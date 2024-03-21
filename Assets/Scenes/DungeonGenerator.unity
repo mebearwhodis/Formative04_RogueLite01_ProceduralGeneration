@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomWhiteObj: {fileID: 106919770644544661, guid: 522e69fb14acf3841b0ee1d14e40bc31, type: 3}
+  roomPrefab: {fileID: 1395436754790840629, guid: d611cafae966a1e49b8ca64c79f67b9d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class DungeonGenerator : MonoBehaviour
     List<Vector2> takenPositions = new List<Vector2>();
     int gridSizeX, gridSizeY, numberOfRooms = 20;
     public GameObject roomWhiteObj;
+    public GameObject roomPrefab;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class DungeonGenerator : MonoBehaviour
         CreateRooms();
         SetRoomDoors();
         DrawMap();
+        SpawnRooms();
     }
 
     void CreateRooms()
@@ -37,7 +39,7 @@ public class DungeonGenerator : MonoBehaviour
         //Setting the rooms up
         rooms = new Room[gridSizeX * 2, gridSizeY * 2];
         //Here, room type 1 is the starting room
-        rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1);
+        rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1, new Vector2Int(16,8));
         takenPositions.Insert(0, Vector2.zero);
         Vector2 checkPos = Vector2.zero;
         
@@ -68,7 +70,7 @@ public class DungeonGenerator : MonoBehaviour
             }
             //finalize position, type of 0 means regular room. If more than 2 types, he suggests doing it in a separate method once the layout of the map is complete
             //for example I could go through each room and check how many neighbours they have, if they have one that means they're at the end of a path and could be a boss or an important room
-            rooms[(int)checkPos.x + gridSizeX, (int)checkPos.y + gridSizeY] = new Room(checkPos, 0);
+            rooms[(int)checkPos.x + gridSizeX, (int)checkPos.y + gridSizeY] = new Room(checkPos, 0, new Vector2Int(16,8));
             takenPositions.Insert(0, checkPos);
         }
     }
@@ -245,6 +247,29 @@ public class DungeonGenerator : MonoBehaviour
            mapper.down = room.DoorBot;
            mapper.right = room.DoorRight;
            mapper.left = room.DoorLeft;
+        }
+    }
+
+    void SpawnRooms()
+    {
+        foreach (Room room in rooms)
+        {
+            if (room == null)
+            {
+                continue;
+            }
+
+            Vector2 drawPos = room.GridPos;
+            drawPos.x *= 16;
+            drawPos.y *= 8;
+            RoomSpawn spawner = GameObject.Instantiate(roomPrefab, drawPos, Quaternion.identity, this.transform)
+                .GetComponent<RoomSpawn>();
+            spawner.size = room.Size;
+            spawner.type = room.Type;
+            spawner.up = room.DoorTop;
+            spawner.down = room.DoorBot;
+            spawner.right = room.DoorRight;
+            spawner.left = room.DoorLeft;
         }
     }
 }
