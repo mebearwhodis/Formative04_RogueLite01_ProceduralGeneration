@@ -11,18 +11,24 @@ public class RoomSpawn : MonoBehaviour
     [SerializeField] private TileBase _floorTile;
 
     public Vector2Int size;
-    
+
     public bool up, down, left, right;
     public int type; //0 = normal, 1 = start, 2 = end
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        for (int x = 0; x < size.x; x++)
+        DrawRoom();
+        CreateDoors();
+    }
+
+    void DrawRoom()
+    {
+        for (int x = -1; x <= size.x; x++)
         {
-            for (int y = 0; y < size.y; y++)
+            for (int y = -1; y <= size.y; y++)
             {
-                if (x == 0 || x == size.x - 1 || y == 0 || y == size.y - 1)
+                if (x == -1 || x == size.x || y == -1 || y == size.y)
                 {
                     _wallMap.SetTile(new Vector3Int(x, y, 0), _wallTile);
                 }
@@ -34,9 +40,27 @@ public class RoomSpawn : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void CreateDoors()
     {
-        
+        if (up)
+        {
+            _wallMap.SetTile(new Vector3Int(size.x / 2, size.y, 0), null);
+            _floorMap.SetTile(new Vector3Int(size.x / 2, size.y, 0), _floorTile);
+        }
+        if (down)
+        {
+            _wallMap.SetTile(new Vector3Int(size.x / 2, -1, 0), null);
+            _floorMap.SetTile(new Vector3Int(size.x / 2, -1, 0), _floorTile);
+        }
+        if (left)
+        {
+            _wallMap.SetTile(new Vector3Int(-1, size.y / 2, 0), null);
+            _floorMap.SetTile(new Vector3Int(-1, size.y / 2, 0), _floorTile);
+        }
+        if (right)
+        {
+            _wallMap.SetTile(new Vector3Int(size.x, size.y / 2, 0), null);
+            _floorMap.SetTile(new Vector3Int(size.x, size.y / 2, 0), _floorTile);
+        }
     }
 }

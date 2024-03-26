@@ -13,12 +13,21 @@ public class DungeonGenerator : MonoBehaviour
     int gridSizeX, gridSizeY, numberOfRooms = 20;
     public GameObject roomWhiteObj;
     public GameObject roomPrefab;
+    public GameObject playerPrefab;
+    public Vector2Int _roomSize = new Vector2Int(15, 15);
 
     private void Start()
     {
      GenerateDungeon();
+     SpawnPlayer();
     }
-    
+
+    private void SpawnPlayer()
+    {
+        // Instantiate the player prefab at the calculated position
+        Instantiate(playerPrefab, new Vector3(_roomSize.x/2f, _roomSize.y/2f,0), Quaternion.identity);
+    }
+
     public void GenerateDungeon()
     {
         //Make sure there aren't more rooms than the grid can fit
@@ -30,7 +39,7 @@ public class DungeonGenerator : MonoBehaviour
         gridSizeY = Mathf.RoundToInt(worldSize.y);
         CreateRooms();
         SetRoomDoors();
-        DrawMap();
+        //DrawMap();
         SpawnRooms();
     }
 
@@ -38,8 +47,8 @@ public class DungeonGenerator : MonoBehaviour
     {
         //Setting the rooms up
         rooms = new Room[gridSizeX * 2, gridSizeY * 2];
-        //Here, room type 1 is the starting room
-        rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1, new Vector2Int(16,8));
+        //Creating the starting room (type 1)
+        rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1, _roomSize);
         takenPositions.Insert(0, Vector2.zero);
         Vector2 checkPos = Vector2.zero;
         
@@ -70,7 +79,12 @@ public class DungeonGenerator : MonoBehaviour
             }
             //finalize position, type of 0 means regular room. If more than 2 types, he suggests doing it in a separate method once the layout of the map is complete
             //for example I could go through each room and check how many neighbours they have, if they have one that means they're at the end of a path and could be a boss or an important room
-            rooms[(int)checkPos.x + gridSizeX, (int)checkPos.y + gridSizeY] = new Room(checkPos, 0, new Vector2Int(16,8));
+            rooms[(int)checkPos.x + gridSizeX, (int)checkPos.y + gridSizeY] = new Room(checkPos, 0, _roomSize);
+            
+            // Check for square configurations and combine rooms
+            //CombineRoomsIfSquare(checkPos);
+
+            // Add the new room to the list of taken positions
             takenPositions.Insert(0, checkPos);
         }
     }
@@ -239,8 +253,8 @@ public class DungeonGenerator : MonoBehaviour
                 continue;
             }
             Vector2 drawPos = room.GridPos;
-            drawPos.x *= 16;
-            drawPos.y *= 8;
+            drawPos.x *= room.Size.x +2;
+            drawPos.y *= room.Size.y +2;
            MapSpriteSelector mapper = GameObject.Instantiate(roomWhiteObj, drawPos, Quaternion.identity, this.transform).GetComponent<MapSpriteSelector>();
            mapper.type = room.Type;
            mapper.up = room.DoorTop;
@@ -260,8 +274,8 @@ public class DungeonGenerator : MonoBehaviour
             }
 
             Vector2 drawPos = room.GridPos;
-            drawPos.x *= 16;
-            drawPos.y *= 8;
+            drawPos.x *= room.Size.x +2;
+            drawPos.y *= room.Size.y +2;
             RoomSpawn spawner = GameObject.Instantiate(roomPrefab, drawPos, Quaternion.identity, this.transform)
                 .GetComponent<RoomSpawn>();
             spawner.size = room.Size;
@@ -272,4 +286,50 @@ public class DungeonGenerator : MonoBehaviour
             spawner.left = room.DoorLeft;
         }
     }
+    
+    //Need rework
+    // void CombineRoomsIfSquare(Vector2 newRoomPos)
+    // {
+    //     // Check if the newly added room creates a square configuration with its neighbors
+    //     foreach (Vector2 direction in new Vector2[] { Vector2.up, Vector2.down, Vector2.left, Vector2.right })
+    //     {
+    //         Vector2 neighborPos = newRoomPos + direction;
+    //         if (IsSquareConfiguration(newRoomPos, neighborPos))
+    //         {
+    //             CombineRooms(newRoomPos, neighborPos);
+    //             break; // Exit loop after one square configuration is found and combined
+    //         }
+    //     }
+    // }
+    //
+    // bool IsSquareConfiguration(Vector2 pos1, Vector2 pos2)
+    // {
+    //     // Check if pos1 and pos2 have two common neighbors
+    //     // This indicates a potential square configuration
+    //     int commonNeighbors = 0;
+    //     foreach (Vector2 direction in new Vector2[] { Vector2.up, Vector2.down, Vector2.left, Vector2.right })
+    //     {
+    //         if (takenPositions.Contains(pos1 + direction) && takenPositions.Contains(pos2 + direction))
+    //         {
+    //             commonNeighbors++;
+    //         }
+    //     }
+    //     return commonNeighbors == 2;
+    // }
+    //
+    // void CombineRooms(Vector2 pos1, Vector2 pos2)
+    // {
+    //     // Remove the individual rooms and create a big room
+    //     // Adjust room size and position accordingly
+    //     Room room1 = rooms[(int)pos1.x + gridSizeX, (int)pos1.y + gridSizeY];
+    //     Room room2 = rooms[(int)pos2.x + gridSizeX, (int)pos2.y + gridSizeY];
+    //
+    //     // Combine rooms and update room data
+    //     Room bigRoom = new Room((room1.GridPos + room2.GridPos) / 2f, room1.Type, room1.Size + room2.Size);
+    //     rooms[(int)pos1.x + gridSizeX, (int)pos1.y + gridSizeY] = bigRoom;
+    //
+    //     // Remove the other rooms
+    //     rooms[(int)pos2.x + gridSizeX, (int)pos2.y + gridSizeY] = null;
+    //     takenPositions.Remove(pos2);
+    // }
 }
