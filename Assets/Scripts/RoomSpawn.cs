@@ -7,6 +7,7 @@ public class RoomSpawn : MonoBehaviour
 {
     [SerializeField] private Tilemap _wallMap;
     [SerializeField] private Tilemap _floorMap;
+    [SerializeField] private Tilemap _roomBoundaries;
     [SerializeField] private TileBase _wallTile;
     [SerializeField] private TileBase _floorTile;
 
@@ -31,13 +32,16 @@ public class RoomSpawn : MonoBehaviour
                 if (x == -1 || x == size.x || y == -1 || y == size.y)
                 {
                     _wallMap.SetTile(new Vector3Int(x, y, 0), _wallTile);
+                    _roomBoundaries.SetTile(new Vector3Int(x, y, 0), _wallTile);
                 }
                 else
                 {
                     _floorMap.SetTile(new Vector3Int(x, y, 0), _floorTile);
+                    _roomBoundaries.SetTile(new Vector3Int(x, y, 0), _wallTile);
                 }
             }
         }
+        _roomBoundaries.color = Color.clear;
     }
 
     void CreateDoors()
