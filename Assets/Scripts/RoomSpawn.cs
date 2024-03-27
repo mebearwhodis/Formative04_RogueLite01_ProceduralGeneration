@@ -10,6 +10,7 @@ public class RoomSpawn : MonoBehaviour
     [SerializeField] private Tilemap _roomBoundaries;
     [SerializeField] private TileBase _wallTile;
     [SerializeField] private TileBase _floorTile;
+    [SerializeField] private GameObject _center;
 
     public Vector2Int size;
 
@@ -21,6 +22,7 @@ public class RoomSpawn : MonoBehaviour
     {
         DrawRoom();
         CreateDoors();
+        SetCenter();
     }
 
     void DrawRoom()
@@ -66,5 +68,10 @@ public class RoomSpawn : MonoBehaviour
             _wallMap.SetTile(new Vector3Int(size.x, size.y / 2, 0), null);
             _floorMap.SetTile(new Vector3Int(size.x, size.y / 2, 0), _floorTile);
         }
+    }
+
+    void SetCenter()
+    {
+        _center.transform.position = GetComponent<CompositeCollider2D>().bounds.center;
     }
 }
