@@ -4,22 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = System.Object;
 
-public class DungeonGenerator : MonoBehaviour
+public class DungeonGeneratorV2 : MonoBehaviour
 {
-    //How  big the level is in rooms (actual size is double that, 8x8)
-    Vector2 worldSize = new Vector2(4, 4);
+    //How  big the level is in rooms (actual size is double that, 8x8, so that we can spawn the first one ~the middle)
+    [SerializeField] private Vector2 worldSize = new Vector2(4, 4);
 
     //(Empty) List of rooms
-    Room[,] rooms;
+    private Room[,] rooms;
 
     //Grid Positions where there's already a room
-    List<Vector2> takenPositions = new List<Vector2>();
+    private List<Vector2> takenPositions = new List<Vector2>();
 
-    private int gridSizeX, gridSizeY, numberOfRooms = 20;
+    private int gridSizeX, gridSizeY;
+    
+    //Maximum number of rooms in the dungeon
+    [SerializeField] private int numberOfRooms = 20;
+    
+    //Size (in tiles) of the rooms
+    [SerializeField] private Vector2Int _roomSize = new Vector2Int(15, 15);
+    
+    //Minimap
     public GameObject roomWhiteObj;
-    public GameObject roomPrefab;
-    public GameObject playerPrefab;
-    public Vector2Int _roomSize = new Vector2Int(15, 15);
+    
+    [SerializeField] private RoomSpawn roomPrefab;
+    [SerializeField] private PlayerController playerPrefab;
 
     private void Start()
     {
@@ -29,13 +37,13 @@ public class DungeonGenerator : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        // Instantiate the player prefab at the calculated position
+        // Instantiate the player prefab at the calculated position (aka middle of the starting room)
         Instantiate(playerPrefab, new Vector3(_roomSize.x / 2f, _roomSize.y / 2f, 0), Quaternion.identity);
     }
 
-    public void GenerateDungeon()
+    private void GenerateDungeon()
     {
-        //Make sure there aren't more rooms than the grid can fit
+        //Make sure the maximum number of rooms isn't higher than what the grid can fit
         if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2))
         {
             numberOfRooms = Mathf.RoundToInt((worldSize.x * 2) * (worldSize.y * 2));
@@ -51,14 +59,15 @@ public class DungeonGenerator : MonoBehaviour
 
     void CreateRooms()
     {
-        //Setting the rooms up
+        //Setting the maximum number of rooms in the list
         rooms = new Room[gridSizeX * 2, gridSizeY * 2];
-        //Creating the starting room (type 1)
+        //Creating the starting room (type 1) in the ~middle position (gridSizeX, gridSizeY)
         rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1, _roomSize);
         takenPositions.Insert(0, Vector2.zero);
         Vector2 checkPos = Vector2.zero;
 
         //magic numbers are bad, but this is just for testing
+        //TODO: see what they do
         float randomCompare = 0.2f, randomCompareStart = 0.2f, randomCompareEnd = 0.01f;
         //Add rooms
         for (int i = 0; i < numberOfRooms - 1; i++)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,10 @@ public class PlayerController : MonoBehaviour
   private Animator _animator;
   private SpriteRenderer _sr;
   private PlayerInputs _input;
+
+  [Header("Items")] 
+  [SerializeField] private Bomb _bomb;
+  [SerializeField] private Arrow _arrow;
 
   private void Start()
   {
@@ -22,11 +27,12 @@ public class PlayerController : MonoBehaviour
   private void FixedUpdate()
   {
     Move();
+    UseItems();
   }
 
   private void Move()
   {
-    _rb.velocity = _input._moveValue * (_moveSpeed * Time.deltaTime);
+    _rb.velocity = _input.MoveValue * (_moveSpeed * Time.deltaTime);
     // //Left & Right
     // _rb.velocityX = Input.GetAxis("Horizontal") * _moveSpeed * Time.deltaTime;
     //
@@ -62,5 +68,23 @@ public class PlayerController : MonoBehaviour
     // {
     //   _animator.SetBool("isWalking", false);
     // }
+  }
+
+  private void UseItems()
+  {
+    if (_input.BombDropped)
+    {
+      Instantiate(_bomb, transform.position, Quaternion.identity);
+    }
+
+    if (_input.ArrowShot)
+    {
+      ShootArrow();
+    }
+  }
+
+  private void ShootArrow()
+  {
+    Instantiate(_arrow, transform.position, Quaternion.identity);
   }
 }

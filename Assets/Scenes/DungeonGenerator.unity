@@ -119,6 +119,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &408371629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408371632}
+  - component: {fileID: 408371630}
+  m_Layer: 0
+  m_Name: DungeonGeneratorV2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &408371630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408371629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bfadb1cd74c34b4c8ba3e65ce4370eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldSize: {x: 4, y: 4}
+  numberOfRooms: 20
+  _roomSize: {x: 15, y: 15}
+  roomWhiteObj: {fileID: 106919770644544661, guid: 522e69fb14acf3841b0ee1d14e40bc31, type: 3}
+  roomPrefab: {fileID: 3721757290086735001, guid: d611cafae966a1e49b8ca64c79f67b9d, type: 3}
+  playerPrefab: {fileID: 8763171800956981434, guid: f804dff96b952474383ccbbb6cf26194, type: 3}
+--- !u!4 &408371632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408371629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324443381
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1918679233
 Transform:
   m_ObjectHideFlags: 0
@@ -345,3 +395,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1324443384}
   - {fileID: 1918679233}
+  - {fileID: 408371632}
