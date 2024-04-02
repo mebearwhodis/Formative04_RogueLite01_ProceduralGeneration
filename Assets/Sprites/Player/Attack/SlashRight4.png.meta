@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f2ea8a4aa7ef038489d6717fdf7de014
+guid: f73b4538d14a4de49bbf21257b961b67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2482105527458818455
-    second: Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_0
+      213: -1058959283236376445
+    second: SlashRight4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,11 +46,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.25, y: 0.5625}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -96,89 +96,39 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_0
+      name: SlashRight4_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 334
-        width: 16
-        height: 16
+        x: 0
+        y: 18
+        width: 28
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 799673393d5327220800000000000000
-      internalID: 2482105527458818455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 334
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9791c741a391484d8c743f6880ffa68
-      internalID: -359194852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_2
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 334
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2539ae2bb478a542a71d846883d5cd0
-      internalID: -868918810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_3
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 334
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b73c331ac3b6b354ea604f8b5b88f6fe
-      internalID: -741546048
+      spriteID: 380f71b7422dd41f0800000000000000
+      internalID: -1058959283236376445
       vertices: []
       indices: 
       edges: []
@@ -186,18 +136,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ede81a885abeee64da9c67a805a95996
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_0: 2482105527458818455
-      Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_1: -359194852
-      Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_2: -868918810
-      Game Boy GBC - The Legend of Zelda Links Awakening DX - Link_3: -741546048
+      SlashRight4_0: -1058959283236376445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

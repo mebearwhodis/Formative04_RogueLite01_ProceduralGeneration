@@ -15,12 +15,13 @@ public class Arrow : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _bc = GetComponent<BoxCollider2D>();
         Destroy(gameObject,5);
+        
+        _rb.rotation = transform.rotation.eulerAngles.z;
     }
     
     private void Update()
     {
-        //transform.rotation = Quaternion.LookRotation(_rb.velocity);
-        _rb.velocity = Vector2.down * _arrowSpeed;
+        _rb.velocity =  transform.right * _arrowSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,7 +46,5 @@ public class Arrow : MonoBehaviour
             Debug.Log("Pewpew");
             Destroy(other.gameObject);
         }
-
-       
     }
 }

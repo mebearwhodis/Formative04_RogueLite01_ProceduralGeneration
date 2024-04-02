@@ -53,6 +53,8 @@ public class DungeonGeneratorV2 : MonoBehaviour
         gridSizeY = Mathf.RoundToInt(worldSize.y);
         CreateRooms();
         SetRoomDoors();
+        CalculateDistancesFromStart();
+        AssignRoomType();
         //DrawMap();
         SpawnRooms();
     }
@@ -322,9 +324,66 @@ public class DungeonGeneratorV2 : MonoBehaviour
             spawner.down = room.DoorBot;
             spawner.right = room.DoorRight;
             spawner.left = room.DoorLeft;
+            spawner.spacesFromStart = room.SpacesFromStart;
         }
     }
 
+    void CalculateDistancesFromStart()
+    {
+        Queue<Room> queue = new Queue<Room>();
+        HashSet<Room> visited = new HashSet<Room>();
+
+        // Start from the initial room
+        Room startRoom = rooms[gridSizeX, gridSizeY];
+        startRoom.SpacesFromStart = 0;
+        queue.Enqueue(startRoom);
+
+        while (queue.Count > 0)
+        {
+            Room currentRoom = queue.Dequeue();
+            visited.Add(currentRoom);
+
+            // Check neighbors
+            List<Room> neighbors = GetNeighbors(currentRoom);
+            foreach (Room neighbor in neighbors)
+            {
+                if (!visited.Contains(neighbor))
+                {
+                    neighbor.SpacesFromStart = currentRoom.SpacesFromStart + 1;
+                    queue.Enqueue(neighbor);
+                }
+            }
+        }
+    }
+
+    List<Room> GetNeighbors(Room room)
+    {
+        List<Room> neighbors = new List<Room>();
+
+        int x = (int)room.GridPos.x + gridSizeX;
+        int y = (int)room.GridPos.y + gridSizeY;
+
+        if (x > 0 && rooms[x - 1, y] != null)
+            neighbors.Add(rooms[x - 1, y]);
+        if (x < gridSizeX * 2 - 1 && rooms[x + 1, y] != null)
+            neighbors.Add(rooms[x + 1, y]);
+        if (y > 0 && rooms[x, y - 1] != null)
+            neighbors.Add(rooms[x, y - 1]);
+        if (y < gridSizeY * 2 - 1 && rooms[x, y + 1] != null)
+            neighbors.Add(rooms[x, y + 1]);
+
+        return neighbors;
+    }
+
+    void AssignRoomType()
+    {
+       //Type logic goes here
+       //Type 1 is the start, have a type for the boss room, and a type for the end room if it's not the same,
+       //Type for treasure rooms, shops if any, combat rooms, etc.
+       
+       //Check all the ones with the highest distance. If there's more than one, choose randomly among all the ones that only have one neighbour
+    }
+    
     //Need rework
     // void CombineRoomsIfSquare(Vector2 newRoomPos)
     // {

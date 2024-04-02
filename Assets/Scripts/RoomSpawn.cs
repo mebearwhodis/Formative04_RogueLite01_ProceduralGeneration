@@ -10,19 +10,20 @@ public class RoomSpawn : MonoBehaviour
     [SerializeField] private Tilemap _roomBoundaries;
     [SerializeField] private TileBase _wallTile;
     [SerializeField] private TileBase _floorTile;
-    [SerializeField] private GameObject _center;
 
     public Vector2Int size;
 
     public bool up, down, left, right;
     public int type; //0 = normal, 1 = start, 2 = end
+    public int spacesFromStart;
 
     // Start is called before the first frame update
     void Start()
     {
         DrawRoom();
         CreateDoors();
-        SetCenter();
+        FillRoom();
+        SetCameraPriority();
     }
 
     void DrawRoom()
@@ -70,8 +71,16 @@ public class RoomSpawn : MonoBehaviour
         }
     }
 
-    void SetCenter()
+    void FillRoom()
     {
-        _center.transform.position = GetComponent<CompositeCollider2D>().bounds.center;
+        //Depending on type, do different things when the player enters the room
+    }
+    
+    void SetCameraPriority()
+    {
+        if (type == 1)
+        {
+            GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>().m_Priority = 11;
+        }
     }
 }
