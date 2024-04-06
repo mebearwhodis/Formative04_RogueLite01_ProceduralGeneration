@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 786222403378105696}
   m_Layer: 0
   m_Name: HitBox_Up
-  m_TagString: Untagged
+  m_TagString: SlashHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2890207097026742585}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.7407017, y: 0.21062593}
+  m_Offset: {x: 0.7407017, y: 0.23665594}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -108,7 +108,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.4252357, y: 0.95787454}
+  m_Size: {x: 2.4252357, y: 0.9058145}
   m_EdgeRadius: 0
 --- !u!1 &4265615290468459744
 GameObject:
@@ -198,9 +198,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6683683260214047266}
   - component: {fileID: 600130669344310775}
+  - component: {fileID: 5028394719284653098}
   m_Layer: 0
   m_Name: Feet
-  m_TagString: Untagged
+  m_TagString: Feet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,6 +267,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &5028394719284653098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519462327186284488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a30592b52923aa4eb8792d9d65f7131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4688624497714819123
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +293,6 @@ GameObject:
   - component: {fileID: 4136433466248566373}
   - component: {fileID: 8763171800956981434}
   - component: {fileID: 5332886932127049955}
-  - component: {fileID: 1902997066952358542}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -458,15 +470,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1902997066952358542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4688624497714819123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a30592b52923aa4eb8792d9d65f7131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

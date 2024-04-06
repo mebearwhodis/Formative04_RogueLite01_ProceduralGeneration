@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_SlashRight
+  m_Name: Player_SlashUp
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 047284cac01d9ab40a7d2d61c9b50a47, type: 3}
+      value: {fileID: 21300000, guid: 7251007446911e74084352c7786586dc, type: 3}
     - time: 0.06666667
-      value: {fileID: 21300000, guid: 2f19ac44ea2f53648a16f96579b441fb, type: 3}
+      value: {fileID: 21300000, guid: 656eac901d0cd5b4b9be4fdec2d426ac, type: 3}
     - time: 0.13333334
-      value: {fileID: 21300000, guid: 6ed8e47dda540fd449950524f3136b62, type: 3}
+      value: {fileID: 21300000, guid: b43dbbdd1850b0741bea942f195481e2, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: f73b4538d14a4de49bbf21257b961b67, type: 3}
+      value: {fileID: 21300000, guid: b23a526ef18236847bff5d258f5c8771, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 047284cac01d9ab40a7d2d61c9b50a47, type: 3}
-    - {fileID: 21300000, guid: 2f19ac44ea2f53648a16f96579b441fb, type: 3}
-    - {fileID: 21300000, guid: 6ed8e47dda540fd449950524f3136b62, type: 3}
-    - {fileID: 21300000, guid: f73b4538d14a4de49bbf21257b961b67, type: 3}
+    - {fileID: 21300000, guid: 7251007446911e74084352c7786586dc, type: 3}
+    - {fileID: 21300000, guid: 656eac901d0cd5b4b9be4fdec2d426ac, type: 3}
+    - {fileID: 21300000, guid: b43dbbdd1850b0741bea942f195481e2, type: 3}
+    - {fileID: 21300000, guid: b23a526ef18236847bff5d258f5c8771, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -86,7 +86,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.2
+  - time: 0.26666668
     functionName: CanMoveFunction
     data: 
     objectReferenceParameter: {fileID: 0}

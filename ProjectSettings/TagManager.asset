@@ -7,6 +7,8 @@ TagManager:
   - Room
   - Wall
   - Enemy
+  - SlashHitBox
+  - Feet
   layers:
   - Default
   - TransparentFX

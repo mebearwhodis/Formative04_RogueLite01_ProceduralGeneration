@@ -1,34 +1,41 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework.Internal;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-  [SerializeField] private float _moveSpeed = 5f;
-  private float _speedMultiplier = 1f;
+  //Generic
   private Rigidbody2D _rb;
   private Animator _animator;
   private SpriteRenderer _sr;
   private PlayerControls _playerControls;
+  
+  //Movement related
+  [Header("Movement")]
+  [SerializeField] private float _moveSpeed = 5f;
+  private float _speedMultiplier = 1f;
   private Vector2 _movement;
   private Vector2 _lookDirection;
   
+  [Header("Attacks")]
   //Hitboxes of the different attack directions
   [SerializeField] private GameObject _hitBox_Top;
   [SerializeField] private GameObject _hitBox_Bottom;
   [SerializeField] private GameObject _hitBox_Left;
   [SerializeField] private GameObject _hitBox_Right;
+
+  [Header("Cooldowns")] 
+  private float _attackCD = 0.3f;
+  private float _bombCD = 1f;
+  private float _shotCD = 0.2f;
   
+  //Enablers
   private bool _canRoll = true;
   private bool _canShoot = true;
   private bool _canDropBomb = true;
   private bool _canAttack = true;
   private bool _canMove = true;
+  private bool _canLook = true;
   private bool _canBlock = true;
-  
   private bool _isRolling = false;
 
   public bool CanRoll
@@ -42,6 +49,8 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private Bomb _bomb;
   [SerializeField] private Arrow _arrow;
 
+  #region Unity
+  
   private void Awake()
   {
     _playerControls = new PlayerControls();
@@ -85,6 +94,8 @@ public class PlayerController : MonoBehaviour
   {
     Move();
   }
+  
+  #endregion
 
   private void PlayerInput()
   {
@@ -107,16 +118,6 @@ public class PlayerController : MonoBehaviour
       _animator.SetFloat("lastLookY", _lookDirection.y);
     }
   }
-
-  private bool IsNotMoving()
-  {
-    return (_movement.x is < 0.1f and > -0.1f && _movement.y is < 0.1f and > -0.1f);
-  }
-
-  private bool IsNotLooking()
-  {
-    return (_lookDirection.x is < 0.1f and > -0.1f && _lookDirection.y is < 0.1f and > -0.1f);
-  }
   
   private void Move()
   {
@@ -132,9 +133,86 @@ public class PlayerController : MonoBehaviour
 
   private void Attack()
   {
+    if (!_canAttack) {return;}
     _rb.velocity = Vector2.zero;
     _canMove = false;
+    _canAttack = false;
     _animator.SetTrigger("attack");
+
+    StartCoroutine("AttackCooldown");
+  }
+
+  private void DropBomb()
+  {
+    if (!_canDropBomb) {return;}
+    _rb.velocity = Vector2.zero;
+    _canMove = false;
+    
+    _animator.SetTrigger("useItem");
+    
+    Instantiate(_bomb, transform.position, Quaternion.identity);
+
+    _canDropBomb = false;
+    StartCoroutine("BombCooldown");
+  }
+
+  private void ShootArrow()
+  {
+    if (!_canShoot) {return;}
+    _rb.velocity = Vector2.zero;
+    _canMove = false;
+    
+    _animator.SetTrigger("useItem");
+    
+    float angle = 0;
+    
+    //If there's no aim input, use the last one
+    if (IsNotLooking())
+    {
+      angle = Mathf.Atan2(_animator.GetFloat("lastLookY"), _animator.GetFloat("lastLookX")) * Mathf.Rad2Deg;
+    }
+    else
+    {
+      // Calculate the angle of the look direction
+      angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
+    }
+    
+    Instantiate(_arrow, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+
+    _canShoot = false;
+    StartCoroutine("ShotCooldown");
+  }
+
+  private void Roll()
+  {
+    if(_canRoll == false || _isRolling || IsNotMoving()){return;}
+
+    Debug.Log("Do a barrel roll!");
+    _animator.SetTrigger("roll");
+    if (_movement.x > 0)
+    {
+      _sr.flipX = true;
+    }
+    _isRolling = true;
+    _canRoll = false;
+      
+    StartCoroutine("RollCooldown");
+  }
+  
+  private void StartBlock()
+  {
+    _canRoll = false;
+    _speedMultiplier = 0.5f;
+    _animator.SetBool("isBlocking", true);
+    
+    //Also if not looking, take the last move or look direction
+  }
+
+  private void StopBlock()
+  {
+    _canRoll = true;
+    _speedMultiplier = 1f;
+    _animator.SetBool("isBlocking", false);
   }
   
   private void ActivateCollider()
@@ -166,56 +244,38 @@ public class PlayerController : MonoBehaviour
     _hitBox_Bottom.SetActive(false);
     _hitBox_Top.SetActive(false);
   }
-
-  private void DropBomb()
+  
+  private bool IsNotMoving()
   {
-    _rb.velocity = Vector2.zero;
-    _canMove = false;
-    
-    _animator.SetTrigger("useItem");
-    
-    Instantiate(_bomb, transform.position, Quaternion.identity);
+    return (_movement.x is < 0.1f and > -0.1f && _movement.y is < 0.1f and > -0.1f);
   }
 
-  private void ShootArrow()
-  {  
-    _rb.velocity = Vector2.zero;
-    _canMove = false;
-    
-    _animator.SetTrigger("useItem");
-    
-    float angle = 0;
-    
-    if (IsNotLooking())
-    {
-      angle = Mathf.Atan2(_animator.GetFloat("lastLookY"), _animator.GetFloat("lastLookX")) * Mathf.Rad2Deg;
-    }
-    else
-    {
-      // Calculate the angle of the look direction
-      angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
-    }
-    
-    Instantiate(_arrow, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+  private bool IsNotLooking()
+  {
+    return (_lookDirection.x is < 0.1f and > -0.1f && _lookDirection.y is < 0.1f and > -0.1f);
   }
 
-  private void Roll()
+  #region Cooldown Coroutines
+  
+  private IEnumerator AttackCooldown()
   {
-    if(_canRoll == false || _isRolling || IsNotMoving()){return;}
-
-    Debug.Log("Do a barrel roll!");
-    _animator.SetTrigger("roll");
-    if (_movement.x > 0)
-    {
-      _sr.flipX = true;
-    }
-    _isRolling = true;
-    _canRoll = false;
-      
-    StartCoroutine("RollCooldown");
+    yield return new WaitForSeconds(_attackCD);
+    _canAttack = true;
+  }
+   
+  private IEnumerator BombCooldown()
+  {
+    yield return new WaitForSeconds(_bombCD);
+    _canDropBomb = true;
   }
   
-  IEnumerator RollCooldown()
+  private IEnumerator ShotCooldown()
+  {
+    yield return new WaitForSeconds(_shotCD);
+    _canShoot = true;
+  }
+
+  private IEnumerator RollCooldown()
   {
     yield return new WaitForSeconds(0.6f);
     _sr.flipX = false;
@@ -225,19 +285,5 @@ public class PlayerController : MonoBehaviour
     _canRoll = true;
   }
 
-  private void StartBlock()
-  {
-    _canRoll = false;
-    _speedMultiplier = 0.5f;
-    _animator.SetBool("isBlocking", true);
-    
-    //Also if not looking, take the last move or look direction
-  }
-
-  private void StopBlock()
-  {
-    _canRoll = true;
-    _speedMultiplier = 1f;
-    _animator.SetBool("isBlocking", false);
-  }
+  #endregion
 }
