@@ -10,6 +10,7 @@ public class RoomSpawn : MonoBehaviour
     [SerializeField] private Tilemap _roomBoundaries;
     [SerializeField] private TileBase _wallTile;
     [SerializeField] private TileBase _floorTile;
+    [SerializeField] private SpawnPoint _center;
 
     public Vector2Int size;
 
@@ -22,6 +23,7 @@ public class RoomSpawn : MonoBehaviour
     {
         DrawRoom();
         CreateDoors();
+        SetCenter();
         FillRoom();
         SetCameraPriority();
     }
@@ -71,8 +73,23 @@ public class RoomSpawn : MonoBehaviour
         }
     }
 
+    void SetCenter()
+    {
+        _center.transform.position = new Vector3((float)size.x / 2, (float)size.y / 2, 0);
+    }
+    
     void FillRoom()
     {
+        switch (type)
+        {
+            case 1:
+                _center.gameObject.SetActive(true);
+                break;
+            default:
+                Debug.Log("Room Type not supported yet");
+                Debug.Log("Spaces from the start : " + spacesFromStart);
+                break;
+        }
         //Depending on type, do different things when the player enters the room
     }
     

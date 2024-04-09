@@ -6,7 +6,8 @@ public class ShyGuy : MonoBehaviour
 {
     [SerializeField] private float _maxSpeed;
 
-    [Header("Seek")] [SerializeField] private Transform _seekTarget;
+    [Header("Seek")] 
+    [SerializeField] private Transform _seekTarget;
     [SerializeField] private float _seekWeight = 1f;
 
 
@@ -14,14 +15,12 @@ public class ShyGuy : MonoBehaviour
     private Vector2 _acceleration;
     private Vector2 _seekDesiredVelocity;
 
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _seekTarget = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 velocity = _rb.velocity;

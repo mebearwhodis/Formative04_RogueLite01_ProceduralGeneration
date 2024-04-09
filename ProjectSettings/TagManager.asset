@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - SlashHitBox
   - Feet
+  - RespawnPoint
+  - Shield
   layers:
   - Default
   - TransparentFX

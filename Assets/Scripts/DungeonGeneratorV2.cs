@@ -22,7 +22,9 @@ public class DungeonGeneratorV2 : MonoBehaviour
     
     //Size (in tiles) of the rooms
     [SerializeField] private Vector2Int _roomSize = new Vector2Int(15, 15);
-    
+
+    public Vector2Int RoomSize => _roomSize;
+
     //Minimap
     public GameObject roomWhiteObj;
     
@@ -32,14 +34,14 @@ public class DungeonGeneratorV2 : MonoBehaviour
     private void Start()
     {
         GenerateDungeon();
-        SpawnPlayer();
+        // SpawnPlayer();
     }
 
-    private void SpawnPlayer()
-    {
-        // Instantiate the player prefab at the calculated position (aka middle of the starting room)
-        Instantiate(playerPrefab, new Vector3(_roomSize.x / 2f, _roomSize.y / 2f, 0), Quaternion.identity);
-    }
+    // private void SpawnPlayer()
+    // {
+    //     // Instantiate the player prefab at the calculated position (aka middle of the starting room)
+    //     Instantiate(playerPrefab, new Vector3(_roomSize.x / 2f, _roomSize.y / 2f, 0), Quaternion.identity);
+    // }
 
     private void GenerateDungeon()
     {
@@ -68,8 +70,7 @@ public class DungeonGeneratorV2 : MonoBehaviour
         takenPositions.Insert(0, Vector2.zero);
         Vector2 checkPos = Vector2.zero;
 
-        //magic numbers are bad, but this is just for testing
-        //TODO: see what they do
+        //Numbers used for branching probability
         float randomCompare = 0.2f, randomCompareStart = 0.2f, randomCompareEnd = 0.01f;
         //Add rooms
         for (int i = 0; i < numberOfRooms - 1; i++)
