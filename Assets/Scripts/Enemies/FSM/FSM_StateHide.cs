@@ -24,10 +24,13 @@ namespace FSM
         public void OnEnter()
         {
             _spriteRenderer.enabled = false;
+            _hidden = true;
         }
 
         public void OnExit()
         {
+            Vector2 spawnPosition = _entity.SpawnPoint.position;
+            _entity.transform.position = spawnPosition + Random.insideUnitCircle * _entity.PopoutRadius;
             _spriteRenderer.enabled = true;
             _hidden = false;
         }

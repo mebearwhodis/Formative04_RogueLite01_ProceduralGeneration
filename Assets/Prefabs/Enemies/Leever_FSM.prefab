@@ -48,11 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2c9f411e5543aba7c9e229c9521d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chaseSpeed: 0
+  _chaseSpeed: 2
   _targetDistance: 0
   _explosionTimer: 0
   _explosionRadius: 0
   _explosionChaseSpeed: 0
+  popoutRadius: 3
   _minAttackDistance: 0
   _maxAttackDistance: 0
   _ammunition: {fileID: 0}

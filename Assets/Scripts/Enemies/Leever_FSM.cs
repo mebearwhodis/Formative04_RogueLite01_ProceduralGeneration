@@ -1,21 +1,22 @@
 ﻿using System;
+using System.Collections;
 using FSM;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Leever_FSM : MonoBehaviour
 {
-    private FSM_StateMachine _stateMachine;
-    private FSM_StateWander _wanderState;
-    private FSM_StateChase _chaseState;
-    private FSM_StateHide _hideState;
+    private PlayerController _target;
     private FSM_Enemy _thisEntity;
     
-    private PlayerController _target;
-    //private Vector2 _targetPosition
-    //private Vector2 _direction;
+    private FSM_StateMachine _stateMachine;
+    
+    private FSM_StateChase _chaseState;
+    private FSM_StateHide _hideState;
+    
 
-    private string _lastTagHit;
-    private bool _vulnerable;
+    private bool _hidden;
+    private bool _canSwitch = false;
 
     private void Start()
     {
@@ -23,25 +24,36 @@ public class Leever_FSM : MonoBehaviour
         _thisEntity = GetComponent<FSM_Enemy>();
 
         _stateMachine = new FSM_StateMachine();
-        _wanderState = new FSM_StateWander(_thisEntity);
+        _chaseState = new FSM_StateChase(_thisEntity);
         _hideState = new FSM_StateHide(_thisEntity);
         
-        _stateMachine.ChangeState(_hideState);
-        //_stateMachine.AddTransition(_hideState, _chaseState, SeePlayer);
-        //_stateMachine.AddTransition(_chaseState, _wanderState, );
+        _stateMachine.ChangeState(_chaseState);
+        _stateMachine.AddTransition(_hideState, _chaseState, () => HiddenStatus(false));
+        _stateMachine.AddTransition(_chaseState, _hideState, () => HiddenStatus(true));
     }
 
     private void Update()
     {
         _stateMachine.UpdateState();
+        if (_canSwitch)
+        {
+            StartCoroutine("SwitchHiddenStatus");
+        }
     }
 
-    private bool SeePlayer()
+    private bool HiddenStatus(bool targetStatus)
     {
-        //either raycast if obstacles or check in a radius
-        var targetPosition = _target.transform.position;
-        var thisPosition = transform.position;
-        return Math.Abs(targetPosition.x - thisPosition.x) < 0.5f || Math.Abs(targetPosition.y - thisPosition.y) < 0.5f;
+        return targetStatus == _hidden;
+    }
+
+    private IEnumerator SwitchHiddenStatus()
+    {
+        _canSwitch = false;
+        _hidden = !_hidden;
+        float randomTimer = Random.Range(3f, 5f);
+        yield return new WaitForSeconds(randomTimer);
+        _hidden = !_hidden;
+        _canSwitch = true;
     }
 
 }

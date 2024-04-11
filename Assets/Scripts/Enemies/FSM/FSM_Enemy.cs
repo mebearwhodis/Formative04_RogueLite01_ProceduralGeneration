@@ -7,6 +7,10 @@ namespace FSM
 {
     public class FSM_Enemy : MonoBehaviour
     {
+        private Transform _spawnPoint;
+
+        public Transform SpawnPoint => _spawnPoint;
+
         private Animator _animator;
         private Rigidbody2D _rigidbody;
         private SpriteRenderer _spriteRenderer;
@@ -32,6 +36,11 @@ namespace FSM
         public float ExplosionTimer => _explosionTimer;
         public float ExplosionRadius => _explosionRadius;
         public float ExplosionChaseSpeed => _explosionChaseSpeed;
+
+        [Header("Hide State")] 
+        [SerializeField] private float popoutRadius;
+
+        public float PopoutRadius => popoutRadius;
 
         [Header("Ranged Attack State")] 
         [SerializeField] private float _minAttackDistance;
@@ -63,6 +72,7 @@ namespace FSM
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _spawnPoint = transform;
         }
 
         public void ThrowProjectile()
