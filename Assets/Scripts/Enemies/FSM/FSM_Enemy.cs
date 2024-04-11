@@ -7,12 +7,15 @@ namespace FSM
 {
     public class FSM_Enemy : MonoBehaviour
     {
-        private PlayerController _target = PlayerController.Instance;
+        private Animator _animator;
         private Rigidbody2D _rigidbody;
+        private SpriteRenderer _spriteRenderer;
+        private PlayerController _target = PlayerController.Instance;
 
-        public PlayerController Target => _target;
+        public Animator Animator => _animator;
         public Rigidbody2D Rigidbody => _rigidbody;
-        
+        public SpriteRenderer SpriteRenderer => _spriteRenderer;
+        public PlayerController Target => _target;
 
         [Header("Chase State")] 
         [SerializeField] private float _chaseSpeed;
@@ -21,10 +24,20 @@ namespace FSM
         public float ChaseSpeed => _chaseSpeed;
         public float TargetDistance => _targetDistance;
 
+        [Header("Explosion State")] 
+        [SerializeField] private float _explosionTimer;
+        [SerializeField] private float _explosionRadius;
+        [SerializeField] private float _explosionChaseSpeed;
+        
+        public float ExplosionTimer => _explosionTimer;
+        public float ExplosionRadius => _explosionRadius;
+        public float ExplosionChaseSpeed => _explosionChaseSpeed;
+
         [Header("Ranged Attack State")] 
         [SerializeField] private float _minAttackDistance;
         [SerializeField] private float _maxAttackDistance;
         [SerializeField] private Ammunition _ammunition;
+        [SerializeField] private float _attackCooldown = 1.5f;
         private bool _canShoot = true;
 
         public float MinAttackDistance => _minAttackDistance;
@@ -47,7 +60,9 @@ namespace FSM
 
         private void Start()
         {
+            _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         public void ThrowProjectile()
@@ -62,7 +77,7 @@ namespace FSM
             Vector2 direction = _target.transform.position - this.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Instantiate(_ammunition, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(_attackCooldown);
             _canShoot = true;
         }
     }
