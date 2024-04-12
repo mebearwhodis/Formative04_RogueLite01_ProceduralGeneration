@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 2687352097001100559}
   - component: {fileID: 8864641522254950414}
   - component: {fileID: 9034678986440823015}
+  - component: {fileID: 5559148682588638212}
   m_Layer: 0
   m_Name: SpikedBeetle_FSM
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,11 +50,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2c9f411e5543aba7c9e229c9521d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startingHealth: 10
+  _currentHealth: 0
   _chaseSpeed: 0
   _targetDistance: 0
   _explosionTimer: 0
   _explosionRadius: 0
   _explosionChaseSpeed: 0
+  popoutRadius: 0
   _minAttackDistance: 0
   _maxAttackDistance: 0
   _ammunition: {fileID: 0}
@@ -238,3 +242,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba1630aa87915547bfed87f37b477d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5559148682588638212
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8203366994296199259}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2dd31c33dba01c040ae990414b15160d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

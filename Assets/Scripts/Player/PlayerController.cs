@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -17,22 +18,31 @@ public class PlayerController : Singleton<PlayerController>
     private Vector2 _movement;
     private Vector2 _lookDirection;
 
-    [Header("Attacks")]
+    [Header("Attack Hitboxes")]
     //Hitboxes of the different attack directions
     [SerializeField]
-    private GameObject _hitBox_Top;
+    private GameObject _slashHitBox_Up;
 
-    [SerializeField] private GameObject _hitBox_Bottom;
-    [SerializeField] private GameObject _hitBox_Left;
-    [SerializeField] private GameObject _hitBox_Right;
+    [SerializeField] private GameObject _slashHitBox_Right;
+    [SerializeField] private GameObject _slashHitBox_Down;
+    [SerializeField] private GameObject _slashHitBox_Left;
+
+    [Header("Shield Hitboxes")]
+    //Hitboxes of the different attack directions
+    [SerializeField]
+    private GameObject _shieldHitBox_Up;
+
+    [SerializeField] private GameObject _shieldHitBox_Right;
+    [SerializeField] private GameObject _shieldHitBox_Down;
+    [SerializeField] private GameObject _shieldHitBox_Left;
 
     [Header("Cooldowns")] private float _attackCD = 0.3f;
     private float _bombCD = 1f;
     private float _shotCD = 0.2f;
 
     private bool _gamePaused = false;
-    
-    //Enablers - Make it a FiniteStateMachine even though we saw them in class 2 days after you made this :,)
+
+    //Enablers - blergh
     private bool _canRoll = true;
     private bool _canShoot = true;
     private bool _canDropBomb = true;
@@ -41,6 +51,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool _canLook = true;
     private bool _canBlock = true;
     private bool _isRolling = false;
+    private bool _isBlocking = false;
 
     public bool CanRoll
     {
@@ -50,16 +61,15 @@ public class PlayerController : Singleton<PlayerController>
 
     public bool IsRolling => _isRolling;
 
-    [Header("Items")] 
-    [SerializeField] private Bomb _bomb;
-    [SerializeField] private Arrow _arrow;
+    [Header("Items")] [SerializeField] private Bomb _bomb;
+    [SerializeField] private Ammunition _arrow;
 
     #region Unity
 
     protected override void Awake()
     {
-         base.Awake();
-         _playerControls = new PlayerControls();
+        base.Awake();
+        _playerControls = new PlayerControls();
     }
 
     private void Start()
@@ -94,6 +104,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         _gamePaused = GameManager.Instance.IsPaused;
         PlayerInput();
+        BlockHitBoxes();
     }
 
     private void FixedUpdate()
@@ -111,7 +122,7 @@ public class PlayerController : Singleton<PlayerController>
 
         // Check the control scheme
         var controlScheme = _playerInput.currentControlScheme;
-        
+
         // Handle input based on the control scheme
         switch (controlScheme)
         {
@@ -256,39 +267,49 @@ public class PlayerController : Singleton<PlayerController>
     private void StartBlock()
     {
         _canRoll = false;
+        _isBlocking = true;
         _speedMultiplier = 0.5f;
         _animator.SetBool("isBlocking", true);
-
-        //Also if not looking, take the last move or look direction
     }
 
     private void StopBlock()
     {
         _canRoll = true;
+        _isBlocking = false;
         _speedMultiplier = 1f;
         _animator.SetBool("isBlocking", false);
     }
 
+    private void BlockHitBoxes()
+    {
+        if (!_isBlocking) {return;}
+
+        _shieldHitBox_Up.SetActive(_animator.GetFloat("lastLookY") >= 0.5f);
+        _shieldHitBox_Right.SetActive(_animator.GetFloat("lastLookX") >= 0.5f);
+        _shieldHitBox_Down.SetActive(_animator.GetFloat("lastLookY") <= -0.5f);
+        _shieldHitBox_Left.SetActive(_animator.GetFloat("lastLookX") <= -0.5f);
+    }
+
     private void ActivateCollider()
     {
-        if (_animator.GetFloat("lastLookX") <= -0.5f)
+        if (_animator.GetFloat("lastLookY") >= 0.5f)
         {
-            _hitBox_Left.SetActive(true);
+            _slashHitBox_Up.SetActive(true);
         }
 
         if (_animator.GetFloat("lastLookX") >= 0.5f)
         {
-            _hitBox_Right.SetActive(true);
+            _slashHitBox_Right.SetActive(true);
         }
 
         if (_animator.GetFloat("lastLookY") <= -0.5f)
         {
-            _hitBox_Bottom.SetActive(true);
+            _slashHitBox_Down.SetActive(true);
         }
 
-        if (_animator.GetFloat("lastLookY") >= 0.5f)
+        if (_animator.GetFloat("lastLookX") <= -0.5f)
         {
-            _hitBox_Top.SetActive(true);
+            _slashHitBox_Left.SetActive(true);
         }
     }
 
@@ -296,10 +317,10 @@ public class PlayerController : Singleton<PlayerController>
     {
         _canMove = true;
 
-        _hitBox_Left.SetActive(false);
-        _hitBox_Right.SetActive(false);
-        _hitBox_Bottom.SetActive(false);
-        _hitBox_Top.SetActive(false);
+        _slashHitBox_Up.SetActive(false);
+        _slashHitBox_Right.SetActive(false);
+        _slashHitBox_Down.SetActive(false);
+        _slashHitBox_Left.SetActive(false);
     }
 
     private bool IsNotMoving()

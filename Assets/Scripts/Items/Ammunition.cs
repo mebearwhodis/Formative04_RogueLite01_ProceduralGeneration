@@ -6,6 +6,7 @@ public class Ammunition : MonoBehaviour
 {
     private Rigidbody2D _rb;
     [SerializeField] private float _ammoSpeed = 10f;
+    [SerializeField] private bool _playerProjectile = false;
 
      
     // Start is called before the first frame update
@@ -31,10 +32,13 @@ public class Ammunition : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (_playerProjectile)
         {
-            Debug.Log("Pewpew");
-            Destroy(other.gameObject);
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Pewpew");
+                Destroy(other.gameObject);
+            } 
         }
     }
 }

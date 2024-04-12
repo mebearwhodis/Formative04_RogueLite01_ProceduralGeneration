@@ -17,7 +17,6 @@ public class SpikedBeetle_FSM : MonoBehaviour
     //private Vector2 _direction;
 
     private string _lastTagHit;
-    private bool _vulnerable;
 
     private void Start()
     {
@@ -51,7 +50,7 @@ public class SpikedBeetle_FSM : MonoBehaviour
 
     private bool StopVulnerable()
     {
-        return !_vulnerable;
+        return _thisEntity.Invulnerable;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -64,7 +63,8 @@ public class SpikedBeetle_FSM : MonoBehaviour
         else if (other.gameObject.CompareTag("Shield"))
         {
             _lastTagHit = "Shield";
-            _vulnerable = true;
+            _thisEntity.Invulnerable = false;
+            _thisEntity.Animator.SetBool("isVulnerable", true);
             Debug.Log("Trigger Shield hit");
             StartCoroutine("VulnerableTime");
         }
@@ -73,7 +73,8 @@ public class SpikedBeetle_FSM : MonoBehaviour
     private IEnumerator VulnerableTime()
     {
         yield return new WaitForSeconds(4);
-        _vulnerable = false;
+        _thisEntity.Invulnerable = true;
+        _thisEntity.Animator.SetBool("isVulnerable", false);
     }
 
     private bool CheckCollisionWithTag(string checkTag)

@@ -7,9 +7,9 @@ namespace FSM
 {
     public class FSM_Enemy : MonoBehaviour
     {
-        private Transform _spawnPoint;
+        private Vector3 _spawnPoint;
 
-        public Transform SpawnPoint => _spawnPoint;
+        public Vector3 SpawnPoint => _spawnPoint;
 
         private Animator _animator;
         private Rigidbody2D _rigidbody;
@@ -20,6 +20,19 @@ namespace FSM
         public Rigidbody2D Rigidbody => _rigidbody;
         public SpriteRenderer SpriteRenderer => _spriteRenderer;
         public PlayerController Target => _target;
+
+        [Header("Enemy stats")] 
+        [SerializeField] private int _startingHealth;
+        [SerializeField] private int _currentHealth;
+        private bool _invulnerable;
+        private float _colorCD = 0.1f;
+        private Color _baseColor;
+
+        public bool Invulnerable
+        {
+            get => _invulnerable;
+            set => _invulnerable = value;
+        }
 
         [Header("Chase State")] 
         [SerializeField] private float _chaseSpeed;
@@ -72,7 +85,14 @@ namespace FSM
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _spawnPoint = transform;
+            _spawnPoint = transform.position;
+            _currentHealth = _startingHealth;
+            _baseColor = _spriteRenderer.color;
+        }
+
+        private void Update()
+        {
+            DetectDeath();
         }
 
         public void ThrowProjectile()
@@ -80,7 +100,29 @@ namespace FSM
             if(!_canShoot){return;}
             StartCoroutine("RangedAttack");
         }
-        
+
+        public void TakeDamage(int damage)
+        {
+            _currentHealth -= damage;
+            _spriteRenderer.color = Color.grey;
+            StartCoroutine(SetDefaultColor(_colorCD));
+        }
+
+        private void DetectDeath()
+        {
+            if (_currentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void GetKnockedBack(Transform damageSource, float knockBackPower)
+        {
+            Vector2 direction = transform.position - damageSource.position;
+            _rigidbody.AddForce(direction.normalized * knockBackPower * _rigidbody.mass, ForceMode2D.Impulse);
+            StartCoroutine(KnockBackRoutine());
+        }
+
         private IEnumerator RangedAttack()
         {
             _canShoot = false;
@@ -89,6 +131,18 @@ namespace FSM
             Instantiate(_ammunition, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
             yield return new WaitForSeconds(_attackCooldown);
             _canShoot = true;
+        }
+        
+        private IEnumerator SetDefaultColor(float colorCD)
+        {
+            yield return new WaitForSeconds(colorCD);
+            _spriteRenderer.color = _baseColor;
+        }
+        
+        private IEnumerator KnockBackRoutine()
+        {
+            yield return new WaitForSeconds(0.5f);
+            _rigidbody.velocity = Vector2.zero;
         }
     }
 }

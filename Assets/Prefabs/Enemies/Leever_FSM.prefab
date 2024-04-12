@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5062026614005403484}
   - component: {fileID: 4252080686694578977}
   - component: {fileID: 2292065485493061280}
+  - component: {fileID: 1332901240245347220}
   m_Layer: 0
   m_Name: Leever_FSM
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,12 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2c9f411e5543aba7c9e229c9521d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chaseSpeed: 2
+  _startingHealth: 3
+  _currentHealth: 0
+  _chaseSpeed: 8
   _targetDistance: 0
   _explosionTimer: 0
   _explosionRadius: 0
   _explosionChaseSpeed: 0
-  popoutRadius: 3
+  popoutRadius: 5
   _minAttackDistance: 0
   _maxAttackDistance: 0
   _ammunition: {fileID: 0}
@@ -201,3 +204,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ed0ca08a0f4934ae5c6ab4fbe0c521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1332901240245347220
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728392012168070043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 240a867492adafc4fbdb828330a03566, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

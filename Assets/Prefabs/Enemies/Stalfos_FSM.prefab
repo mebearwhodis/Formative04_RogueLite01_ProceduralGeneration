@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 4370183410740148274}
   - component: {fileID: 4961663213165488676}
   - component: {fileID: 5703685244690845435}
+  - component: {fileID: 7021763798100671375}
   m_Layer: 0
   m_Name: Stalfos_FSM
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,11 +50,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2c9f411e5543aba7c9e229c9521d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startingHealth: 5
+  _currentHealth: 0
   _chaseSpeed: 5
   _targetDistance: 5
+  _explosionTimer: 0
+  _explosionRadius: 0
+  _explosionChaseSpeed: 0
+  popoutRadius: 0
   _minAttackDistance: 4.8
   _maxAttackDistance: 5.2
   _ammunition: {fileID: 4599700557065895254, guid: b5787d9792f575a4baaada2b19097625, type: 3}
+  _attackCooldown: 1.5
   _rushSpeed: 0
   _wanderRadius: 0
   _wanderSpeed: 0
@@ -234,3 +242,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dedb0a65a9073741a52b86c7ee4ec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7021763798100671375
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358037129116432425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a31e431c5dd7644bb1c1d1f3b338e40, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

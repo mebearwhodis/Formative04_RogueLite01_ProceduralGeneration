@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7495654755205750760}
   m_Layer: 0
   m_Name: Bombite_FSM
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,11 +50,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2c9f411e5543aba7c9e229c9521d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startingHealth: 10
+  _currentHealth: 0
   _chaseSpeed: 10
   _targetDistance: 1
   _explosionTimer: 0
   _explosionRadius: 2
   _explosionChaseSpeed: 3.5
+  popoutRadius: 0
   _minAttackDistance: 0
   _maxAttackDistance: 0
   _ammunition: {fileID: 0}

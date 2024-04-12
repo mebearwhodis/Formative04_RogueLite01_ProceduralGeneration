@@ -134,7 +134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leever_Underground
+      name: Leever_Out1
       rect:
         serializedVersion: 2
         x: 137
@@ -155,7 +155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leever_Out1
+      name: Leever_Out2
       rect:
         serializedVersion: 2
         x: 154
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leever_Out2
+      name: Leever_Walk1
       rect:
         serializedVersion: 2
         x: 171
@@ -197,7 +197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leever_Out3
+      name: Leever_Walk2
       rect:
         serializedVersion: 2
         x: 188
@@ -365,7 +365,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikedBeetle_Up1
+      name: SpikedBeetle_Walk1
       rect:
         serializedVersion: 2
         x: 202
@@ -386,7 +386,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikedBeetle_Up2
+      name: SpikedBeetle_Walk2
       rect:
         serializedVersion: 2
         x: 219
@@ -407,7 +407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikedBeetle_Down1
+      name: SpikedBeetle_Flipped1
       rect:
         serializedVersion: 2
         x: 236
@@ -428,7 +428,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikedBeetle_Down2
+      name: SpikedBeetle_Flipped2
       rect:
         serializedVersion: 2
         x: 253
@@ -911,7 +911,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stalfos_Orange
+      name: Stalfos_Walk1
       rect:
         serializedVersion: 2
         x: 1
@@ -1234,7 +1234,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1282,10 +1282,10 @@ TextureImporter:
       Fireball_Blue: -933541940
       Fireball_Red: 1053563302
       Game Boy GBC - The Legend of Zelda Links Awakening DX - Minor Enemies_1: 242835802
-      Leever_Out1: 1445370846
-      Leever_Out2: 643324988
-      Leever_Out3: -1958602847
-      Leever_Underground: -958367734
+      Leever_Out1: -958367734
+      Leever_Out2: 1445370846
+      Leever_Walk1: 643324988
+      Leever_Walk2: -1958602847
       Pairodd_Idle: -917521580
       Pairodd_Projectile1: 2127674868
       Pairodd_Projectile2: -2000616558
@@ -1300,12 +1300,12 @@ TextureImporter:
       ShyGuy_Up: 1248020133
       Spark1: 102991419
       Spark2: 1474173108
-      SpikedBeetle_Down1: -1175693925
-      SpikedBeetle_Down2: 1832686589
-      SpikedBeetle_Up1: -420350323
-      SpikedBeetle_Up2: 1098616078
-      Stalfos_Orange: 1745238846
+      SpikedBeetle_Flipped1: -1175693925
+      SpikedBeetle_Flipped2: 1832686589
+      SpikedBeetle_Walk1: -420350323
+      SpikedBeetle_Walk2: 1098616078
       Stalfos_Projectile: 1336979865
+      Stalfos_Walk1: 1745238846
       Urchin1: -1986264508
       Urchin2: 73218625
       Urchin3: -1430167971
