@@ -1,8 +1,13 @@
 # Formative 04: Procedural Generation for a RogueLite
 
-I haven't been able to work as much as I would have liked (because of illnesses and all that stuff) but here's what is planned:
+## 4 Enemies, spawnable in the "CombatTesting" Scene:
+* Spiked Beetle: Invulnerable while on their legs (not working right now), rush in a straight line towards the player when they detect them in a cross-pattern, the player needs to block them with their shield (right-click) to flip them and make them vulnerable to hits.
+* Stalfos: Will stay at a preferred distance from the player and throw projectiles at them.
+* Leever: Come out from the ground somewhere random around their spawn point, chase the player for a time and then go back underground.
+* Bombite: Chase the player at high-speed and start an explosion countdown when near them.
 
-## Three layers of Procedural Generation:
+
+## Initial plan regarding procedural generation: Three layers of Procedural Generation
 
 ### 1. Overworld Map/Island type selection
  * Sources:
