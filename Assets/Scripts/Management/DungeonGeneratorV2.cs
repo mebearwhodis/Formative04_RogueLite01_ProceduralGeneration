@@ -1,47 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Object = System.Object;
 
 public class DungeonGeneratorV2 : MonoBehaviour
 {
-    //How  big the level is in rooms (actual size is double that, 8x8, so that we can spawn the first one ~the middle)
-    [SerializeField] private Vector2 worldSize = new Vector2(4, 4);
-
-    //(Empty) List of rooms
-    private Room[,] rooms;
-
-    //Grid Positions where there's already a room
-    private List<Vector2> takenPositions = new List<Vector2>();
-
-    private int gridSizeX, gridSizeY;
     
-    //Maximum number of rooms in the dungeon
-    [SerializeField] private int numberOfRooms = 20;
-    
-    //Size (in tiles) of the rooms
-    [SerializeField] private Vector2Int _roomSize = new Vector2Int(15, 15);
-
-    public Vector2Int RoomSize => _roomSize;
-
-    //Minimap
-    public GameObject roomWhiteObj;
-    
+    [SerializeField] private Vector2 worldSize = new Vector2(4, 4); //How big the level is in rooms (actual size is double that, 8x8, so that we can spawn the first one ~the middle)
+    [SerializeField] private int numberOfRooms = 20; //Maximum number of rooms in the dungeon
+    [SerializeField] private Vector2Int _roomSize = new Vector2Int(15, 15); //Size (in tiles) of the rooms
     [SerializeField] private RoomSpawn roomPrefab;
     [SerializeField] private PlayerController playerPrefab;
+    
+    private int _gridSizeX, _gridSizeY;
+    private Room[,] _rooms; //(Empty) List of rooms
+    private List<Vector2> _takenPositions = new List<Vector2>(); //Grid Positions where there's already a room
+    //public GameObject roomWhiteObj; //Minimap
+    
+    public Vector2Int RoomSize => _roomSize;
 
     private void Start()
     {
         GenerateDungeon();
-        // SpawnPlayer();
     }
-
-    // private void SpawnPlayer()
-    // {
-    //     // Instantiate the player prefab at the calculated position (aka middle of the starting room)
-    //     Instantiate(playerPrefab, new Vector3(_roomSize.x / 2f, _roomSize.y / 2f, 0), Quaternion.identity);
-    // }
 
     private void GenerateDungeon()
     {
@@ -51,23 +34,23 @@ public class DungeonGeneratorV2 : MonoBehaviour
             numberOfRooms = Mathf.RoundToInt((worldSize.x * 2) * (worldSize.y * 2));
         }
 
-        gridSizeX = Mathf.RoundToInt(worldSize.x);
-        gridSizeY = Mathf.RoundToInt(worldSize.y);
+        _gridSizeX = Mathf.RoundToInt(worldSize.x);
+        _gridSizeY = Mathf.RoundToInt(worldSize.y);
         CreateRooms();
         SetRoomDoors();
-        CalculateDistancesFromStart();
+        CalculateDistanceFromStart();
         AssignRoomType();
-        //DrawMap();
+        //DrawMiniMap();
         SpawnRooms();
     }
 
     void CreateRooms()
     {
         //Setting the maximum number of rooms in the list
-        rooms = new Room[gridSizeX * 2, gridSizeY * 2];
+        _rooms = new Room[_gridSizeX * 2, _gridSizeY * 2];
         //Creating the starting room (type 1) in the ~middle position (gridSizeX, gridSizeY)
-        rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1, _roomSize);
-        takenPositions.Insert(0, Vector2.zero);
+        _rooms[_gridSizeX, _gridSizeY] = new Room(Vector2.zero, 1, _roomSize);
+        _takenPositions.Insert(0, Vector2.zero);
         Vector2 checkPos = Vector2.zero;
 
         //Numbers used for branching probability
@@ -82,31 +65,31 @@ public class DungeonGeneratorV2 : MonoBehaviour
             //grab a new position
             checkPos = NewPosition();
             //test the new position
-            if (NumberOfNeighbors(checkPos, takenPositions) > 1 && UnityEngine.Random.value > randomCompare)
+            if (NumberOfNeighbors(checkPos, _takenPositions) > 1 && UnityEngine.Random.value > randomCompare)
             {
                 int iterations = 0;
                 do
                 {
                     checkPos = SelectiveNewPosition();
                     iterations++;
-                } while (NumberOfNeighbors(checkPos, takenPositions) > 1 && iterations < 100);
+                } while (NumberOfNeighbors(checkPos, _takenPositions) > 1 && iterations < 100);
 
                 if (iterations >= 50)
                 {
                     Debug.Log("error: could not create with fewer neighbors than : " +
-                              NumberOfNeighbors(checkPos, takenPositions));
+                              NumberOfNeighbors(checkPos, _takenPositions));
                 }
             }
 
             //finalize position, type of 0 means regular room. If more than 2 types, he suggests doing it in a separate method once the layout of the map is complete
             //for example I could go through each room and check how many neighbours they have, if they have one that means they're at the end of a path and could be a boss or an important room
-            rooms[(int)checkPos.x + gridSizeX, (int)checkPos.y + gridSizeY] = new Room(checkPos, 0, _roomSize);
+            _rooms[(int)checkPos.x + _gridSizeX, (int)checkPos.y + _gridSizeY] = new Room(checkPos, 0, _roomSize);
 
             // Check for square configurations and combine rooms
             //CombineRoomsIfSquare(checkPos);
 
             // Add the new room to the list of taken positions
-            takenPositions.Insert(0, checkPos);
+            _takenPositions.Insert(0, checkPos);
         }
     }
 
@@ -116,9 +99,9 @@ public class DungeonGeneratorV2 : MonoBehaviour
         Vector2 checkingPos = Vector2.zero;
         do
         {
-            int index = Mathf.RoundToInt(UnityEngine.Random.value * (takenPositions.Count - 1));
-            x = (int)takenPositions[index].x;
-            y = (int)takenPositions[index].y;
+            int index = Mathf.RoundToInt(UnityEngine.Random.value * (_takenPositions.Count - 1));
+            x = (int)_takenPositions[index].x;
+            y = (int)_takenPositions[index].y;
             bool UpDown = (UnityEngine.Random.value < 0.5f);
             bool positive = (UnityEngine.Random.value < 0.5f);
             if (UpDown)
@@ -145,8 +128,8 @@ public class DungeonGeneratorV2 : MonoBehaviour
             }
 
             checkingPos = new Vector2(x, y);
-        } while (takenPositions.Contains(checkingPos) || x >= gridSizeX || x < -gridSizeX || y >= gridSizeY ||
-                 y < -gridSizeY);
+        } while (_takenPositions.Contains(checkingPos) || x >= _gridSizeX || x < -_gridSizeX || y >= _gridSizeY ||
+                 y < -_gridSizeY);
 
         return checkingPos;
     }
@@ -162,12 +145,12 @@ public class DungeonGeneratorV2 : MonoBehaviour
             inc = 0;
             do
             {
-                index = Mathf.RoundToInt(UnityEngine.Random.value * (takenPositions.Count - 1));
+                index = Mathf.RoundToInt(UnityEngine.Random.value * (_takenPositions.Count - 1));
                 inc++;
-            } while (NumberOfNeighbors(takenPositions[index], takenPositions) > 1 && inc < 100);
+            } while (NumberOfNeighbors(_takenPositions[index], _takenPositions) > 1 && inc < 100);
 
-            x = (int)takenPositions[index].x;
-            y = (int)takenPositions[index].y;
+            x = (int)_takenPositions[index].x;
+            y = (int)_takenPositions[index].y;
             bool UpDown = (UnityEngine.Random.value < 0.5f);
             bool positive = (UnityEngine.Random.value < 0.5f);
             if (UpDown)
@@ -194,8 +177,8 @@ public class DungeonGeneratorV2 : MonoBehaviour
             }
 
             checkingPos = new Vector2(x, y);
-        } while (takenPositions.Contains(checkingPos) || x >= gridSizeX || x < -gridSizeX || y >= gridSizeY ||
-                 y < -gridSizeY);
+        } while (_takenPositions.Contains(checkingPos) || x >= _gridSizeX || x < -_gridSizeX || y >= _gridSizeY ||
+                 y < -_gridSizeY);
 
         if (inc >= 100)
         {
@@ -233,11 +216,11 @@ public class DungeonGeneratorV2 : MonoBehaviour
 
     void SetRoomDoors()
     {
-        for (int x = 0; x < ((gridSizeX * 2)); x++)
+        for (int x = 0; x < ((_gridSizeX * 2)); x++)
         {
-            for (int y = 0; y < ((gridSizeY * 2)); y++)
+            for (int y = 0; y < ((_gridSizeY * 2)); y++)
             {
-                if (rooms[x, y] == null)
+                if (_rooms[x, y] == null)
                 {
                     continue;
                 }
@@ -245,69 +228,69 @@ public class DungeonGeneratorV2 : MonoBehaviour
                 Vector2 gridPosition = new Vector2(x, y);
                 if (y - 1 < 0)
                 {
-                    rooms[x, y].DoorBot = false;
+                    _rooms[x, y].DoorBot = false;
                 }
                 else
                 {
-                    rooms[x, y].DoorBot = (rooms[x, y - 1] != null);
+                    _rooms[x, y].DoorBot = (_rooms[x, y - 1] != null);
                 }
 
-                if (y + 1 >= gridSizeY * 2)
+                if (y + 1 >= _gridSizeY * 2)
                 {
-                    rooms[x, y].DoorTop = false;
+                    _rooms[x, y].DoorTop = false;
                 }
                 else
                 {
-                    rooms[x, y].DoorTop = (rooms[x, y + 1] != null);
+                    _rooms[x, y].DoorTop = (_rooms[x, y + 1] != null);
                 }
 
                 if (x - 1 < 0)
                 {
-                    rooms[x, y].DoorLeft = false;
+                    _rooms[x, y].DoorLeft = false;
                 }
                 else
                 {
-                    rooms[x, y].DoorLeft = (rooms[x - 1, y] != null);
+                    _rooms[x, y].DoorLeft = (_rooms[x - 1, y] != null);
                 }
 
-                if (x + 1 >= gridSizeX * 2)
+                if (x + 1 >= _gridSizeX * 2)
                 {
-                    rooms[x, y].DoorRight = false;
+                    _rooms[x, y].DoorRight = false;
                 }
                 else
                 {
-                    rooms[x, y].DoorRight = (rooms[x + 1, y] != null);
+                    _rooms[x, y].DoorRight = (_rooms[x + 1, y] != null);
                 }
             }
         }
     }
 
-    void DrawMap()
-    {
-        foreach (Room room in rooms)
-        {
-            if (room == null)
-            {
-                continue;
-            }
-
-            Vector2 drawPos = room.GridPos;
-            drawPos.x *= room.Size.x + 2;
-            drawPos.y *= room.Size.y + 2;
-            MapSpriteSelector mapper = GameObject
-                .Instantiate(roomWhiteObj, drawPos, Quaternion.identity, this.transform)
-                .GetComponent<MapSpriteSelector>();
-            mapper.type = room.Type;
-            mapper.up = room.DoorTop;
-            mapper.down = room.DoorBot;
-            mapper.right = room.DoorRight;
-            mapper.left = room.DoorLeft;
-        }
-    }
+    // void DrawMiniMap()
+    // {
+    //     foreach (Room room in _rooms)
+    //     {
+    //         if (room == null)
+    //         {
+    //             continue;
+    //         }
+    //
+    //         Vector2 drawPos = room.GridPos;
+    //         drawPos.x *= room.Size.x + 2;
+    //         drawPos.y *= room.Size.y + 2;
+    //         MapSpriteSelector mapper = GameObject
+    //             .Instantiate(roomWhiteObj, drawPos, Quaternion.identity, this.transform)
+    //             .GetComponent<MapSpriteSelector>();
+    //         mapper.type = room.Type;
+    //         mapper.up = room.DoorTop;
+    //         mapper.down = room.DoorBot;
+    //         mapper.right = room.DoorRight;
+    //         mapper.left = room.DoorLeft;
+    //     }
+    // }
 
     void SpawnRooms()
     {
-        foreach (Room room in rooms)
+        foreach (Room room in _rooms)
         {
             if (room == null)
             {
@@ -317,8 +300,7 @@ public class DungeonGeneratorV2 : MonoBehaviour
             Vector2 drawPos = room.GridPos;
             drawPos.x *= room.Size.x + 2;
             drawPos.y *= room.Size.y + 2;
-            RoomSpawn spawner = GameObject.Instantiate(roomPrefab, drawPos, Quaternion.identity, this.transform)
-                .GetComponent<RoomSpawn>();
+            RoomSpawn spawner = GameObject.Instantiate(roomPrefab, drawPos, Quaternion.identity, this.transform).GetComponent<RoomSpawn>();
             spawner.size = room.Size;
             spawner.type = room.Type;
             spawner.up = room.DoorTop;
@@ -326,16 +308,18 @@ public class DungeonGeneratorV2 : MonoBehaviour
             spawner.right = room.DoorRight;
             spawner.left = room.DoorLeft;
             spawner.spacesFromStart = room.SpacesFromStart;
+            spawner.completed = room.Completed;
+            spawner.open = room.Open;
         }
     }
 
-    void CalculateDistancesFromStart()
+    void CalculateDistanceFromStart()
     {
         Queue<Room> queue = new Queue<Room>();
         HashSet<Room> visited = new HashSet<Room>();
 
         // Start from the initial room
-        Room startRoom = rooms[gridSizeX, gridSizeY];
+        Room startRoom = _rooms[_gridSizeX, _gridSizeY];
         startRoom.SpacesFromStart = 0;
         queue.Enqueue(startRoom);
 
@@ -361,28 +345,51 @@ public class DungeonGeneratorV2 : MonoBehaviour
     {
         List<Room> neighbors = new List<Room>();
 
-        int x = (int)room.GridPos.x + gridSizeX;
-        int y = (int)room.GridPos.y + gridSizeY;
+        int x = (int)room.GridPos.x + _gridSizeX;
+        int y = (int)room.GridPos.y + _gridSizeY;
 
-        if (x > 0 && rooms[x - 1, y] != null)
-            neighbors.Add(rooms[x - 1, y]);
-        if (x < gridSizeX * 2 - 1 && rooms[x + 1, y] != null)
-            neighbors.Add(rooms[x + 1, y]);
-        if (y > 0 && rooms[x, y - 1] != null)
-            neighbors.Add(rooms[x, y - 1]);
-        if (y < gridSizeY * 2 - 1 && rooms[x, y + 1] != null)
-            neighbors.Add(rooms[x, y + 1]);
+        if (x > 0 && _rooms[x - 1, y] != null)
+            neighbors.Add(_rooms[x - 1, y]);
+        if (x < _gridSizeX * 2 - 1 && _rooms[x + 1, y] != null)
+            neighbors.Add(_rooms[x + 1, y]);
+        if (y > 0 && _rooms[x, y - 1] != null)
+            neighbors.Add(_rooms[x, y - 1]);
+        if (y < _gridSizeY * 2 - 1 && _rooms[x, y + 1] != null)
+            neighbors.Add(_rooms[x, y + 1]);
 
         return neighbors;
     }
 
     void AssignRoomType()
     {
+        List<Room> roomsByDistance = new List<Room>();
        //Type logic goes here
        //Type 1 is the start, have a type for the boss room, and a type for the end room if it's not the same,
        //Type for treasure rooms, shops if any, combat rooms, etc.
        
-       //Check all the ones with the highest distance. If there's more than one, choose randomly among all the ones that only have one neighbour
+       //Check all the ones with the highest distance. If there's more than one, choose randomly
+       foreach (Room room in _rooms)
+       {
+           if (room == null)
+           {
+               continue;
+           }
+           
+           roomsByDistance.Add(room);
+       }
+
+       roomsByDistance = roomsByDistance.OrderByDescending(r => r.SpacesFromStart).ToList();
+       if (roomsByDistance[0].SpacesFromStart == roomsByDistance[1].SpacesFromStart)
+       {
+           Debug.Log("Two end rooms with same value: " + roomsByDistance[0].SpacesFromStart + " & " + roomsByDistance[1].SpacesFromStart);
+           //If two end rooms have the same value, change ones value to +1
+           roomsByDistance[0].SpacesFromStart += 1;
+           Debug.Log(roomsByDistance[0].SpacesFromStart + " & " + roomsByDistance[1].SpacesFromStart);
+       }
+       else
+       {
+           Debug.Log("No two end rooms with same value: " + roomsByDistance[0].SpacesFromStart + " & " + roomsByDistance[1].SpacesFromStart);
+       }
     }
     
     //Need rework

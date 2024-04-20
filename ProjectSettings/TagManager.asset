@@ -11,6 +11,7 @@ TagManager:
   - Feet
   - RespawnPoint
   - Shield
+  - Door
   layers:
   - Default
   - TransparentFX

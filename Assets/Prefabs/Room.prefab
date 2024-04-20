@@ -49,11 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0c02028945296468b3f2762d9afd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallMap: {fileID: 7306104905858814850}
+  _wallsMap: {fileID: 7306104905858814850}
   _floorMap: {fileID: 4962140510919408200}
+  _doorsMap: {fileID: 4609472611582860572}
   _roomBoundaries: {fileID: 3978471614772932332}
-  _wallTile: {fileID: 11400000, guid: bc495b9161d7ff84983b148fcf7722e0, type: 2}
-  _floorTile: {fileID: 11400000, guid: 60f7792b27dd75e499a94ffb56cba939, type: 2}
+  _wallTile: {fileID: 11400000, guid: 4da19bfa530376e43bced3ec34725b34, type: 2}
+  _floorTile: {fileID: 11400000, guid: 251ae41910f046f428bc3bb7fcad27dc, type: 2}
+  _closedDoorTile: {fileID: 11400000, guid: a5c9f69ea94c4c54c9bff7622eb96d2f, type: 2}
+  _openDoorTile: {fileID: 11400000, guid: 251ae41910f046f428bc3bb7fcad27dc, type: 2}
   _center: {fileID: 1117098055261712969}
   size: {x: 0, y: 0}
   up: 0
@@ -62,6 +65,8 @@ MonoBehaviour:
   right: 0
   type: 0
   spacesFromStart: 0
+  completed: 0
+  open: 0
 --- !u!50 &4551125753978390533
 Rigidbody2D:
   serializedVersion: 4
@@ -150,7 +155,7 @@ GameObject:
   - component: {fileID: 4145848683497887865}
   m_Layer: 0
   m_Name: DoorsMap
-  m_TagString: Wall
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +255,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -266,7 +271,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070031032917090785}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -674,7 +679,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -835,7 +840,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -895,7 +900,7 @@ GameObject:
   - component: {fileID: 3007648703578936708}
   - component: {fileID: 1894893461623564986}
   m_Layer: 0
-  m_Name: WallMap
+  m_Name: WallsMap
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -996,7 +1001,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

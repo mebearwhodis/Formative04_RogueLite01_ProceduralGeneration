@@ -10,10 +10,12 @@ public class Room
     public int Type;
     public bool DoorTop, DoorBot, DoorLeft, DoorRight;
     public Vector2Int Size = new Vector2Int();
-    //Also add a public int "value" to know how far from the start it is?
     public int SpacesFromStart;
     //Difficulty tied to how far it is?
     public int MaxDifficulty;
+
+    public bool Completed = false;
+    public bool Open = true;
     
    
 
