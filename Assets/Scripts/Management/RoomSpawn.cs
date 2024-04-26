@@ -87,8 +87,8 @@ public class RoomSpawn : MonoBehaviour
         {
             _wallsMap.SetTile(new Vector3Int(size.x / 2, size.y, 0), null);
             _wallsMap.SetTile(new Vector3Int(size.x / 2, size.y + 1, 0), null);
-            _doorsMap.SetTile(new Vector3Int(size.x / 2, size.y, 0), _closedDoorTile);
-            _doorsMap.SetTile(new Vector3Int(size.x / 2, size.y + 1, 0), _closedDoorTile);
+            _doorsMap.SetTile(new Vector3Int(size.x / 2, size.y, 0), _openDoorTile);
+            // _doorsMap.SetTile(new Vector3Int(size.x / 2, size.y + 1, 0), _openDoorTile);
             
             _doorsMap.SetTile(new Vector3Int(size.x / 2 -1, size.y, 0), _closedDoorTile);
             _doorsMap.SetTile(new Vector3Int(size.x / 2 +1, size.y, 0), _closedDoorTile);
@@ -100,7 +100,7 @@ public class RoomSpawn : MonoBehaviour
             _wallsMap.SetTile(new Vector3Int(size.x / 2, -1, 0), null);
             _wallsMap.SetTile(new Vector3Int(size.x / 2, -2, 0), null);
             _doorsMap.SetTile(new Vector3Int(size.x / 2, -1, 0), _openDoorTile);
-            _doorsMap.SetTile(new Vector3Int(size.x / 2, -2, 0), _openDoorTile);
+            // _doorsMap.SetTile(new Vector3Int(size.x / 2, -2, 0), _openDoorTile);
             
             _doorsMap.SetTile(new Vector3Int(size.x / 2 -1, -2, 0), _closedDoorTile);
             _doorsMap.SetTile(new Vector3Int(size.x / 2 +1, -2, 0), _closedDoorTile);
@@ -112,7 +112,7 @@ public class RoomSpawn : MonoBehaviour
             _wallsMap.SetTile(new Vector3Int(-1, size.y / 2, 0), null);
             _wallsMap.SetTile(new Vector3Int(-2, size.y / 2, 0), null);
             _doorsMap.SetTile(new Vector3Int(-1, size.y / 2, 0), _openDoorTile);
-            _doorsMap.SetTile(new Vector3Int(-2, size.y / 2, 0), _openDoorTile);
+            // _doorsMap.SetTile(new Vector3Int(-2, size.y / 2, 0), _openDoorTile);
             
             
             _doorsMap.SetTile(new Vector3Int(-2, size.y / 2 -1, 0), _closedDoorTile);
@@ -125,7 +125,7 @@ public class RoomSpawn : MonoBehaviour
             _wallsMap.SetTile(new Vector3Int(size.x, size.y / 2, 0), null);
             _wallsMap.SetTile(new Vector3Int(size.x + 1, size.y / 2, 0), null);
             _doorsMap.SetTile(new Vector3Int(size.x, size.y / 2, 0), _openDoorTile);
-            _doorsMap.SetTile(new Vector3Int(size.x + 1, size.y / 2, 0), _openDoorTile);
+            // _doorsMap.SetTile(new Vector3Int(size.x + 1, size.y / 2, 0), _openDoorTile);
             
             _doorsMap.SetTile(new Vector3Int(size.x, size.y / 2 -1, 0), _closedDoorTile);
             _doorsMap.SetTile(new Vector3Int(size.x, size.y / 2 +1, 0), _closedDoorTile);
