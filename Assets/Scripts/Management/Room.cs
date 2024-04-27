@@ -5,24 +5,34 @@ using UnityEngine;
 public class Room
 {
     
+    public enum RoomType
+    {
+        NA,
+        Start,
+        Treasure,
+        Shop,
+        Combat,
+        Boss
+    }
+    
     public Vector2 GridPos;
-    //Maybe make an enum for the type
-    public int Type;
+    public RoomType Type;
     public bool DoorTop, DoorBot, DoorLeft, DoorRight;
     public Vector2Int Size = new Vector2Int();
     public int SpacesFromStart;
-    //Difficulty tied to how far it is?
     public int MaxDifficulty;
+    public int MonstersLeft;
 
     public bool Completed = false;
     public bool Open = true;
     
    
 
-    public Room(Vector2 gridPos, int type, Vector2Int size)
+    public Room(Vector2 gridPos, RoomType type, Vector2Int size)
     {
         GridPos = gridPos;
         Type = type;
         Size = size;
     }
 }
+

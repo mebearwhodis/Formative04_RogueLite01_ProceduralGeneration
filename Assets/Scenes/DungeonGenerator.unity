@@ -405,10 +405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6989be028f90c7648936cd8e32d0056b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomWhiteObj: {fileID: 106919770644544661, guid: 522e69fb14acf3841b0ee1d14e40bc31, type: 3}
-  roomPrefab: {fileID: 1395436754790840629, guid: d611cafae966a1e49b8ca64c79f67b9d, type: 3}
-  playerPrefab: {fileID: 4688624497714819123, guid: f804dff96b952474383ccbbb6cf26194, type: 3}
-  _roomSize: {x: 15, y: 15}
 --- !u!1001 &2111936018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298181897703771405, guid: 853c5b0bba8555f4480e821bc61f5e69, type: 3}
       propertyPath: numberOfRooms
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

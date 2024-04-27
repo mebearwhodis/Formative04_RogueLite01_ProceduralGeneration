@@ -47,7 +47,7 @@ public class Leever_FSM : MonoBehaviour
     private IEnumerator SwitchHiddenStatus()
     {
         _canSwitch = false; // Prevent switching while coroutine is running
-        float randomTimer = Random.Range(2f, 4f);
+        float randomTimer = Random.Range(4f, 6f);
         yield return new WaitForSeconds(randomTimer);
         _hidden = !_hidden; // Toggle hidden status
         _canSwitch = true; // Allow switching again

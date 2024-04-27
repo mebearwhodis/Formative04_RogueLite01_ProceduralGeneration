@@ -15,11 +15,11 @@ public class EssentialsLoader : MonoBehaviour
             PlayerController clone = Instantiate(_player).GetComponent<PlayerController>();
 
             // Can place in any scene to set the spawn point of our hero in that scene
-            if (FindFirstObjectByType<SpawnPoint>()) {
-                clone.transform.position = FindFirstObjectByType<SpawnPoint>().transform.position;
+            if (FindFirstObjectByType<PlayerSpawn>()) {
+                clone.transform.position = FindFirstObjectByType<PlayerSpawn>().transform.position;
             } else {
-                //clone.transform.position = new Vector3((float)_dungeonGeneratorV2.RoomSize.x / 2, (float)_dungeonGeneratorV2.RoomSize.y / 2, 0);
-                clone.transform.position = new Vector3((float)1 / 2, (float)1 / 2, 0);
+                clone.transform.position = new Vector3((float)_dungeonGeneratorV2.RoomSize.x / 2, (float)_dungeonGeneratorV2.RoomSize.y / 2, 0);
+                //clone.transform.position = new Vector3((float)1 / 2, (float)1 / 2, 0);
             }
         }
 

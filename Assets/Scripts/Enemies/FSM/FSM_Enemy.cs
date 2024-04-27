@@ -112,6 +112,7 @@ namespace FSM
         {
             if (_currentHealth <= 0)
             {
+                PlayerController.Instance.CurrentRoom.monstersLeft--;
                 Destroy(gameObject);
             }
         }

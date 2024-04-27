@@ -11,6 +11,13 @@ public class PlayerController : Singleton<PlayerController>
     private SpriteRenderer _sr;
     private PlayerControls _playerControls;
     private PlayerInput _playerInput;
+    private RoomSpawn _currentRoom;
+
+    public RoomSpawn CurrentRoom
+    {
+        get => _currentRoom;
+        set => _currentRoom = value;
+    }
 
     //Movement related
     [Header("Movement")] [SerializeField] private float _moveSpeed = 5f;
@@ -36,7 +43,8 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject _shieldHitBox_Down;
     [SerializeField] private GameObject _shieldHitBox_Left;
 
-    [Header("Cooldowns")] private float _attackCD = 0.3f;
+    [Header("Cooldowns")] 
+    private float _attackCD = 0.3f;
     private float _bombCD = 1f;
     private float _shotCD = 0.2f;
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Object = System.Object;
+using Random = UnityEngine.Random;
 
 public class DungeonGeneratorV2 : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class DungeonGeneratorV2 : MonoBehaviour
     private int _gridSizeX, _gridSizeY;
     private Room[,] _rooms; //(Empty) List of rooms
     private List<Vector2> _takenPositions = new List<Vector2>(); //Grid Positions where there's already a room
-    //public GameObject roomWhiteObj; //Minimap
     
     public Vector2Int RoomSize => _roomSize;
 
@@ -40,7 +40,6 @@ public class DungeonGeneratorV2 : MonoBehaviour
         SetRoomDoors();
         CalculateDistanceFromStart();
         AssignRoomType();
-        //DrawMiniMap();
         SpawnRooms();
     }
 
@@ -48,8 +47,8 @@ public class DungeonGeneratorV2 : MonoBehaviour
     {
         //Setting the maximum number of rooms in the list
         _rooms = new Room[_gridSizeX * 2, _gridSizeY * 2];
-        //Creating the starting room (type 1) in the ~middle position (gridSizeX, gridSizeY)
-        _rooms[_gridSizeX, _gridSizeY] = new Room(Vector2.zero, 1, _roomSize);
+        //Creating the starting room in the middle position (= gridSizeX, gridSizeY)
+        _rooms[_gridSizeX, _gridSizeY] = new Room(Vector2.zero, Room.RoomType.Start, _roomSize);
         _takenPositions.Insert(0, Vector2.zero);
         Vector2 checkPos = Vector2.zero;
 
@@ -62,9 +61,8 @@ public class DungeonGeneratorV2 : MonoBehaviour
 
             //The further the room is from the start, the less likely it is to branch out
             randomCompare = Mathf.Lerp(randomCompareStart, randomCompareEnd, randomPerc);
-            //grab a new position
             checkPos = NewPosition();
-            //test the new position
+            //Test the new position
             if (NumberOfNeighbors(checkPos, _takenPositions) > 1 && UnityEngine.Random.value > randomCompare)
             {
                 int iterations = 0;
@@ -81,12 +79,9 @@ public class DungeonGeneratorV2 : MonoBehaviour
                 }
             }
 
-            //finalize position, type of 0 means regular room. If more than 2 types, he suggests doing it in a separate method once the layout of the map is complete
+            //finalize position, type of 0 means regular room. If more than 2 types, do it in a separate method once the layout of the map is complete
             //for example I could go through each room and check how many neighbours they have, if they have one that means they're at the end of a path and could be a boss or an important room
-            _rooms[(int)checkPos.x + _gridSizeX, (int)checkPos.y + _gridSizeY] = new Room(checkPos, 0, _roomSize);
-
-            // Check for square configurations and combine rooms
-            //CombineRoomsIfSquare(checkPos);
+            _rooms[(int)checkPos.x + _gridSizeX, (int)checkPos.y + _gridSizeY] = new Room(checkPos, Room.RoomType.NA, _roomSize);
 
             // Add the new room to the list of taken positions
             _takenPositions.Insert(0, checkPos);
@@ -265,29 +260,6 @@ public class DungeonGeneratorV2 : MonoBehaviour
         }
     }
 
-    // void DrawMiniMap()
-    // {
-    //     foreach (Room room in _rooms)
-    //     {
-    //         if (room == null)
-    //         {
-    //             continue;
-    //         }
-    //
-    //         Vector2 drawPos = room.GridPos;
-    //         drawPos.x *= room.Size.x + 2;
-    //         drawPos.y *= room.Size.y + 2;
-    //         MapSpriteSelector mapper = GameObject
-    //             .Instantiate(roomWhiteObj, drawPos, Quaternion.identity, this.transform)
-    //             .GetComponent<MapSpriteSelector>();
-    //         mapper.type = room.Type;
-    //         mapper.up = room.DoorTop;
-    //         mapper.down = room.DoorBot;
-    //         mapper.right = room.DoorRight;
-    //         mapper.left = room.DoorLeft;
-    //     }
-    // }
-
     void SpawnRooms()
     {
         foreach (Room room in _rooms)
@@ -300,7 +272,9 @@ public class DungeonGeneratorV2 : MonoBehaviour
             Vector2 drawPos = room.GridPos;
             drawPos.x *= room.Size.x + 2;
             drawPos.y *= room.Size.y + 2;
+            
             RoomSpawn spawner = GameObject.Instantiate(roomPrefab, drawPos, Quaternion.identity, this.transform).GetComponent<RoomSpawn>();
+            
             spawner.size = room.Size;
             spawner.type = room.Type;
             spawner.up = room.DoorTop;
@@ -308,8 +282,10 @@ public class DungeonGeneratorV2 : MonoBehaviour
             spawner.right = room.DoorRight;
             spawner.left = room.DoorLeft;
             spawner.spacesFromStart = room.SpacesFromStart;
+            spawner.maxDifficulty = room.MaxDifficulty;
             spawner.completed = room.Completed;
             spawner.open = room.Open;
+            spawner.monstersLeft = room.MonstersLeft;
         }
     }
 
@@ -362,79 +338,37 @@ public class DungeonGeneratorV2 : MonoBehaviour
 
     void AssignRoomType()
     {
+        //Type logic goes here
+        //Type for treasure rooms, shops if any, combat rooms, etc.
+        
         List<Room> roomsByDistance = new List<Room>();
-       //Type logic goes here
-       //Type 1 is the start, have a type for the boss room, and a type for the end room if it's not the same,
-       //Type for treasure rooms, shops if any, combat rooms, etc.
-       
-       //Check all the ones with the highest distance. If there's more than one, choose randomly
        foreach (Room room in _rooms)
        {
-           if (room == null)
+           if (room == null || room.Type == Room.RoomType.Start)
            {
                continue;
            }
-           
+
+           float treasureChance = Random.Range(0f, 1f);
+           room.Type = treasureChance > 0.85f ? Room.RoomType.Treasure : Room.RoomType.Combat;
            roomsByDistance.Add(room);
        }
 
+       //Make sure there's only one room with the highest distance from start
        roomsByDistance = roomsByDistance.OrderByDescending(r => r.SpacesFromStart).ToList();
        if (roomsByDistance[0].SpacesFromStart == roomsByDistance[1].SpacesFromStart)
        {
+           //If two end rooms have the same value, change one's value to +1
            Debug.Log("Two end rooms with same value: " + roomsByDistance[0].SpacesFromStart + " & " + roomsByDistance[1].SpacesFromStart);
-           //If two end rooms have the same value, change ones value to +1
            roomsByDistance[0].SpacesFromStart += 1;
-           Debug.Log(roomsByDistance[0].SpacesFromStart + " & " + roomsByDistance[1].SpacesFromStart);
+           Debug.Log("New values: " + roomsByDistance[0].SpacesFromStart + " & " + roomsByDistance[1].SpacesFromStart);
        }
        else
        {
            Debug.Log("No two end rooms with same value: " + roomsByDistance[0].SpacesFromStart + " & " + roomsByDistance[1].SpacesFromStart);
        }
+       //Assign the Boss Type to the furthest room from the start
+       roomsByDistance[0].Type = Room.RoomType.Boss;
+       roomsByDistance[1].Type = Room.RoomType.Shop;
     }
-    
-    //Need rework
-    // void CombineRoomsIfSquare(Vector2 newRoomPos)
-    // {
-    //     // Check if the newly added room creates a square configuration with its neighbors
-    //     foreach (Vector2 direction in new Vector2[] { Vector2.up, Vector2.down, Vector2.left, Vector2.right })
-    //     {
-    //         Vector2 neighborPos = newRoomPos + direction;
-    //         if (IsSquareConfiguration(newRoomPos, neighborPos))
-    //         {
-    //             CombineRooms(newRoomPos, neighborPos);
-    //             break; // Exit loop after one square configuration is found and combined
-    //         }
-    //     }
-    // }
-    //
-    // bool IsSquareConfiguration(Vector2 pos1, Vector2 pos2)
-    // {
-    //     // Check if pos1 and pos2 have two common neighbors
-    //     // This indicates a potential square configuration
-    //     int commonNeighbors = 0;
-    //     foreach (Vector2 direction in new Vector2[] { Vector2.up, Vector2.down, Vector2.left, Vector2.right })
-    //     {
-    //         if (takenPositions.Contains(pos1 + direction) && takenPositions.Contains(pos2 + direction))
-    //         {
-    //             commonNeighbors++;
-    //         }
-    //     }
-    //     return commonNeighbors == 2;
-    // }
-    //
-    // void CombineRooms(Vector2 pos1, Vector2 pos2)
-    // {
-    //     // Remove the individual rooms and create a big room
-    //     // Adjust room size and position accordingly
-    //     Room room1 = rooms[(int)pos1.x + gridSizeX, (int)pos1.y + gridSizeY];
-    //     Room room2 = rooms[(int)pos2.x + gridSizeX, (int)pos2.y + gridSizeY];
-    //
-    //     // Combine rooms and update room data
-    //     Room bigRoom = new Room((room1.GridPos + room2.GridPos) / 2f, room1.Type, room1.Size + room2.Size);
-    //     rooms[(int)pos1.x + gridSizeX, (int)pos1.y + gridSizeY] = bigRoom;
-    //
-    //     // Remove the other rooms
-    //     rooms[(int)pos2.x + gridSizeX, (int)pos2.y + gridSizeY] = null;
-    //     takenPositions.Remove(pos2);
-    // }
 }
