@@ -277,7 +277,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -291,7 +291,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -315,7 +315,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -2063,7 +2063,88 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_0: -601207396034343595
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_1: 2481965611805980893
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_10: -4900621631772431618
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_11: 3001224169318516277
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_12: -3904480186528734084
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_13: -7356010463215795415
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_14: -4049653024382298266
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_15: -1096415665139075958
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_16: -2946669554121535090
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_17: -3404567804203379249
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_18: 2074104858374931928
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_19: -6268751266828953850
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_2: -4769062089879068306
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_20: 7856327406267571257
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_21: -488635298310175319
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_22: -8623957829442904701
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_23: -3875886444681960587
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_24: -7050172075021420380
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_25: -3583025181901097409
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_26: 8413383528672513462
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_27: 3144330221109385798
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_28: 3625700525964318443
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_29: 1270576333936016054
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_3: -8434976413172242031
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_30: 3835422193146119884
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_31: 7497444791748766738
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_32: -8072870532310127688
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_33: -6790197276706758716
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_34: -2547235831623331934
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_35: -1719837977858090552
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_36: 8086774358713845759
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_37: 857045187514317439
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_38: 1270282703306415992
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_39: -4415435194940196102
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_4: 7741723230506140964
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_40: 301478819385959357
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_41: 8352363696743100863
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_42: -6243585054297194466
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_43: -9215132288669638230
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_44: 8087219968595510326
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_45: 191423680736943099
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_46: 3392186184533327927
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_47: -6006339692517364699
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_48: -7713063270472976758
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_49: -6553317386019534974
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_5: 7332005464001387819
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_50: -1217222572830647865
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_51: -1396879471308844671
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_52: 1185995490098629840
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_53: 942232216510557006
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_54: -7160386344119464881
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_55: 9142437334556321680
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_56: 3675223354621161160
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_57: -4222881799179626807
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_58: 2001352056297782417
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_59: 1843601456152127190
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_6: -5659079118285428374
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_60: 4310051551283575616
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_61: -3275782263408748889
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_62: -7044572634018489100
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_63: 8784462716559022380
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_64: -7237392239462575928
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_65: 675738455113312741
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_66: 4726888191124406267
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_67: 2912808463558221633
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_68: -981783090556359084
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_69: -4022558079396030109
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_7: -4005071202228258190
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_70: 1389815121027093949
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_71: -6017143897193359915
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_72: 2064855043320004934
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_73: 554386192653627782
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_74: 1779202505299856686
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_75: 3878182578698292036
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_76: -2334282245429295733
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_77: 8986532373352411882
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_78: 4231229189952845168
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_79: 3750317657160468251
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_8: 8463330528881885102
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_80: 6117267257418683679
+      Game Boy GBC - The Legend of Zelda Links Awakening DX - House Tileset_9: 4686306077064316087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

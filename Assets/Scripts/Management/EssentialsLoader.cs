@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class EssentialsLoader : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
-    [SerializeField] private DungeonGeneratorV2 _dungeonGeneratorV2;
     
-    private GameObject cameraContainer;
+    [SerializeField] private DungeonGeneratorV2 _dungeonGeneratorV2;
+    [SerializeField] private GameObject _player;
+    PlayerController player;
 
-    private void Start()
+    public void PlacePlayer()
     {
-        if(PlayerController.Instance == null) {
-            PlayerController clone = Instantiate(_player).GetComponent<PlayerController>();
-
-            // Can place in any scene to set the spawn point of our hero in that scene
-            if (FindFirstObjectByType<PlayerSpawn>()) {
-                clone.transform.position = FindFirstObjectByType<PlayerSpawn>().transform.position;
-            } else {
-                clone.transform.position = new Vector3((float)_dungeonGeneratorV2.RoomSize.x / 2, (float)_dungeonGeneratorV2.RoomSize.y / 2, 0);
-                //clone.transform.position = new Vector3((float)1 / 2, (float)1 / 2, 0);
-            }
+        if (PlayerController.Instance == null)
+        {
+            player = Instantiate(_player).GetComponent<PlayerController>();
+        }
+        else
+        {
+            player = PlayerController.Instance;
         }
 
-        // if(CameraController.Instance == null) {
-        //     Instantiate(cameraContainer).GetComponent<CameraController>();
-        // }
+        // Can place in any scene to set the spawn point of our hero in that scene
+        if (FindFirstObjectByType<PlayerSpawn>())
+        {
+            player.transform.position = FindFirstObjectByType<PlayerSpawn>().transform.position;
+            Debug.Log("Moving player to spawn point");
+        }
+        else
+        {
+            Debug.Log("Nowhere to put player");
+            //player.transform.position = new Vector3((float)_dungeonGeneratorV2.RoomSize.x / 2, (float)_dungeonGeneratorV2.RoomSize.y / 2, 0);
+        }
     }
 }

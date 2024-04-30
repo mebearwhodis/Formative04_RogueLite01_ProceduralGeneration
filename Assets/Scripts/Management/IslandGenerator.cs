@@ -1,11 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class IslandGenerator : MonoBehaviour
 {
+    [Header("Map Generation")] 
+    [SerializeField] private PolygonCollider2D _cameraConfiner;
+        
     [SerializeField] private Tilemap _generatedMap;
     [SerializeField] private Tilemap _landMap;
     [SerializeField] private Tilemap _seaMap;
@@ -19,18 +24,127 @@ public class IslandGenerator : MonoBehaviour
     [SerializeField] private string seed;
     [SerializeField] private bool useRandomSeed;
 
+    [SerializeField] private GameObject _dungeonEntrance;
+    [SerializeField] private PlayerSpawn _playerSpawn;
+
     private void Start()
     {
         GenerateMap();
+        SetUpCameraConfiner();
+        MoveSpawnPoint();
+        PlaceDungeonEntrance();
+        FindFirstObjectByType<EssentialsLoader>().PlacePlayer();
     }
 
-    private void Update()
+    private void SetUpCameraConfiner()
     {
-        if (Input.GetMouseButtonDown(0))
+        Vector2[] confinerPoints =
         {
-            GenerateMap();
+            new Vector2(0,0),
+            new Vector2(0, _size.y),
+            new Vector2(_size.x, _size.y),
+            new Vector2(_size.x, 0)
+        };
+        _cameraConfiner.points = confinerPoints;
+    }
+
+    private void MoveSpawnPoint()
+    {
+        // Get the bounds of the land map
+        BoundsInt bounds = _landMap.cellBounds;
+
+        // Iterate through the tiles starting from the bottom-left corner
+        for (int x = bounds.xMin; x < bounds.xMax; x++)
+        {
+            for (int y = bounds.yMin; y < bounds.yMax; y++)
+            {
+                Vector3Int tilePosition = new Vector3Int(x, y, bounds.z);
+
+                // Check if the tile at this position is not empty
+                if (!_landMap.HasTile(tilePosition)) continue;
+                // Convert the position of the non-empty tile to world coordinates
+                Vector3 nonEmptyTileWorldPosition = _landMap.CellToWorld(tilePosition);
+
+                // Adjust the world position to avoid the player spawning in a weird place
+                nonEmptyTileWorldPosition += new Vector3(_landMap.cellSize.x, _landMap.cellSize.y);
+
+                // Assign the player spawn position to the world position of the non-empty tile
+                _playerSpawn.transform.position = nonEmptyTileWorldPosition;
+
+                // Exit the loop once a non-empty tile is found
+                return;
+            }
         }
     }
+
+    private void PlaceDungeonEntrance()
+    {
+        // Get the bounds of the land map
+        BoundsInt bounds = _landMap.cellBounds;
+
+        // Define the search area to be the right half of the map
+        int startX = bounds.xMin + (bounds.xMax - bounds.xMin) / 2;
+        int endX = bounds.xMax;
+        
+        // List to store available positions for placing the prefab
+        List<Vector3Int> availablePositions = new List<Vector3Int>();
+
+        // Iterate through the tiles starting from the bottom-left corner
+        for (int x = startX; x < endX; x++)
+        {
+            for (int y = bounds.yMin; y < bounds.yMax; y++)
+            {
+                Vector3Int tilePosition = new Vector3Int(x, y, bounds.z);
+
+                // Check if the tile at this position is land
+                if (_landMap.HasTile(tilePosition))
+                {
+                    // Check if there is enough space to place the prefab
+                    bool canPlacePrefab = true;
+                    for (int offsetX = -1; offsetX < 3; offsetX++)
+                    {
+                        for (int offsetY = -1; offsetY < 2; offsetY++)
+                        {
+                            Vector3Int offsetTile = tilePosition + new Vector3Int(offsetX, offsetY, 0);
+                            if (!_landMap.HasTile(offsetTile))
+                            {
+                                // There is not enough space, mark as unable to place prefab
+                                canPlacePrefab = false;
+                                break;
+                            }
+                        }
+
+                        if (!canPlacePrefab) break;
+                    }
+
+                    // If enough space is available, add this position to available positions list
+                    if (canPlacePrefab)
+                    {
+                        availablePositions.Add(tilePosition);
+                    }
+                }
+            }
+        }
+
+        // If there are available positions, randomly choose one and place the prefab
+        if (availablePositions.Count > 0)
+        {
+            // Choose a random position from the available positions list
+            Vector3Int randomPosition = availablePositions[Random.Range(0, availablePositions.Count)];
+
+            // Instantiate the prefab at the chosen position
+            Vector3 prefabWorldPosition = _landMap.CellToWorld(randomPosition);
+            Instantiate(_dungeonEntrance, prefabWorldPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("No suitable position found to place the dungeon entrance, regenerating Map");
+            GenerateMap();
+            MoveSpawnPoint();
+            PlaceDungeonEntrance();
+        }
+    }
+
 
     public void GenerateMap()
     {
@@ -50,8 +164,8 @@ public class IslandGenerator : MonoBehaviour
     {
         List<List<Coord>> wallRegions = GetRegions(_water);
 
-        //Delete small 'island' of walls in rooms,
-        //Any wall region with less than 50 tiles is removed, make it serializable?
+        //Delete small islands,
+        //Any wall region with less than 50 tiles is removed
         int wallThresholdSize = 50;
 
         foreach (List<Coord> wallRegion in wallRegions)
@@ -67,7 +181,7 @@ public class IslandGenerator : MonoBehaviour
 
         List<List<Coord>> roomRegions = GetRegions(_land);
 
-        //Any room region with less than 50 tiles is removed, make it serializable?
+        //Any room region with less than 50 tiles is removed
         int roomThresholdSize = 50;
         List<Room> survivingRooms = new List<Room>();
 
@@ -207,7 +321,7 @@ public class IslandGenerator : MonoBehaviour
         //First iteration of the method connects rooms closest to each other but stops once every room is connected,
         //it does not check if they're all connected to the main room. Second iteration will check every room that is
         //not connected to the main room, and pick the closest one of each group to connect to the closest
-        //that is connected to the main room. (Yeah it's a bit complicated)
+        //that is connected to the main room.
         if (!forceAccessibilityFromMainRoom)
         {
             ConnectClosestRooms(allRooms, true);
@@ -382,7 +496,7 @@ public class IslandGenerator : MonoBehaviour
     {
         if (useRandomSeed)
         {
-            seed = Time.time.ToString();
+            seed = Random.Range(0f,100f).ToString();
         }
 
         System.Random pseudoRandom = new System.Random(seed.GetHashCode());
@@ -412,7 +526,6 @@ public class IslandGenerator : MonoBehaviour
             {
                 int neighbourWallTiles = GetSurroundingWallCount(x, y);
 
-                //Could make the conditions serializable
                 if (neighbourWallTiles > 4)
                 {
                     _generatedMap.SetTile(new Vector3Int(x, y, 0), _water);

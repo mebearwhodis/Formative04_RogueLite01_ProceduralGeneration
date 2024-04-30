@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class SlashAttack : MonoBehaviour
 {
-    [SerializeField] private int _damageValue;
-    [SerializeField] private float _knockBackPower;
+    [SerializeField] private int _damageValue = 1;
+    [SerializeField] private float _knockBackPower = 3;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

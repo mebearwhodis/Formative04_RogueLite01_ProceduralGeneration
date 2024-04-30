@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-public class RoomChange : MonoBehaviour
+public class PlayerPositionCollider : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,7 +14,11 @@ public class RoomChange : MonoBehaviour
             Debug.Log("Entered Room");
             //Set current room's camera as the main one
             other.gameObject.transform.parent.parent.GetComponentInChildren<CinemachineVirtualCamera>().m_Priority = 11;
-            
+        }
+
+        if (other.gameObject.CompareTag("Entrance"))
+        {
+            GameManager.Instance.SetGameState(GameManager.GameState.DungeonState);
         }
     }
 

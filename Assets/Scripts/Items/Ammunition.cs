@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FSM;
 using UnityEngine;
 
 public class Ammunition : MonoBehaviour
@@ -7,28 +8,29 @@ public class Ammunition : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] private float _ammoSpeed = 10f;
     [SerializeField] private bool _playerProjectile = false;
+    [SerializeField] private int _damageValue = 1;
+    [SerializeField] private float _knockBackPower = 3;
 
-     
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject,5);
-        
+        Destroy(gameObject, 5);
+
         _rb.rotation = transform.rotation.eulerAngles.z;
     }
-    
+
     private void Update()
     {
-        _rb.velocity =  transform.right * _ammoSpeed;
+        _rb.velocity = transform.right * _ammoSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      
         if (other.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Hit wall"); 
+            Debug.Log("Hit wall");
             Destroy(gameObject);
         }
 
@@ -36,9 +38,16 @@ public class Ammunition : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Pewpew");
-                Destroy(other.gameObject);
-            } 
+                other.GetComponent<FSM_Enemy>().GetKnockedBack(transform, _knockBackPower);
+                if (other.GetComponent<FSM_Enemy>().Invulnerable)
+                {
+                    return;
+                }
+                else
+                {
+                    other.GetComponent<FSM_Enemy>().TakeDamage(_damageValue);
+                }
+            }
         }
     }
 }

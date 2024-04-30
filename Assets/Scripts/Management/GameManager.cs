@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
@@ -10,6 +11,8 @@ public class GameManager : Singleton<GameManager>
     public enum GameState
     {
         Init,
+        MainMenu,
+        Credits,
         StartingState,
         MapState,
         IslandState,
@@ -48,13 +51,17 @@ public class GameManager : Singleton<GameManager>
             case GameState.Init:
                 //Initialize game
                 break;
+            case GameState.MainMenu:
+                break;  
+            case GameState.Credits:
+                SceneManager.LoadScene("Credits");
+                break;
             case GameState.StartingState:
                 break;
             case GameState.MapState:
                 break;
             case GameState.IslandState:
                 SceneManager.LoadScene("IslandGenerator");
-                Debug.Log("Entering Island Scene");
                 break;
             case GameState.DungeonState:
                 SceneManager.LoadScene("DungeonGenerator");
@@ -72,6 +79,10 @@ public class GameManager : Singleton<GameManager>
         switch (currentGameState)
         {
             case GameState.Init:
+                break;
+            case GameState.MainMenu:
+                break;  
+            case GameState.Credits:
                 break;
             case GameState.StartingState:
                 break;

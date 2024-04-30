@@ -41,6 +41,7 @@ public class DungeonGeneratorV2 : MonoBehaviour
         CalculateDistanceFromStart();
         AssignRoomType();
         SpawnRooms();
+        FindFirstObjectByType<EssentialsLoader>().PlacePlayer();
     }
 
     void CreateRooms()

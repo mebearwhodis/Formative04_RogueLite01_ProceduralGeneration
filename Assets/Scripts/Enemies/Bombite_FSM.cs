@@ -60,6 +60,7 @@ public class Bombite_FSM : MonoBehaviour
         yield return new WaitForSeconds(1);
         //Explosion code, destroy enemy, etc.
         Debug.Log("Exploded :(");
+        PlayerController.Instance.CurrentRoom.monstersLeft--;
         Destroy(this.gameObject);
     }
 }

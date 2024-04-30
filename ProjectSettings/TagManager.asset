@@ -12,6 +12,7 @@ TagManager:
   - RespawnPoint
   - Shield
   - Door
+  - Entrance
   layers:
   - Default
   - TransparentFX

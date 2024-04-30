@@ -175,3 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ammoSpeed: 10
+  _playerProjectile: 0
+  _damageValue: 1
+  _knockBackPower: 3

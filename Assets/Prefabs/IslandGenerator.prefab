@@ -50,6 +50,8 @@ MonoBehaviour:
   _water: {fileID: 11400000, guid: 16f37c343d098c84ea7363015132ed0b, type: 2}
   _land: {fileID: 11400000, guid: 60f7792b27dd75e499a94ffb56cba939, type: 2}
   _fillPercent: 46
-  _size: {x: 50, y: 50}
-  seed: 73.02316
+  _size: {x: 70, y: 70}
+  seed: 17.78026
   useRandomSeed: 1
+  _dungeonEntrance: {fileID: 2322319797752249742, guid: fb3506e8fae6b4644ab4bbcfba955061, type: 3}
+  _playerSpawn: {fileID: 0}

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -20,25 +21,33 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     //Movement related
-    [Header("Movement")] [SerializeField] private float _moveSpeed = 5f;
+    [Header("Movement")] 
+    [SerializeField] private float _moveSpeed = 5f;
     private float _speedMultiplier = 1f;
     private Vector2 _movement;
     private Vector2 _lookDirection;
+    
+    //Health
+    [Header("Health")] 
+    private int _maxPlayerHealth = 6;
+    [SerializeField][Range(0,6)] private int _remainingHealth;
+    [SerializeField] private Image _heart1;
+    [SerializeField] private Image _heart2;
+    [SerializeField] private Image _heart3;
+    [SerializeField] private Sprite _heartFull;
+    [SerializeField] private Sprite _heartHalf;
+    [SerializeField] private Sprite _heartEmpty;
 
     [Header("Attack Hitboxes")]
     //Hitboxes of the different attack directions
-    [SerializeField]
-    private GameObject _slashHitBox_Up;
-
+    [SerializeField] private GameObject _slashHitBox_Up;
     [SerializeField] private GameObject _slashHitBox_Right;
     [SerializeField] private GameObject _slashHitBox_Down;
     [SerializeField] private GameObject _slashHitBox_Left;
 
     [Header("Shield Hitboxes")]
     //Hitboxes of the different attack directions
-    [SerializeField]
-    private GameObject _shieldHitBox_Up;
-
+    [SerializeField] private GameObject _shieldHitBox_Up;
     [SerializeField] private GameObject _shieldHitBox_Right;
     [SerializeField] private GameObject _shieldHitBox_Down;
     [SerializeField] private GameObject _shieldHitBox_Left;
@@ -113,6 +122,8 @@ public class PlayerController : Singleton<PlayerController>
         _gamePaused = GameManager.Instance.IsPaused;
         PlayerInput();
         BlockHitBoxes();
+        //Testing
+        UpdateHearts();
     }
 
     private void FixedUpdate()
@@ -187,7 +198,22 @@ public class PlayerController : Singleton<PlayerController>
     {
         GameManager.Instance.SetPause();
     }
+    
+    public void LowerHealth()
+    {
+        _remainingHealth--;
+        UpdateHearts();
+    }
 
+    private void UpdateHearts()
+    {
+        if (_heart1 is null || _heart2 is null || _heart3 is null) return;
+        // Determine which sprite to use for each heart
+        _heart1.sprite = (_remainingHealth >= 2) ? _heartFull : (_remainingHealth == 1) ? _heartHalf : _heartEmpty;
+        _heart2.sprite = (_remainingHealth >= 4) ? _heartFull : (_remainingHealth == 3) ? _heartHalf : _heartEmpty;
+        _heart3.sprite = (_remainingHealth >= 6) ? _heartFull : (_remainingHealth == 5) ? _heartHalf : _heartEmpty;
+    }
+    
     private void Attack()
     {
         if (!_canAttack)
@@ -290,8 +316,14 @@ public class PlayerController : Singleton<PlayerController>
 
     private void BlockHitBoxes()
     {
-        if (!_isBlocking) {return;}
-
+        if (!_isBlocking) 
+        { 
+            _shieldHitBox_Up.SetActive(false);
+            _shieldHitBox_Right.SetActive(false);
+            _shieldHitBox_Down.SetActive(false);
+            _shieldHitBox_Left.SetActive(false);
+            return;
+        }
         _shieldHitBox_Up.SetActive(_animator.GetFloat("lastLookY") >= 0.5f);
         _shieldHitBox_Right.SetActive(_animator.GetFloat("lastLookX") >= 0.5f);
         _shieldHitBox_Down.SetActive(_animator.GetFloat("lastLookY") <= -0.5f);
