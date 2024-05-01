@@ -357,6 +357,11 @@ public class DungeonGeneratorV2 : MonoBehaviour
 
        //Make sure there's only one room with the highest distance from start
        roomsByDistance = roomsByDistance.OrderByDescending(r => r.SpacesFromStart).ToList();
+       if (roomsByDistance.Count <= 1)
+       {
+           Debug.Log("One room or less");
+           return;
+       }
        if (roomsByDistance[0].SpacesFromStart == roomsByDistance[1].SpacesFromStart)
        {
            //If two end rooms have the same value, change one's value to +1

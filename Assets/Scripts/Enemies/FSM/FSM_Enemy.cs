@@ -27,6 +27,8 @@ namespace FSM
         private bool _invulnerable;
         private float _colorCD = 0.1f;
         private Color _baseColor;
+        [SerializeField] private int _damageValue = 1;
+        [SerializeField] private float _knockBackPower = 3;
 
         public bool Invulnerable
         {
@@ -139,11 +141,20 @@ namespace FSM
             yield return new WaitForSeconds(colorCD);
             _spriteRenderer.color = _baseColor;
         }
-        
+     
         private IEnumerator KnockBackRoutine()
         {
             yield return new WaitForSeconds(0.5f);
             _rigidbody.velocity = Vector2.zero;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("PlayerBody"))
+            {
+                _target.GetKnockedBack(transform, _knockBackPower);
+                _target.LowerHealth();
+            }
         }
     }
 }

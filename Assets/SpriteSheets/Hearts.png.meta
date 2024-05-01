@@ -406,7 +406,7 @@ TextureImporter:
         width: 12
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -427,7 +427,7 @@ TextureImporter:
         width: 12
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -448,7 +448,7 @@ TextureImporter:
         width: 12
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -456,6 +456,48 @@ TextureImporter:
       bones: []
       spriteID: c41c8380c3598364e9f9dc34256a83cd
       internalID: -743659340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartPickup_Full
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 373
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c6deca2d065c24f925ee15590aa1a4
+      internalID: 1754173623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartPickup_Half
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 373
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26301bd7354157d43a319a86d4cd6e6f
+      internalID: 1410745715
       vertices: []
       indices: 
       edges: []
@@ -471,6 +513,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      HeartPickup_Full: 1754173623
+      HeartPickup_Half: 1410745715
       Heart_Empty: 8124259339964715380
       Heart_Full: 4432793351920879750
       Heart_Half: 5642012044021194823

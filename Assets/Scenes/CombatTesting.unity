@@ -409,6 +409,10 @@ MonoBehaviour:
   _leever: {fileID: 2292065485493061280, guid: 2eb728915bbf8dc4fbd4a93c7ac0ac04, type: 3}
   _spikedBeetle: {fileID: 9034678986440823015, guid: 841e4d413a67f7d4a946d2aa1e9bbad5, type: 3}
   _stalfos: {fileID: 5703685244690845435, guid: d1520b2f8e118e845b408a9e0a1c7ca1, type: 3}
+  _bombiteCost: 6
+  _leeverCost: 3
+  _spikedBeetleCost: 8
+  _stalfosCost: 3
 --- !u!1 &573374433
 GameObject:
   m_ObjectHideFlags: 0

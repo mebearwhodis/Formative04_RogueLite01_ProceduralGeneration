@@ -10,18 +10,21 @@ public class GameManager : Singleton<GameManager>
 {
     public enum GameState
     {
-        Init,
+        InitState,
         MainMenu,
         Credits,
         StartingState,
-        MapState,
         IslandState,
-        DungeonState
+        DungeonState,
+        GameOver
     }
 
+    [SerializeField] private GameObject _pauseMenu;
+    
     //public static GameManager instance = null;
-    public GameState currentGameState = GameState.Init;
+    public GameState currentGameState = GameState.InitState;
 
+    private bool _canPause = false;
     private bool _isPaused = false;
 
     public bool IsPaused => _isPaused;
@@ -48,26 +51,30 @@ public class GameManager : Singleton<GameManager>
     {
         switch (currentGameState)
         {
-            case GameState.Init:
+            case GameState.InitState:
                 //Initialize game
+                _canPause = false;
                 break;
             case GameState.MainMenu:
+                _canPause = false;
                 break;  
             case GameState.Credits:
                 SceneManager.LoadScene("Credits");
+                _canPause = false;
                 break;
             case GameState.StartingState:
                 break;
-            case GameState.MapState:
-                break;
             case GameState.IslandState:
                 SceneManager.LoadScene("IslandGenerator");
+                _canPause = true;
                 break;
             case GameState.DungeonState:
                 SceneManager.LoadScene("DungeonGenerator");
-                //Mettre ici les fonctions appelées dans l'ordre plutôt que dans leurs Starts respectifs ?
-                //Ou alors on fait un "sous-manager" par scène, qu'on appelle ici et qui lui appelle les fonctions ?
-                Debug.Log("Entering Dungeon Scene");
+                _canPause = true;
+                break;
+            case GameState.GameOver:
+                SceneManager.LoadScene("GameOver");
+                _canPause = false;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -78,7 +85,7 @@ public class GameManager : Singleton<GameManager>
     {
         switch (currentGameState)
         {
-            case GameState.Init:
+            case GameState.InitState:
                 break;
             case GameState.MainMenu:
                 break;  
@@ -86,13 +93,11 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GameState.StartingState:
                 break;
-            case GameState.MapState:
-                break;
             case GameState.IslandState:
-                Debug.Log("Exiting Island Scene");
                 break;
             case GameState.DungeonState:
-                Debug.Log("Exiting Dungeon Scene");
+                break;
+            case GameState.GameOver:
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -101,7 +106,10 @@ public class GameManager : Singleton<GameManager>
 
     public void SetPause()
     {
+        if(!_canPause){Debug.Log("Can't pause here");return;}
         _isPaused = !_isPaused;
+        _pauseMenu.SetActive(_isPaused);
+        //de/Activate Pause Menu
     }
 
     public Vector3 GetPlayerPosition()

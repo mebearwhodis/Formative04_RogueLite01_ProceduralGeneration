@@ -23,6 +23,8 @@ public class SpikedBeetle_FSM : MonoBehaviour
         _target = PlayerController.Instance;
         _thisEntity = GetComponent<FSM_Enemy>();
 
+        _thisEntity.Invulnerable = true;
+
         _stateMachine = new FSM_StateMachine();
         _wanderState = new FSM_StateWander(_thisEntity);
         _rushState = new FSM_StateRush(_thisEntity);

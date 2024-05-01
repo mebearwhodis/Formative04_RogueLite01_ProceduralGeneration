@@ -54,12 +54,14 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("Cooldowns")] 
     private float _attackCD = 0.3f;
+    private float _damagedCD = 1f;
     private float _bombCD = 1f;
     private float _shotCD = 0.2f;
 
     private bool _gamePaused = false;
 
     //Enablers - blergh
+    private bool _canTakeDamage = true;
     private bool _canRoll = true;
     private bool _canShoot = true;
     private bool _canDropBomb = true;
@@ -70,11 +72,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool _isRolling = false;
     private bool _isBlocking = false;
 
-    public bool CanRoll
-    {
-        get => _canRoll;
-        set => _canRoll = value;
-    }
+    public bool CanTakeDamage => _canTakeDamage;
 
     public bool IsRolling => _isRolling;
 
@@ -122,8 +120,6 @@ public class PlayerController : Singleton<PlayerController>
         _gamePaused = GameManager.Instance.IsPaused;
         PlayerInput();
         BlockHitBoxes();
-        //Testing
-        UpdateHearts();
     }
 
     private void FixedUpdate()
@@ -135,7 +131,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void PlayerInput()
     {
-        if (!_canMove) return;
+        if (!_canMove || _gamePaused) return;
 
         _movement = _playerControls.Player.Move.ReadValue<Vector2>();
 
@@ -179,7 +175,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
-        if (!_canMove)
+        if (!_canMove || _gamePaused)
         {
             return;
         }
@@ -201,8 +197,32 @@ public class PlayerController : Singleton<PlayerController>
     
     public void LowerHealth()
     {
+        if (!_canTakeDamage) { return; }
+        _canTakeDamage = false;
         _remainingHealth--;
         UpdateHearts();
+        if (_remainingHealth > 0)
+        {
+            StartCoroutine(DamagedCooldown());
+        }
+        else
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        _animator.SetTrigger("dead");
+        //Deactivate inputs rather than use the bools 'cause it's disgustang
+        _canTakeDamage = _canRoll = _canShoot = _canDropBomb = _canAttack = _canMove = _canLook = _canBlock = false;
+        _rb.bodyType = RigidbodyType2D.Static;
+    }
+    
+    //Called by the death animation
+    public void GameOver()
+    {
+        GameManager.Instance.SetGameState(GameManager.GameState.GameOver);
     }
 
     private void UpdateHearts()
@@ -214,9 +234,21 @@ public class PlayerController : Singleton<PlayerController>
         _heart3.sprite = (_remainingHealth >= 6) ? _heartFull : (_remainingHealth == 5) ? _heartHalf : _heartEmpty;
     }
     
+    public void GetKnockedBack(Transform damageSource, float knockBackPower)
+    {
+        Vector2 direction = transform.position - damageSource.position;
+        _rb.AddForce(direction.normalized * knockBackPower * _rb.mass, ForceMode2D.Impulse);
+        StartCoroutine(KnockBackRoutine());
+    }
+    private IEnumerator KnockBackRoutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _rb.velocity = Vector2.zero;
+    }
+    
     private void Attack()
     {
-        if (!_canAttack)
+        if (!_canAttack || _gamePaused)
         {
             return;
         }
@@ -231,7 +263,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void DropBomb()
     {
-        if (!_canDropBomb)
+        if (!_canDropBomb || _gamePaused)
         {
             return;
         }
@@ -280,7 +312,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Roll()
     {
-        if (_canRoll == false || _isRolling || IsNotMoving())
+        if (_canRoll == false || _isRolling || IsNotMoving()  || _gamePaused)
         {
             return;
         }
@@ -292,6 +324,7 @@ public class PlayerController : Singleton<PlayerController>
             _sr.flipX = true;
         }
 
+        _canTakeDamage = false;
         _isRolling = true;
         _canRoll = false;
 
@@ -300,6 +333,10 @@ public class PlayerController : Singleton<PlayerController>
 
     private void StartBlock()
     {
+        if (_gamePaused)
+        {
+            return;
+        }
         _canRoll = false;
         _isBlocking = true;
         _speedMultiplier = 0.5f;
@@ -308,6 +345,10 @@ public class PlayerController : Singleton<PlayerController>
 
     private void StopBlock()
     {
+        if (_gamePaused)
+        {
+            return;
+        }
         _canRoll = true;
         _isBlocking = false;
         _speedMultiplier = 1f;
@@ -375,6 +416,12 @@ public class PlayerController : Singleton<PlayerController>
 
     #region Cooldown Coroutines
 
+    private IEnumerator DamagedCooldown()
+    {
+        yield return new WaitForSeconds(_damagedCD);
+        _canTakeDamage = true;
+    }
+    
     private IEnumerator AttackCooldown()
     {
         yield return new WaitForSeconds(_attackCD);
@@ -401,6 +448,7 @@ public class PlayerController : Singleton<PlayerController>
         yield return new WaitForSeconds(0.4f);
         _isRolling = false;
         _canRoll = true;
+        _canTakeDamage = true;
     }
 
     #endregion

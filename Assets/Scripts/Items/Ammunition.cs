@@ -8,6 +8,7 @@ public class Ammunition : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] private float _ammoSpeed = 10f;
     [SerializeField] private bool _playerProjectile = false;
+    [SerializeField] private bool _enemyProjectile = false;
     [SerializeField] private int _damageValue = 1;
     [SerializeField] private float _knockBackPower = 3;
 
@@ -47,6 +48,20 @@ public class Ammunition : MonoBehaviour
                 {
                     other.GetComponent<FSM_Enemy>().TakeDamage(_damageValue);
                 }
+            }
+        }
+
+        if (_enemyProjectile)
+        {
+            if (other.gameObject.CompareTag("PlayerBody"))
+            {
+                other.GetComponentInParent<PlayerController>().GetKnockedBack(transform, _knockBackPower);
+                other.GetComponentInParent<PlayerController>().LowerHealth();
+            }
+
+            if (other.gameObject.CompareTag("Shield"))
+            {
+                Destroy(gameObject);
             }
         }
     }
