@@ -56,7 +56,7 @@ public class Ammunition : MonoBehaviour
             if (other.gameObject.CompareTag("PlayerBody"))
             {
                 other.GetComponentInParent<PlayerController>().GetKnockedBack(transform, _knockBackPower);
-                other.GetComponentInParent<PlayerController>().LowerHealth();
+                other.GetComponentInParent<PlayerController>().UpdateHealth(-1);
             }
 
             if (other.gameObject.CompareTag("Shield"))

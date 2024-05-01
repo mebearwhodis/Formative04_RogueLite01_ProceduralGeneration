@@ -153,7 +153,7 @@ namespace FSM
             if (other.gameObject.CompareTag("PlayerBody"))
             {
                 _target.GetKnockedBack(transform, _knockBackPower);
-                _target.LowerHealth();
+                _target.UpdateHealth(-1);
             }
         }
     }

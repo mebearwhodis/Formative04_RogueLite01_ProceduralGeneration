@@ -401,10 +401,10 @@ TextureImporter:
       name: Heart_Full
       rect:
         serializedVersion: 2
-        x: 2
-        y: 115
-        width: 12
-        height: 11
+        x: 151
+        y: 6
+        width: 19
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,10 +422,10 @@ TextureImporter:
       name: Heart_Half
       rect:
         serializedVersion: 2
-        x: 18
-        y: 115
-        width: 12
-        height: 11
+        x: 183
+        y: 6
+        width: 19
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,10 +443,10 @@ TextureImporter:
       name: Heart_Empty
       rect:
         serializedVersion: 2
-        x: 34
-        y: 115
-        width: 12
-        height: 11
+        x: 215
+        y: 70
+        width: 19
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,7 +469,7 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -490,7 +490,7 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

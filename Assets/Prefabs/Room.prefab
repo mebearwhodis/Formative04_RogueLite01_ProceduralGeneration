@@ -55,8 +55,11 @@ MonoBehaviour:
   _roomBoundaries: {fileID: 3978471614772932332}
   _wallTile: {fileID: 11400000, guid: 4da19bfa530376e43bced3ec34725b34, type: 2}
   _floorTile: {fileID: 11400000, guid: 251ae41910f046f428bc3bb7fcad27dc, type: 2}
+  _flairFloorTile: {fileID: 11400000, guid: 03d6d94f35280734d8d199944164fae9, type: 2}
   _closedDoorTile: {fileID: 11400000, guid: a5c9f69ea94c4c54c9bff7622eb96d2f, type: 2}
   _openDoorTile: {fileID: 11400000, guid: 251ae41910f046f428bc3bb7fcad27dc, type: 2}
+  _blockTile: {fileID: 11400000, guid: eea463bf119509e4d90703a8d635da63, type: 2}
+  _holeTile: {fileID: 11400000, guid: 2255205a9b733b84e84cbe1493d2aeda, type: 2}
   _center: {fileID: 6038670384740010121}
   size: {x: 0, y: 0}
   up: 0
@@ -66,6 +69,7 @@ MonoBehaviour:
   type: 0
   spacesFromStart: 0
   maxDifficulty: 0
+  monstersLeft: 0
   completed: 0
   open: 0
 --- !u!50 &4551125753978390533
@@ -395,6 +399,10 @@ MonoBehaviour:
   _leever: {fileID: 2292065485493061280, guid: 2eb728915bbf8dc4fbd4a93c7ac0ac04, type: 3}
   _spikedBeetle: {fileID: 9034678986440823015, guid: 841e4d413a67f7d4a946d2aa1e9bbad5, type: 3}
   _stalfos: {fileID: 5703685244690845435, guid: d1520b2f8e118e845b408a9e0a1c7ca1, type: 3}
+  _bombiteCost: 6
+  _leeverCost: 3
+  _spikedBeetleCost: 8
+  _stalfosCost: 3
 --- !u!1 &5205975444930868696
 GameObject:
   m_ObjectHideFlags: 0

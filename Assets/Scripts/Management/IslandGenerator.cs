@@ -14,9 +14,15 @@ public class IslandGenerator : MonoBehaviour
     [SerializeField] private Tilemap _generatedMap;
     [SerializeField] private Tilemap _landMap;
     [SerializeField] private Tilemap _seaMap;
+    [SerializeField] private Tilemap _decorSolid;
+    [SerializeField] private Tilemap _decorFront;
 
     [SerializeField] private TileBase _water;
     [SerializeField] private TileBase _land;
+    [SerializeField] private TileBase _box;
+    [SerializeField] private TileBase _barrel;
+    [SerializeField] private TileBase _treeBase;
+    [SerializeField] private TileBase _treeTop;
 
     [SerializeField] [Range(0, 100)] private int _fillPercent;
     [SerializeField] Vector2Int _size;
@@ -30,8 +36,8 @@ public class IslandGenerator : MonoBehaviour
     private void Start()
     {
         GenerateMap();
-        SetUpCameraConfiner();
         MoveSpawnPoint();
+        SetUpCameraConfiner();
         PlaceDungeonEntrance();
         FindFirstObjectByType<EssentialsLoader>().PlacePlayer();
     }
@@ -132,6 +138,9 @@ public class IslandGenerator : MonoBehaviour
             // Choose a random position from the available positions list
             Vector3Int randomPosition = availablePositions[Random.Range(0, availablePositions.Count)];
 
+            // Clear tiles on decor tilemaps around the dungeon entrance position
+            ClearDecorTilesAround(randomPosition);
+            
             // Instantiate the prefab at the chosen position
             Vector3 prefabWorldPosition = _landMap.CellToWorld(randomPosition);
             Instantiate(_dungeonEntrance, prefabWorldPosition, Quaternion.identity);
@@ -142,6 +151,70 @@ public class IslandGenerator : MonoBehaviour
             GenerateMap();
             MoveSpawnPoint();
             PlaceDungeonEntrance();
+        }
+    }
+    
+    private void ClearDecorTilesAround(Vector3Int position)
+    {
+        // Define the area around the position to clear decor tiles
+        for (int x = position.x - 2; x <= position.x + 2; x++)
+        {
+            for (int y = position.y - 2; y <= position.y + 1; y++)
+            {
+                // Clear tiles on decorSolid tilemap
+                _decorSolid.SetTile(new Vector3Int(x, y, 0), null);
+                // Clear tiles on decorFront tilemap
+                _decorFront.SetTile(new Vector3Int(x, y, 0), null);
+            }
+        }
+    }
+
+    private void AddDecor()
+    {
+        _decorSolid.ClearAllTiles();
+        _decorFront.ClearAllTiles();
+        
+        for (int x = 1; x < _size.x - 1; x++) // Exclude outer border tiles
+        {
+            for (int y = 1; y < _size.y - 1; y++) // Exclude outer border tiles
+            {
+                Vector3Int tilePosition = new Vector3Int(x, y, 0);
+
+                // Check if there is a tile on _landMap at the current position
+                if (_landMap.HasTile(tilePosition))
+                {
+                    // Check if there are tiles on _landMap in the surrounding southwest, south, and southeast positions
+                    Vector3Int swPosition = new Vector3Int(x - 1, y - 1, 0);
+                    Vector3Int sPosition = new Vector3Int(x, y - 1, 0);
+                    Vector3Int sePosition = new Vector3Int(x + 1, y - 1, 0);
+
+                    if (_landMap.HasTile(swPosition) && _landMap.HasTile(sPosition) && _landMap.HasTile(sePosition))
+                    {
+                        // Randomly choose which decor to add
+                        float randomValue = Random.value;
+                        if (randomValue <= 0.15f) // 15% chance for any decoration
+                        {
+                            float decorationChance = Random.value;
+                            if (decorationChance < 0.33f) // 50% chance for box
+                            {
+                                _decorSolid.SetTile(tilePosition, _box);
+                            }
+                            else if (decorationChance < 0.66f) // 25% chance for barrel
+                            {
+                                _decorSolid.SetTile(tilePosition, _barrel);
+                            }
+                            else // 25% chance for tree
+                            {
+                                _decorSolid.SetTile(tilePosition, _treeBase);
+
+                                // Add tree top on decorFront tilemap above tree base
+                                Vector3Int treeTopPosition = new Vector3Int(x, y + 1, 0);
+                                _decorFront.SetTile(treeTopPosition, _treeTop);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -158,6 +231,8 @@ public class IslandGenerator : MonoBehaviour
 
         ProcessMap();
         SeparateMaps();
+        
+        AddDecor();
     }
 
     void ProcessMap()

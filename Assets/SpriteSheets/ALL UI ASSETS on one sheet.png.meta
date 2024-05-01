@@ -1,0 +1,3912 @@
+fileFormatVersion: 2
+guid: 916bbe7dd14e08e46851c081cfa1f6cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8941493973892504005
+    second: ALL UI ASSETS on one sheet_0
+  - first:
+      213: -2030066031634937321
+    second: ALL UI ASSETS on one sheet_1
+  - first:
+      213: -2378394926778746609
+    second: ALL UI ASSETS on one sheet_2
+  - first:
+      213: -5624715320683190882
+    second: ALL UI ASSETS on one sheet_3
+  - first:
+      213: -3241562248284104445
+    second: ALL UI ASSETS on one sheet_4
+  - first:
+      213: -6257201345770840444
+    second: ALL UI ASSETS on one sheet_5
+  - first:
+      213: 3035196218415841854
+    second: ALL UI ASSETS on one sheet_6
+  - first:
+      213: -4196791425797626592
+    second: ALL UI ASSETS on one sheet_7
+  - first:
+      213: -4383363975761947765
+    second: ALL UI ASSETS on one sheet_8
+  - first:
+      213: -2162925620693784119
+    second: ALL UI ASSETS on one sheet_9
+  - first:
+      213: -2480788993376632010
+    second: ALL UI ASSETS on one sheet_10
+  - first:
+      213: -7783490628143730368
+    second: ALL UI ASSETS on one sheet_11
+  - first:
+      213: -8611563409106166928
+    second: ALL UI ASSETS on one sheet_12
+  - first:
+      213: 8172657222396510025
+    second: ALL UI ASSETS on one sheet_13
+  - first:
+      213: 7523384122759846713
+    second: ALL UI ASSETS on one sheet_14
+  - first:
+      213: 8549789402721970620
+    second: ALL UI ASSETS on one sheet_15
+  - first:
+      213: -6139143459908755758
+    second: ALL UI ASSETS on one sheet_16
+  - first:
+      213: 7939613268401114021
+    second: ALL UI ASSETS on one sheet_17
+  - first:
+      213: -8600179450236705013
+    second: ALL UI ASSETS on one sheet_18
+  - first:
+      213: -2796251370172468740
+    second: ALL UI ASSETS on one sheet_19
+  - first:
+      213: -920298830952381806
+    second: ALL UI ASSETS on one sheet_20
+  - first:
+      213: -1463362224701535884
+    second: ALL UI ASSETS on one sheet_21
+  - first:
+      213: 2868710439779045402
+    second: ALL UI ASSETS on one sheet_22
+  - first:
+      213: -8394908467179356990
+    second: ALL UI ASSETS on one sheet_23
+  - first:
+      213: -6433873195375631927
+    second: ALL UI ASSETS on one sheet_24
+  - first:
+      213: -8362015224732209485
+    second: ALL UI ASSETS on one sheet_25
+  - first:
+      213: 501680618407991531
+    second: ALL UI ASSETS on one sheet_26
+  - first:
+      213: 8681791021186234070
+    second: ALL UI ASSETS on one sheet_27
+  - first:
+      213: -5666511888378117666
+    second: ALL UI ASSETS on one sheet_28
+  - first:
+      213: -6691932176389988150
+    second: ALL UI ASSETS on one sheet_29
+  - first:
+      213: 569266455062729265
+    second: ALL UI ASSETS on one sheet_30
+  - first:
+      213: -8942346181465614887
+    second: ALL UI ASSETS on one sheet_31
+  - first:
+      213: 2815779716322265695
+    second: ALL UI ASSETS on one sheet_32
+  - first:
+      213: -1556463785959436498
+    second: ALL UI ASSETS on one sheet_33
+  - first:
+      213: 6877420153433410747
+    second: ALL UI ASSETS on one sheet_34
+  - first:
+      213: 8575078689050873974
+    second: ALL UI ASSETS on one sheet_35
+  - first:
+      213: -7169758740890742364
+    second: ALL UI ASSETS on one sheet_36
+  - first:
+      213: 6141866788661160763
+    second: ALL UI ASSETS on one sheet_37
+  - first:
+      213: 2265995856446988198
+    second: ALL UI ASSETS on one sheet_38
+  - first:
+      213: -6778193076377554055
+    second: ALL UI ASSETS on one sheet_39
+  - first:
+      213: 2260847157708037898
+    second: ALL UI ASSETS on one sheet_40
+  - first:
+      213: 2690458897601022983
+    second: ALL UI ASSETS on one sheet_41
+  - first:
+      213: -6878638860590712464
+    second: ALL UI ASSETS on one sheet_42
+  - first:
+      213: 5297208323179865156
+    second: ALL UI ASSETS on one sheet_43
+  - first:
+      213: -7164149145420104239
+    second: ALL UI ASSETS on one sheet_44
+  - first:
+      213: 4760910407918167013
+    second: ALL UI ASSETS on one sheet_45
+  - first:
+      213: 7206221202898011976
+    second: ALL UI ASSETS on one sheet_46
+  - first:
+      213: -4051977986851772506
+    second: ALL UI ASSETS on one sheet_47
+  - first:
+      213: -867568935241097962
+    second: ALL UI ASSETS on one sheet_48
+  - first:
+      213: -3023819253828358666
+    second: ALL UI ASSETS on one sheet_49
+  - first:
+      213: 4089357063721853086
+    second: ALL UI ASSETS on one sheet_50
+  - first:
+      213: -3716521246416987199
+    second: ALL UI ASSETS on one sheet_51
+  - first:
+      213: -8605854907383157551
+    second: ALL UI ASSETS on one sheet_52
+  - first:
+      213: 5697051173305052097
+    second: ALL UI ASSETS on one sheet_53
+  - first:
+      213: -4203176898543381772
+    second: ALL UI ASSETS on one sheet_54
+  - first:
+      213: 5364776951435634088
+    second: ALL UI ASSETS on one sheet_55
+  - first:
+      213: -5957293809877282659
+    second: ALL UI ASSETS on one sheet_56
+  - first:
+      213: 4536128244145200802
+    second: ALL UI ASSETS on one sheet_57
+  - first:
+      213: 4453208579526777176
+    second: ALL UI ASSETS on one sheet_58
+  - first:
+      213: 1905247122971191166
+    second: ALL UI ASSETS on one sheet_59
+  - first:
+      213: 6839275369242874053
+    second: ALL UI ASSETS on one sheet_60
+  - first:
+      213: -4538327072765141677
+    second: ALL UI ASSETS on one sheet_61
+  - first:
+      213: -7296368523936815610
+    second: ALL UI ASSETS on one sheet_62
+  - first:
+      213: -1497656006619814472
+    second: ALL UI ASSETS on one sheet_63
+  - first:
+      213: -435758326045806278
+    second: ALL UI ASSETS on one sheet_64
+  - first:
+      213: -2122618712620947231
+    second: ALL UI ASSETS on one sheet_65
+  - first:
+      213: -3126073298653045570
+    second: ALL UI ASSETS on one sheet_66
+  - first:
+      213: -8254687922777717559
+    second: ALL UI ASSETS on one sheet_67
+  - first:
+      213: 3264928061890879640
+    second: ALL UI ASSETS on one sheet_68
+  - first:
+      213: -157112321719517708
+    second: ALL UI ASSETS on one sheet_69
+  - first:
+      213: -1121141621798124114
+    second: ALL UI ASSETS on one sheet_70
+  - first:
+      213: 8568570675879443738
+    second: ALL UI ASSETS on one sheet_71
+  - first:
+      213: -5485507876850742107
+    second: ALL UI ASSETS on one sheet_72
+  - first:
+      213: 6984554615086582904
+    second: ALL UI ASSETS on one sheet_73
+  - first:
+      213: 8680607634454464931
+    second: ALL UI ASSETS on one sheet_74
+  - first:
+      213: -1406431484919105234
+    second: ALL UI ASSETS on one sheet_75
+  - first:
+      213: 3737349019888353124
+    second: ALL UI ASSETS on one sheet_76
+  - first:
+      213: -777228792849234919
+    second: ALL UI ASSETS on one sheet_77
+  - first:
+      213: -4386960419760875145
+    second: ALL UI ASSETS on one sheet_78
+  - first:
+      213: 155535723616132787
+    second: ALL UI ASSETS on one sheet_79
+  - first:
+      213: -7244157882052175588
+    second: ALL UI ASSETS on one sheet_80
+  - first:
+      213: 480988971995551542
+    second: ALL UI ASSETS on one sheet_81
+  - first:
+      213: -164904635705834261
+    second: ALL UI ASSETS on one sheet_82
+  - first:
+      213: 3468026451303325918
+    second: ALL UI ASSETS on one sheet_83
+  - first:
+      213: -1315643469991551706
+    second: ALL UI ASSETS on one sheet_84
+  - first:
+      213: -4127233512520197732
+    second: ALL UI ASSETS on one sheet_85
+  - first:
+      213: -3113347989978628771
+    second: ALL UI ASSETS on one sheet_86
+  - first:
+      213: -1164721510784170803
+    second: ALL UI ASSETS on one sheet_87
+  - first:
+      213: -4130967481332942892
+    second: ALL UI ASSETS on one sheet_88
+  - first:
+      213: 692189313909204066
+    second: ALL UI ASSETS on one sheet_89
+  - first:
+      213: -8651664643340248046
+    second: ALL UI ASSETS on one sheet_90
+  - first:
+      213: 7705452045722410721
+    second: ALL UI ASSETS on one sheet_91
+  - first:
+      213: 8527984976343601245
+    second: ALL UI ASSETS on one sheet_92
+  - first:
+      213: 6140143909546754733
+    second: ALL UI ASSETS on one sheet_93
+  - first:
+      213: 3725007263832718832
+    second: ALL UI ASSETS on one sheet_94
+  - first:
+      213: 2363362013701411731
+    second: ALL UI ASSETS on one sheet_95
+  - first:
+      213: -1607510888303917283
+    second: ALL UI ASSETS on one sheet_96
+  - first:
+      213: 3819612001446427360
+    second: ALL UI ASSETS on one sheet_97
+  - first:
+      213: 8711223286032965866
+    second: ALL UI ASSETS on one sheet_98
+  - first:
+      213: 1592385059442131968
+    second: ALL UI ASSETS on one sheet_99
+  - first:
+      213: 6086901885108262619
+    second: ALL UI ASSETS on one sheet_100
+  - first:
+      213: 4769412499747385653
+    second: ALL UI ASSETS on one sheet_101
+  - first:
+      213: 8769187137359601158
+    second: ALL UI ASSETS on one sheet_102
+  - first:
+      213: 1502531382925197540
+    second: ALL UI ASSETS on one sheet_103
+  - first:
+      213: -5954019312354078064
+    second: ALL UI ASSETS on one sheet_104
+  - first:
+      213: 7857569446364466480
+    second: ALL UI ASSETS on one sheet_105
+  - first:
+      213: 4503109223621788278
+    second: ALL UI ASSETS on one sheet_106
+  - first:
+      213: -3728789560487129730
+    second: ALL UI ASSETS on one sheet_107
+  - first:
+      213: -7877599811751592578
+    second: ALL UI ASSETS on one sheet_108
+  - first:
+      213: -2719224848234324911
+    second: ALL UI ASSETS on one sheet_109
+  - first:
+      213: 1126955988195466860
+    second: ALL UI ASSETS on one sheet_110
+  - first:
+      213: -1680331493962214288
+    second: ALL UI ASSETS on one sheet_111
+  - first:
+      213: 7825221096883715416
+    second: ALL UI ASSETS on one sheet_112
+  - first:
+      213: 8686316269644454442
+    second: ALL UI ASSETS on one sheet_113
+  - first:
+      213: -171960253922352311
+    second: ALL UI ASSETS on one sheet_114
+  - first:
+      213: -6177982356137100957
+    second: ALL UI ASSETS on one sheet_115
+  - first:
+      213: 7472834187356167979
+    second: ALL UI ASSETS on one sheet_116
+  - first:
+      213: 3925198902159234250
+    second: ALL UI ASSETS on one sheet_117
+  - first:
+      213: -9062821356946994944
+    second: ALL UI ASSETS on one sheet_118
+  - first:
+      213: 184215889447730637
+    second: ALL UI ASSETS on one sheet_119
+  - first:
+      213: 5642961010115129933
+    second: ALL UI ASSETS on one sheet_120
+  - first:
+      213: 4474777078994760420
+    second: ALL UI ASSETS on one sheet_121
+  - first:
+      213: 2125128195900679198
+    second: ALL UI ASSETS on one sheet_122
+  - first:
+      213: -856506913273280272
+    second: ALL UI ASSETS on one sheet_123
+  - first:
+      213: -9059305923482209473
+    second: ALL UI ASSETS on one sheet_124
+  - first:
+      213: 8079455815301583235
+    second: ALL UI ASSETS on one sheet_125
+  - first:
+      213: -8200584491240250445
+    second: ALL UI ASSETS on one sheet_126
+  - first:
+      213: 3522404096469732715
+    second: ALL UI ASSETS on one sheet_127
+  - first:
+      213: -1699910222602691948
+    second: ALL UI ASSETS on one sheet_128
+  - first:
+      213: 3715731613461423870
+    second: ALL UI ASSETS on one sheet_129
+  - first:
+      213: -198761201541217743
+    second: ALL UI ASSETS on one sheet_130
+  - first:
+      213: -1370197464920565874
+    second: ALL UI ASSETS on one sheet_131
+  - first:
+      213: 6791068531047169795
+    second: ALL UI ASSETS on one sheet_132
+  - first:
+      213: -177147539334992183
+    second: ALL UI ASSETS on one sheet_133
+  - first:
+      213: -5557201551802747563
+    second: ALL UI ASSETS on one sheet_134
+  - first:
+      213: -4342209971500007488
+    second: ALL UI ASSETS on one sheet_135
+  - first:
+      213: 7659293931741310159
+    second: ALL UI ASSETS on one sheet_136
+  - first:
+      213: -1337776564315985612
+    second: ALL UI ASSETS on one sheet_137
+  - first:
+      213: 1503069010029754022
+    second: ALL UI ASSETS on one sheet_138
+  - first:
+      213: -7991907767607154823
+    second: ALL UI ASSETS on one sheet_139
+  - first:
+      213: -3839122430765308791
+    second: ALL UI ASSETS on one sheet_140
+  - first:
+      213: -7981968223247506981
+    second: ALL UI ASSETS on one sheet_141
+  - first:
+      213: 4021212092624295203
+    second: ALL UI ASSETS on one sheet_142
+  - first:
+      213: -3949292576818120530
+    second: ALL UI ASSETS on one sheet_143
+  - first:
+      213: 7381493385757999221
+    second: ALL UI ASSETS on one sheet_144
+  - first:
+      213: -1881981566066164939
+    second: ALL UI ASSETS on one sheet_145
+  - first:
+      213: 2845131624823488741
+    second: ALL UI ASSETS on one sheet_146
+  - first:
+      213: 4022576974448501239
+    second: ALL UI ASSETS on one sheet_147
+  - first:
+      213: 6533991004065082452
+    second: ALL UI ASSETS on one sheet_148
+  - first:
+      213: 6879714629956045223
+    second: ALL UI ASSETS on one sheet_149
+  - first:
+      213: 9050420459051302831
+    second: ALL UI ASSETS on one sheet_150
+  - first:
+      213: -4595121972908430473
+    second: ALL UI ASSETS on one sheet_151
+  - first:
+      213: 6496856428866099606
+    second: ALL UI ASSETS on one sheet_152
+  - first:
+      213: -3066733974990921887
+    second: ALL UI ASSETS on one sheet_153
+  - first:
+      213: -7665615911964629443
+    second: ALL UI ASSETS on one sheet_154
+  - first:
+      213: -6693004619424139951
+    second: ALL UI ASSETS on one sheet_155
+  - first:
+      213: 9028880068207283306
+    second: ALL UI ASSETS on one sheet_156
+  - first:
+      213: -3236996966722799570
+    second: ALL UI ASSETS on one sheet_157
+  - first:
+      213: -7447423115598044247
+    second: ALL UI ASSETS on one sheet_158
+  - first:
+      213: 6153841338323762273
+    second: ALL UI ASSETS on one sheet_159
+  - first:
+      213: -5133559231289634248
+    second: ALL UI ASSETS on one sheet_160
+  - first:
+      213: -3251036902195578532
+    second: ALL UI ASSETS on one sheet_161
+  - first:
+      213: 9139786328241654836
+    second: ALL UI ASSETS on one sheet_162
+  - first:
+      213: 6875846044504446016
+    second: ALL UI ASSETS on one sheet_163
+  - first:
+      213: -6151694400241095754
+    second: ALL UI ASSETS on one sheet_164
+  - first:
+      213: 3596186790626063170
+    second: ALL UI ASSETS on one sheet_165
+  - first:
+      213: -9052512826091796535
+    second: ALL UI ASSETS on one sheet_166
+  - first:
+      213: -5526975412716983450
+    second: ALL UI ASSETS on one sheet_167
+  - first:
+      213: -6394767000030983786
+    second: ALL UI ASSETS on one sheet_168
+  - first:
+      213: -7508725375352263577
+    second: ALL UI ASSETS on one sheet_169
+  - first:
+      213: -5405198713887189712
+    second: ALL UI ASSETS on one sheet_170
+  - first:
+      213: -590548650701900983
+    second: ALL UI ASSETS on one sheet_171
+  - first:
+      213: 2182887556328142451
+    second: ALL UI ASSETS on one sheet_172
+  - first:
+      213: -7691620463129542213
+    second: ALL UI ASSETS on one sheet_173
+  - first:
+      213: 1637770720205544565
+    second: ALL UI ASSETS on one sheet_174
+  - first:
+      213: -4236778580397440845
+    second: ALL UI ASSETS on one sheet_175
+  - first:
+      213: 7998032041127735271
+    second: ALL UI ASSETS on one sheet_176
+  - first:
+      213: 9103774380228018660
+    second: ALL UI ASSETS on one sheet_177
+  - first:
+      213: -7117903357340992106
+    second: ALL UI ASSETS on one sheet_178
+  - first:
+      213: 1900085581879763303
+    second: ALL UI ASSETS on one sheet_179
+  - first:
+      213: 7109528334308026874
+    second: ALL UI ASSETS on one sheet_180
+  - first:
+      213: -6132145730705090864
+    second: ALL UI ASSETS on one sheet_181
+  - first:
+      213: -5455408037003376220
+    second: ALL UI ASSETS on one sheet_182
+  - first:
+      213: 8622933039045148104
+    second: ALL UI ASSETS on one sheet_183
+  - first:
+      213: -2253870877862221946
+    second: ALL UI ASSETS on one sheet_184
+  - first:
+      213: -8799537743248248070
+    second: ALL UI ASSETS on one sheet_185
+  - first:
+      213: 1266859598256429739
+    second: ALL UI ASSETS on one sheet_186
+  - first:
+      213: -3393957699381404962
+    second: ALL UI ASSETS on one sheet_187
+  - first:
+      213: 957061646398316813
+    second: ALL UI ASSETS on one sheet_188
+  - first:
+      213: -7434274137218209782
+    second: ALL UI ASSETS on one sheet_189
+  - first:
+      213: -7546011082084079821
+    second: ALL UI ASSETS on one sheet_190
+  - first:
+      213: 5726964097552408154
+    second: ALL UI ASSETS on one sheet_191
+  - first:
+      213: -6495525320835957633
+    second: ALL UI ASSETS on one sheet_192
+  - first:
+      213: 1207112154172954436
+    second: ALL UI ASSETS on one sheet_193
+  - first:
+      213: -8226631053167983678
+    second: ALL UI ASSETS on one sheet_194
+  - first:
+      213: -20590131756588171
+    second: ALL UI ASSETS on one sheet_195
+  - first:
+      213: 3004732966729987301
+    second: ALL UI ASSETS on one sheet_196
+  - first:
+      213: 3703668457430952384
+    second: ALL UI ASSETS on one sheet_197
+  - first:
+      213: -4427218912279150816
+    second: ALL UI ASSETS on one sheet_198
+  - first:
+      213: 2779632676594408281
+    second: ALL UI ASSETS on one sheet_199
+  - first:
+      213: 1714289923384903784
+    second: ALL UI ASSETS on one sheet_200
+  - first:
+      213: -6756901999911368612
+    second: ALL UI ASSETS on one sheet_201
+  - first:
+      213: -6923290901867722946
+    second: ALL UI ASSETS on one sheet_202
+  - first:
+      213: 4511295060189749279
+    second: ALL UI ASSETS on one sheet_203
+  - first:
+      213: -7481407965822069821
+    second: ALL UI ASSETS on one sheet_204
+  - first:
+      213: 4158979818581026411
+    second: ALL UI ASSETS on one sheet_205
+  - first:
+      213: 5772024167494277468
+    second: ALL UI ASSETS on one sheet_206
+  - first:
+      213: -7593674215467363386
+    second: ALL UI ASSETS on one sheet_207
+  - first:
+      213: -1368217344750913449
+    second: ALL UI ASSETS on one sheet_208
+  - first:
+      213: 4351856693515534364
+    second: ALL UI ASSETS on one sheet_209
+  - first:
+      213: -6724210528851879203
+    second: ALL UI ASSETS on one sheet_210
+  - first:
+      213: 4165227673014712791
+    second: ALL UI ASSETS on one sheet_211
+  - first:
+      213: 3699760014070152850
+    second: ALL UI ASSETS on one sheet_212
+  - first:
+      213: -3224073655494649888
+    second: ALL UI ASSETS on one sheet_213
+  - first:
+      213: 4429642482355533765
+    second: ALL UI ASSETS on one sheet_214
+  - first:
+      213: -8114456832480327587
+    second: ALL UI ASSETS on one sheet_215
+  - first:
+      213: -5157423788164367562
+    second: ALL UI ASSETS on one sheet_216
+  - first:
+      213: -4531538397709754552
+    second: ALL UI ASSETS on one sheet_217
+  - first:
+      213: 8243759623941064767
+    second: ALL UI ASSETS on one sheet_218
+  - first:
+      213: -8244638677073380725
+    second: ALL UI ASSETS on one sheet_219
+  - first:
+      213: -6890312165273237712
+    second: ALL UI ASSETS on one sheet_220
+  - first:
+      213: -9122435576124721597
+    second: ALL UI ASSETS on one sheet_221
+  - first:
+      213: -7849903365223245245
+    second: ALL UI ASSETS on one sheet_222
+  - first:
+      213: 2859544088277165721
+    second: ALL UI ASSETS on one sheet_223
+  - first:
+      213: -2444609283037630917
+    second: ALL UI ASSETS on one sheet_224
+  - first:
+      213: 3741751699141361191
+    second: ALL UI ASSETS on one sheet_225
+  - first:
+      213: 3855912739989787886
+    second: ALL UI ASSETS on one sheet_226
+  - first:
+      213: 2739744703645082128
+    second: ALL UI ASSETS on one sheet_227
+  - first:
+      213: 3229823441350681627
+    second: ALL UI ASSETS on one sheet_228
+  - first:
+      213: 8932829168236482761
+    second: ALL UI ASSETS on one sheet_229
+  - first:
+      213: 5027676446868946162
+    second: ALL UI ASSETS on one sheet_230
+  - first:
+      213: 5093357351837614302
+    second: ALL UI ASSETS on one sheet_231
+  - first:
+      213: 1578997826927400082
+    second: ALL UI ASSETS on one sheet_232
+  - first:
+      213: -1436843036951316289
+    second: ALL UI ASSETS on one sheet_233
+  - first:
+      213: -7601969145734568411
+    second: ALL UI ASSETS on one sheet_234
+  - first:
+      213: -6365369696627660721
+    second: ALL UI ASSETS on one sheet_235
+  - first:
+      213: -8684037608148261145
+    second: ALL UI ASSETS on one sheet_236
+  - first:
+      213: 1631032840526995053
+    second: ALL UI ASSETS on one sheet_237
+  - first:
+      213: -5433890535187683743
+    second: ALL UI ASSETS on one sheet_238
+  - first:
+      213: -250104570538093544
+    second: ALL UI ASSETS on one sheet_239
+  - first:
+      213: -4191901464578295441
+    second: ALL UI ASSETS on one sheet_240
+  - first:
+      213: -5383453477850563645
+    second: ALL UI ASSETS on one sheet_241
+  - first:
+      213: 8563794380241683362
+    second: ALL UI ASSETS on one sheet_242
+  - first:
+      213: 1089089485880147063
+    second: ALL UI ASSETS on one sheet_243
+  - first:
+      213: -6927746805442852743
+    second: ALL UI ASSETS on one sheet_244
+  - first:
+      213: -8676315388260370162
+    second: ALL UI ASSETS on one sheet_245
+  - first:
+      213: -7000249257935722507
+    second: ALL UI ASSETS on one sheet_246
+  - first:
+      213: -557757744305429144
+    second: ALL UI ASSETS on one sheet_247
+  - first:
+      213: 410310774975003932
+    second: ALL UI ASSETS on one sheet_248
+  - first:
+      213: 4999828178735069644
+    second: ALL UI ASSETS on one sheet_249
+  - first:
+      213: 342672050771615456
+    second: ALL UI ASSETS on one sheet_250
+  - first:
+      213: 1385939559671527052
+    second: ALL UI ASSETS on one sheet_251
+  - first:
+      213: 4528118220910137175
+    second: ALL UI ASSETS on one sheet_252
+  - first:
+      213: 546903400573903018
+    second: ALL UI ASSETS on one sheet_253
+  - first:
+      213: 7399432125444666150
+    second: ALL UI ASSETS on one sheet_254
+  - first:
+      213: -4652379186252280716
+    second: ALL UI ASSETS on one sheet_255
+  - first:
+      213: 4283515654305461903
+    second: ALL UI ASSETS on one sheet_256
+  - first:
+      213: 9212521493584133990
+    second: ALL UI ASSETS on one sheet_257
+  - first:
+      213: -6264389359669579016
+    second: ALL UI ASSETS on one sheet_258
+  - first:
+      213: 8878378455212271355
+    second: ALL UI ASSETS on one sheet_259
+  - first:
+      213: -6129774110660966913
+    second: ALL UI ASSETS on one sheet_260
+  - first:
+      213: -756936800545133471
+    second: ALL UI ASSETS on one sheet_261
+  - first:
+      213: -1075603739019708376
+    second: ALL UI ASSETS on one sheet_262
+  - first:
+      213: -1656179844506742526
+    second: ALL UI ASSETS on one sheet_263
+  - first:
+      213: -1659754943620575446
+    second: ALL UI ASSETS on one sheet_264
+  - first:
+      213: 3423508962990832779
+    second: ALL UI ASSETS on one sheet_265
+  - first:
+      213: -4488456501736578139
+    second: ALL UI ASSETS on one sheet_266
+  - first:
+      213: -96073365481415176
+    second: ALL UI ASSETS on one sheet_267
+  - first:
+      213: 3323372611364725938
+    second: ALL UI ASSETS on one sheet_268
+  - first:
+      213: 9161994433714674103
+    second: ALL UI ASSETS on one sheet_269
+  - first:
+      213: 7423330156653446004
+    second: ALL UI ASSETS on one sheet_270
+  - first:
+      213: 2085539265659836403
+    second: ALL UI ASSETS on one sheet_271
+  - first:
+      213: 8767188240216419282
+    second: ALL UI ASSETS on one sheet_272
+  - first:
+      213: 3736906914453612406
+    second: ALL UI ASSETS on one sheet_273
+  - first:
+      213: 7107050507829974382
+    second: ALL UI ASSETS on one sheet_274
+  - first:
+      213: -6371216238476480039
+    second: ALL UI ASSETS on one sheet_275
+  - first:
+      213: -3826229367690976470
+    second: ALL UI ASSETS on one sheet_276
+  - first:
+      213: 4134045168926475635
+    second: ALL UI ASSETS on one sheet_277
+  - first:
+      213: 5530063016059755285
+    second: ALL UI ASSETS on one sheet_278
+  - first:
+      213: -6138024348149493211
+    second: ALL UI ASSETS on one sheet_279
+  - first:
+      213: -1179886096196813314
+    second: ALL UI ASSETS on one sheet_280
+  - first:
+      213: -5699805568744938817
+    second: ALL UI ASSETS on one sheet_281
+  - first:
+      213: 7190445237895243649
+    second: ALL UI ASSETS on one sheet_282
+  - first:
+      213: 6052108766447705826
+    second: ALL UI ASSETS on one sheet_283
+  - first:
+      213: -7917812158180883765
+    second: ALL UI ASSETS on one sheet_284
+  - first:
+      213: -7737924095798206540
+    second: ALL UI ASSETS on one sheet_285
+  - first:
+      213: -514512177506698777
+    second: ALL UI ASSETS on one sheet_286
+  - first:
+      213: -1887714900129651903
+    second: ALL UI ASSETS on one sheet_287
+  - first:
+      213: 9028111410598342510
+    second: ALL UI ASSETS on one sheet_288
+  - first:
+      213: -6842609209650512637
+    second: ALL UI ASSETS on one sheet_289
+  - first:
+      213: 5862173062596252201
+    second: ALL UI ASSETS on one sheet_290
+  - first:
+      213: -1308740022726158286
+    second: ALL UI ASSETS on one sheet_291
+  - first:
+      213: 7551021642482640514
+    second: ALL UI ASSETS on one sheet_292
+  - first:
+      213: 4888179706643094019
+    second: ALL UI ASSETS on one sheet_293
+  - first:
+      213: -7076357902681723925
+    second: ALL UI ASSETS on one sheet_294
+  - first:
+      213: -6405150966189528423
+    second: ALL UI ASSETS on one sheet_295
+  - first:
+      213: 5755373568418014137
+    second: ALL UI ASSETS on one sheet_296
+  - first:
+      213: -3806623745778355390
+    second: ALL UI ASSETS on one sheet_297
+  - first:
+      213: -3356750929791048473
+    second: ALL UI ASSETS on one sheet_298
+  - first:
+      213: 4522444084988139247
+    second: ALL UI ASSETS on one sheet_299
+  - first:
+      213: 2801784982972615650
+    second: ALL UI ASSETS on one sheet_300
+  - first:
+      213: -2758998859144372162
+    second: ALL UI ASSETS on one sheet_301
+  - first:
+      213: 7943203849887484165
+    second: ALL UI ASSETS on one sheet_302
+  - first:
+      213: -6197651609670515141
+    second: ALL UI ASSETS on one sheet_303
+  - first:
+      213: -5730750759156888391
+    second: ALL UI ASSETS on one sheet_304
+  - first:
+      213: -5532956992478346838
+    second: ALL UI ASSETS on one sheet_305
+  - first:
+      213: 3056111121225523341
+    second: ALL UI ASSETS on one sheet_306
+  - first:
+      213: 1939286974512648651
+    second: ALL UI ASSETS on one sheet_307
+  - first:
+      213: 5782885618705325569
+    second: ALL UI ASSETS on one sheet_308
+  - first:
+      213: 2616458281259262049
+    second: ALL UI ASSETS on one sheet_309
+  - first:
+      213: -8646578662226631286
+    second: ALL UI ASSETS on one sheet_310
+  - first:
+      213: 4329285014209173621
+    second: ALL UI ASSETS on one sheet_311
+  - first:
+      213: 4638307015980538359
+    second: ALL UI ASSETS on one sheet_312
+  - first:
+      213: 4929136274211710271
+    second: ALL UI ASSETS on one sheet_313
+  - first:
+      213: 8397661035097222187
+    second: ALL UI ASSETS on one sheet_314
+  - first:
+      213: -5717012431890489416
+    second: ALL UI ASSETS on one sheet_315
+  - first:
+      213: -2376975634920770680
+    second: ALL UI ASSETS on one sheet_316
+  - first:
+      213: 4163829641658484249
+    second: ALL UI ASSETS on one sheet_317
+  - first:
+      213: 3401870067987559842
+    second: ALL UI ASSETS on one sheet_318
+  - first:
+      213: 6537300840521072977
+    second: ALL UI ASSETS on one sheet_319
+  - first:
+      213: 4195445464488207572
+    second: ALL UI ASSETS on one sheet_320
+  - first:
+      213: -7854612430686862643
+    second: ALL UI ASSETS on one sheet_321
+  - first:
+      213: 9161771481121591144
+    second: ALL UI ASSETS on one sheet_322
+  - first:
+      213: -7335585281529923130
+    second: ALL UI ASSETS on one sheet_323
+  - first:
+      213: 8129749821442081980
+    second: ALL UI ASSETS on one sheet_324
+  - first:
+      213: -3200800944801840574
+    second: ALL UI ASSETS on one sheet_325
+  - first:
+      213: 4538753892201064729
+    second: ALL UI ASSETS on one sheet_326
+  - first:
+      213: -3449523408919327362
+    second: ALL UI ASSETS on one sheet_327
+  - first:
+      213: -7193565330796688687
+    second: ALL UI ASSETS on one sheet_328
+  - first:
+      213: -8564247558354435397
+    second: ALL UI ASSETS on one sheet_329
+  - first:
+      213: -3985215177432409787
+    second: ALL UI ASSETS on one sheet_330
+  - first:
+      213: 747169947292228287
+    second: ALL UI ASSETS on one sheet_331
+  - first:
+      213: 4391347692393062773
+    second: ALL UI ASSETS on one sheet_332
+  - first:
+      213: 2635551139029544880
+    second: ALL UI ASSETS on one sheet_333
+  - first:
+      213: -88373817755656956
+    second: ALL UI ASSETS on one sheet_334
+  - first:
+      213: 4461806994632811984
+    second: ALL UI ASSETS on one sheet_335
+  - first:
+      213: -134014091821217821
+    second: ALL UI ASSETS on one sheet_336
+  - first:
+      213: -3247029158987049124
+    second: ALL UI ASSETS on one sheet_337
+  - first:
+      213: 8133865987353041734
+    second: ALL UI ASSETS on one sheet_338
+  - first:
+      213: -1098420748756011073
+    second: ALL UI ASSETS on one sheet_339
+  - first:
+      213: 4425169511433067964
+    second: ALL UI ASSETS on one sheet_340
+  - first:
+      213: 1552151883767249377
+    second: ALL UI ASSETS on one sheet_341
+  - first:
+      213: -9104966116176147366
+    second: ALL UI ASSETS on one sheet_342
+  - first:
+      213: -4446518101398933602
+    second: ALL UI ASSETS on one sheet_343
+  - first:
+      213: -3065529610817784753
+    second: ALL UI ASSETS on one sheet_344
+  - first:
+      213: -8359401346049451515
+    second: ALL UI ASSETS on one sheet_345
+  - first:
+      213: 6165481300376147027
+    second: ALL UI ASSETS on one sheet_346
+  - first:
+      213: 2542628748720151837
+    second: ALL UI ASSETS on one sheet_347
+  - first:
+      213: 6434125094928106042
+    second: ALL UI ASSETS on one sheet_348
+  - first:
+      213: 4593664468076154872
+    second: ALL UI ASSETS on one sheet_349
+  - first:
+      213: -7433354486010057910
+    second: ALL UI ASSETS on one sheet_350
+  - first:
+      213: 2735649263487887636
+    second: ALL UI ASSETS on one sheet_351
+  - first:
+      213: 3385778418186660855
+    second: ALL UI ASSETS on one sheet_352
+  - first:
+      213: -4023200390951501259
+    second: ALL UI ASSETS on one sheet_353
+  - first:
+      213: -1919101174778018903
+    second: ALL UI ASSETS on one sheet_354
+  - first:
+      213: 5525228791985338480
+    second: ALL UI ASSETS on one sheet_355
+  - first:
+      213: 8525119940200561571
+    second: ALL UI ASSETS on one sheet_356
+  - first:
+      213: -9097957423418925119
+    second: ALL UI ASSETS on one sheet_357
+  - first:
+      213: -2324120206529221087
+    second: ALL UI ASSETS on one sheet_358
+  - first:
+      213: 3507762028708889247
+    second: ALL UI ASSETS on one sheet_359
+  - first:
+      213: -3018144887502417213
+    second: ALL UI ASSETS on one sheet_360
+  - first:
+      213: -790218836548531040
+    second: ALL UI ASSETS on one sheet_361
+  - first:
+      213: -44454737294308235
+    second: ALL UI ASSETS on one sheet_362
+  - first:
+      213: 6118673944121790577
+    second: ALL UI ASSETS on one sheet_363
+  - first:
+      213: 1037223475876076030
+    second: ALL UI ASSETS on one sheet_364
+  - first:
+      213: 1571436541983811325
+    second: ALL UI ASSETS on one sheet_365
+  - first:
+      213: 4310140032135543981
+    second: ALL UI ASSETS on one sheet_366
+  - first:
+      213: 6174307529387581253
+    second: ALL UI ASSETS on one sheet_367
+  - first:
+      213: -756113130219874838
+    second: ALL UI ASSETS on one sheet_368
+  - first:
+      213: -1206482625277343006
+    second: ALL UI ASSETS on one sheet_369
+  - first:
+      213: -730911552930439262
+    second: ALL UI ASSETS on one sheet_370
+  - first:
+      213: -8698119175206786007
+    second: ALL UI ASSETS on one sheet_371
+  - first:
+      213: 5604448282246502417
+    second: ALL UI ASSETS on one sheet_372
+  - first:
+      213: 1564393798900475890
+    second: ALL UI ASSETS on one sheet_373
+  - first:
+      213: 2058284550528505696
+    second: ALL UI ASSETS on one sheet_374
+  - first:
+      213: -4017127623783763062
+    second: ALL UI ASSETS on one sheet_375
+  - first:
+      213: -1923495733089549091
+    second: ALL UI ASSETS on one sheet_376
+  - first:
+      213: 2223753655934885097
+    second: ALL UI ASSETS on one sheet_377
+  - first:
+      213: 1734447536190710570
+    second: ALL UI ASSETS on one sheet_378
+  - first:
+      213: -5143744408333715265
+    second: ALL UI ASSETS on one sheet_379
+  - first:
+      213: -6069896872023264367
+    second: ALL UI ASSETS on one sheet_380
+  - first:
+      213: 5235152838268576924
+    second: ALL UI ASSETS on one sheet_381
+  - first:
+      213: -2301281514136638671
+    second: ALL UI ASSETS on one sheet_382
+  - first:
+      213: -3686521069274222458
+    second: ALL UI ASSETS on one sheet_383
+  - first:
+      213: 8203488998648427585
+    second: ALL UI ASSETS on one sheet_384
+  - first:
+      213: 7020537791433859506
+    second: ALL UI ASSETS on one sheet_385
+  - first:
+      213: -3409415679384474653
+    second: ALL UI ASSETS on one sheet_386
+  - first:
+      213: 4749785665934602072
+    second: ALL UI ASSETS on one sheet_387
+  - first:
+      213: -4528778499692290177
+    second: ALL UI ASSETS on one sheet_388
+  - first:
+      213: -4712322838531780019
+    second: ALL UI ASSETS on one sheet_389
+  - first:
+      213: 8617656883232217592
+    second: ALL UI ASSETS on one sheet_390
+  - first:
+      213: -9005969804788790180
+    second: ALL UI ASSETS on one sheet_391
+  - first:
+      213: 427514967312775350
+    second: ALL UI ASSETS on one sheet_392
+  - first:
+      213: -1208516772312607116
+    second: ALL UI ASSETS on one sheet_393
+  - first:
+      213: -1091340388365742367
+    second: ALL UI ASSETS on one sheet_394
+  - first:
+      213: 5018660106096893771
+    second: ALL UI ASSETS on one sheet_395
+  - first:
+      213: -2022946242649089078
+    second: ALL UI ASSETS on one sheet_396
+  - first:
+      213: -7088612988530475027
+    second: ALL UI ASSETS on one sheet_397
+  - first:
+      213: 2439129200160214746
+    second: ALL UI ASSETS on one sheet_398
+  - first:
+      213: -2202775576810615470
+    second: ALL UI ASSETS on one sheet_399
+  - first:
+      213: -6172582679375400049
+    second: ALL UI ASSETS on one sheet_400
+  - first:
+      213: -6300662873308197604
+    second: ALL UI ASSETS on one sheet_401
+  - first:
+      213: -1493244488260481679
+    second: ALL UI ASSETS on one sheet_402
+  - first:
+      213: -7896175218166139430
+    second: ALL UI ASSETS on one sheet_403
+  - first:
+      213: 7078552512364145967
+    second: ALL UI ASSETS on one sheet_404
+  - first:
+      213: -5483640107406277565
+    second: ALL UI ASSETS on one sheet_405
+  - first:
+      213: -8383949107551960681
+    second: ALL UI ASSETS on one sheet_406
+  - first:
+      213: -8983201482500594957
+    second: ALL UI ASSETS on one sheet_407
+  - first:
+      213: -3241348578757263408
+    second: ALL UI ASSETS on one sheet_408
+  - first:
+      213: -1945924562424264630
+    second: ALL UI ASSETS on one sheet_409
+  - first:
+      213: -8568353861064487432
+    second: ALL UI ASSETS on one sheet_410
+  - first:
+      213: -8251684722762248570
+    second: ALL UI ASSETS on one sheet_411
+  - first:
+      213: 1420163963162415003
+    second: ALL UI ASSETS on one sheet_412
+  - first:
+      213: -3839877254157005194
+    second: ALL UI ASSETS on one sheet_413
+  - first:
+      213: 4141647254906033423
+    second: ALL UI ASSETS on one sheet_414
+  - first:
+      213: 1208415062314594999
+    second: ALL UI ASSETS on one sheet_415
+  - first:
+      213: -8460323687109670447
+    second: ALL UI ASSETS on one sheet_416
+  - first:
+      213: -9056876467972434268
+    second: ALL UI ASSETS on one sheet_417
+  - first:
+      213: -631049902578492991
+    second: ALL UI ASSETS on one sheet_418
+  - first:
+      213: 31468541338402601
+    second: ALL UI ASSETS on one sheet_419
+  - first:
+      213: -5508005288315759961
+    second: ALL UI ASSETS on one sheet_420
+  - first:
+      213: 6756475884677832032
+    second: ALL UI ASSETS on one sheet_421
+  - first:
+      213: -1935669110210328135
+    second: ALL UI ASSETS on one sheet_422
+  - first:
+      213: 8145237910584249919
+    second: ALL UI ASSETS on one sheet_423
+  - first:
+      213: -3821784152636212641
+    second: ALL UI ASSETS on one sheet_424
+  - first:
+      213: 2495820609129193456
+    second: ALL UI ASSETS on one sheet_425
+  - first:
+      213: -5142570775875467998
+    second: ALL UI ASSETS on one sheet_426
+  - first:
+      213: -5721635585061073662
+    second: ALL UI ASSETS on one sheet_427
+  - first:
+      213: -4002275709641728843
+    second: ALL UI ASSETS on one sheet_428
+  - first:
+      213: 4277456878330072703
+    second: ALL UI ASSETS on one sheet_429
+  - first:
+      213: 103702191928932668
+    second: ALL UI ASSETS on one sheet_430
+  - first:
+      213: 5797463813849767121
+    second: ALL UI ASSETS on one sheet_431
+  - first:
+      213: -8506500349121907583
+    second: ALL UI ASSETS on one sheet_432
+  - first:
+      213: 1970203470940677812
+    second: ALL UI ASSETS on one sheet_433
+  - first:
+      213: -6174648348354875504
+    second: ALL UI ASSETS on one sheet_434
+  - first:
+      213: 4405587555946584740
+    second: ALL UI ASSETS on one sheet_435
+  - first:
+      213: -3553444798991958282
+    second: ALL UI ASSETS on one sheet_436
+  - first:
+      213: -7734266899020853720
+    second: ALL UI ASSETS on one sheet_437
+  - first:
+      213: -2372123699385917279
+    second: ALL UI ASSETS on one sheet_438
+  - first:
+      213: 9019400860132307347
+    second: ALL UI ASSETS on one sheet_439
+  - first:
+      213: -2201089400064720174
+    second: ALL UI ASSETS on one sheet_440
+  - first:
+      213: 2043159307797970190
+    second: ALL UI ASSETS on one sheet_441
+  - first:
+      213: 5307059651751488063
+    second: ALL UI ASSETS on one sheet_442
+  - first:
+      213: -4951620494437321362
+    second: ALL UI ASSETS on one sheet_443
+  - first:
+      213: -4541175918296156383
+    second: ALL UI ASSETS on one sheet_444
+  - first:
+      213: 5342358726930263460
+    second: ALL UI ASSETS on one sheet_445
+  - first:
+      213: 3995022166628357037
+    second: ALL UI ASSETS on one sheet_446
+  - first:
+      213: -749242727406029539
+    second: ALL UI ASSETS on one sheet_447
+  - first:
+      213: -6306195321599065667
+    second: ALL UI ASSETS on one sheet_448
+  - first:
+      213: -5532646634467379038
+    second: ALL UI ASSETS on one sheet_449
+  - first:
+      213: 6881980954794420522
+    second: ALL UI ASSETS on one sheet_450
+  - first:
+      213: -2328134522903714931
+    second: ALL UI ASSETS on one sheet_451
+  - first:
+      213: 9193368672331864448
+    second: ALL UI ASSETS on one sheet_452
+  - first:
+      213: 228928504875165068
+    second: ALL UI ASSETS on one sheet_453
+  - first:
+      213: 5415914291666466567
+    second: ALL UI ASSETS on one sheet_454
+  - first:
+      213: 2807960653672256801
+    second: ALL UI ASSETS on one sheet_455
+  - first:
+      213: 4259713092029438214
+    second: ALL UI ASSETS on one sheet_456
+  - first:
+      213: 179291650123417107
+    second: ALL UI ASSETS on one sheet_457
+  - first:
+      213: 3443391151254722602
+    second: ALL UI ASSETS on one sheet_458
+  - first:
+      213: -8249101934442530454
+    second: ALL UI ASSETS on one sheet_459
+  - first:
+      213: -1371113152246932232
+    second: ALL UI ASSETS on one sheet_460
+  - first:
+      213: -5913969483995436681
+    second: ALL UI ASSETS on one sheet_461
+  - first:
+      213: 7490876085625868435
+    second: ALL UI ASSETS on one sheet_462
+  - first:
+      213: 7966649166230855366
+    second: ALL UI ASSETS on one sheet_463
+  - first:
+      213: 5196117006141249962
+    second: ALL UI ASSETS on one sheet_464
+  - first:
+      213: -5012670547263769591
+    second: ALL UI ASSETS on one sheet_465
+  - first:
+      213: 7938340427819762665
+    second: ALL UI ASSETS on one sheet_466
+  - first:
+      213: -7337502294848836478
+    second: ALL UI ASSETS on one sheet_467
+  - first:
+      213: 1457633061875176448
+    second: ALL UI ASSETS on one sheet_468
+  - first:
+      213: -3644332339139519691
+    second: ALL UI ASSETS on one sheet_469
+  - first:
+      213: 4523289120950491798
+    second: ALL UI ASSETS on one sheet_470
+  - first:
+      213: -7271197136495951222
+    second: ALL UI ASSETS on one sheet_471
+  - first:
+      213: -62109682846368986
+    second: ALL UI ASSETS on one sheet_472
+  - first:
+      213: 156156751777134152
+    second: ALL UI ASSETS on one sheet_473
+  - first:
+      213: 8601388143237290647
+    second: ALL UI ASSETS on one sheet_474
+  - first:
+      213: -7862788753275223142
+    second: ALL UI ASSETS on one sheet_475
+  - first:
+      213: 2389903578647914780
+    second: ALL UI ASSETS on one sheet_476
+  - first:
+      213: -3525795351373999793
+    second: ALL UI ASSETS on one sheet_477
+  - first:
+      213: 2564224327569097991
+    second: ALL UI ASSETS on one sheet_478
+  - first:
+      213: -7928268412204747391
+    second: ALL UI ASSETS on one sheet_479
+  - first:
+      213: -4217306731659141942
+    second: ALL UI ASSETS on one sheet_480
+  - first:
+      213: 3755510818882313720
+    second: ALL UI ASSETS on one sheet_481
+  - first:
+      213: 4319015523552457467
+    second: ALL UI ASSETS on one sheet_482
+  - first:
+      213: -6317550313038937967
+    second: ALL UI ASSETS on one sheet_483
+  - first:
+      213: 6071760108231317484
+    second: ALL UI ASSETS on one sheet_484
+  - first:
+      213: 4521629633123226795
+    second: ALL UI ASSETS on one sheet_485
+  - first:
+      213: 4348801624314698867
+    second: ALL UI ASSETS on one sheet_486
+  - first:
+      213: 258378909833810066
+    second: ALL UI ASSETS on one sheet_487
+  - first:
+      213: 1293123805054226716
+    second: ALL UI ASSETS on one sheet_488
+  - first:
+      213: 3543832625446374875
+    second: ALL UI ASSETS on one sheet_489
+  - first:
+      213: -4592997050410452645
+    second: ALL UI ASSETS on one sheet_490
+  - first:
+      213: 5783408685024218869
+    second: ALL UI ASSETS on one sheet_491
+  - first:
+      213: 5322048782675776550
+    second: ALL UI ASSETS on one sheet_492
+  - first:
+      213: -6920582929829476614
+    second: ALL UI ASSETS on one sheet_493
+  - first:
+      213: -5113466613865655921
+    second: ALL UI ASSETS on one sheet_494
+  - first:
+      213: -4586936964146853073
+    second: ALL UI ASSETS on one sheet_495
+  - first:
+      213: -3530021305143855228
+    second: ALL UI ASSETS on one sheet_496
+  - first:
+      213: -6232976170976824121
+    second: ALL UI ASSETS on one sheet_497
+  - first:
+      213: -6425717806862020868
+    second: ALL UI ASSETS on one sheet_498
+  - first:
+      213: -1006707801695723048
+    second: ALL UI ASSETS on one sheet_499
+  - first:
+      213: 6362576271339043710
+    second: ALL UI ASSETS on one sheet_500
+  - first:
+      213: -6107593936525716848
+    second: ALL UI ASSETS on one sheet_501
+  - first:
+      213: -4241356096176079317
+    second: ALL UI ASSETS on one sheet_502
+  - first:
+      213: 2697283055442492953
+    second: ALL UI ASSETS on one sheet_503
+  - first:
+      213: 1856900655389274645
+    second: ALL UI ASSETS on one sheet_504
+  - first:
+      213: -5684765001781477108
+    second: ALL UI ASSETS on one sheet_505
+  - first:
+      213: -1130261699705079769
+    second: ALL UI ASSETS on one sheet_506
+  - first:
+      213: 6270942585067085716
+    second: ALL UI ASSETS on one sheet_507
+  - first:
+      213: 871920894264009088
+    second: ALL UI ASSETS on one sheet_508
+  - first:
+      213: -6564595993795505394
+    second: ALL UI ASSETS on one sheet_509
+  - first:
+      213: 6736717768561181411
+    second: ALL UI ASSETS on one sheet_510
+  - first:
+      213: 5696962915909545956
+    second: ALL UI ASSETS on one sheet_511
+  - first:
+      213: 1228430883214541362
+    second: ALL UI ASSETS on one sheet_512
+  - first:
+      213: 1879650005857993384
+    second: ALL UI ASSETS on one sheet_513
+  - first:
+      213: -6025923776393525557
+    second: ALL UI ASSETS on one sheet_514
+  - first:
+      213: 4688930335891622635
+    second: ALL UI ASSETS on one sheet_515
+  - first:
+      213: -8517869605413463562
+    second: ALL UI ASSETS on one sheet_516
+  - first:
+      213: 5360328005329906361
+    second: ALL UI ASSETS on one sheet_517
+  - first:
+      213: -667444320626202466
+    second: ALL UI ASSETS on one sheet_518
+  - first:
+      213: 8421702358389020654
+    second: ALL UI ASSETS on one sheet_519
+  - first:
+      213: 1980020469148474456
+    second: ALL UI ASSETS on one sheet_520
+  - first:
+      213: 1359385577959515990
+    second: ALL UI ASSETS on one sheet_521
+  - first:
+      213: 9162586321159439606
+    second: ALL UI ASSETS on one sheet_522
+  - first:
+      213: -2145570307386524376
+    second: ALL UI ASSETS on one sheet_523
+  - first:
+      213: -5771642978065239389
+    second: ALL UI ASSETS on one sheet_524
+  - first:
+      213: -7266951269260759775
+    second: ALL UI ASSETS on one sheet_525
+  - first:
+      213: -1194159534742886805
+    second: ALL UI ASSETS on one sheet_526
+  - first:
+      213: -5094066622679635166
+    second: ALL UI ASSETS on one sheet_527
+  - first:
+      213: -6302236032608008512
+    second: ALL UI ASSETS on one sheet_528
+  - first:
+      213: 2662299562978441726
+    second: ALL UI ASSETS on one sheet_529
+  - first:
+      213: 8082677817414295015
+    second: ALL UI ASSETS on one sheet_530
+  - first:
+      213: 694417079834847778
+    second: ALL UI ASSETS on one sheet_531
+  - first:
+      213: 900712824086021458
+    second: ALL UI ASSETS on one sheet_532
+  - first:
+      213: 4255708726633850254
+    second: ALL UI ASSETS on one sheet_533
+  - first:
+      213: -4019847065682646175
+    second: ALL UI ASSETS on one sheet_534
+  - first:
+      213: -2144762376548335576
+    second: ALL UI ASSETS on one sheet_535
+  - first:
+      213: 2678290003085119198
+    second: ALL UI ASSETS on one sheet_536
+  - first:
+      213: 1062331560817167811
+    second: ALL UI ASSETS on one sheet_537
+  - first:
+      213: 8696889263809751917
+    second: ALL UI ASSETS on one sheet_538
+  - first:
+      213: -5365157065557989429
+    second: ALL UI ASSETS on one sheet_539
+  - first:
+      213: 5242946620685778096
+    second: ALL UI ASSETS on one sheet_540
+  - first:
+      213: 4214109705780375149
+    second: ALL UI ASSETS on one sheet_541
+  - first:
+      213: 5759359187766357851
+    second: ALL UI ASSETS on one sheet_542
+  - first:
+      213: 7399987423444573319
+    second: ALL UI ASSETS on one sheet_543
+  - first:
+      213: 6988819184635030597
+    second: ALL UI ASSETS on one sheet_544
+  - first:
+      213: -3977895302917346249
+    second: ALL UI ASSETS on one sheet_545
+  - first:
+      213: -5485045108088706566
+    second: ALL UI ASSETS on one sheet_546
+  - first:
+      213: -8619864727226145549
+    second: ALL UI ASSETS on one sheet_547
+  - first:
+      213: -8025291487250608941
+    second: ALL UI ASSETS on one sheet_548
+  - first:
+      213: 4138533811850078599
+    second: ALL UI ASSETS on one sheet_549
+  - first:
+      213: 30035747148188869
+    second: ALL UI ASSETS on one sheet_550
+  - first:
+      213: -4194467952472611620
+    second: ALL UI ASSETS on one sheet_551
+  - first:
+      213: 1306887279776815816
+    second: ALL UI ASSETS on one sheet_552
+  - first:
+      213: 7264721898898208661
+    second: ALL UI ASSETS on one sheet_553
+  - first:
+      213: -5175991728218151487
+    second: ALL UI ASSETS on one sheet_554
+  - first:
+      213: 6358134845206101038
+    second: ALL UI ASSETS on one sheet_555
+  - first:
+      213: -7239811603210397392
+    second: ALL UI ASSETS on one sheet_556
+  - first:
+      213: 1560091787823884662
+    second: ALL UI ASSETS on one sheet_557
+  - first:
+      213: -711288312514123434
+    second: ALL UI ASSETS on one sheet_558
+  - first:
+      213: -4073396362320273031
+    second: ALL UI ASSETS on one sheet_559
+  - first:
+      213: -6516966755835624122
+    second: ALL UI ASSETS on one sheet_560
+  - first:
+      213: -4660499254327444771
+    second: ALL UI ASSETS on one sheet_561
+  - first:
+      213: 8208110632782476917
+    second: ALL UI ASSETS on one sheet_562
+  - first:
+      213: 5290518046877456852
+    second: ALL UI ASSETS on one sheet_563
+  - first:
+      213: 1362473362871054743
+    second: ALL UI ASSETS on one sheet_564
+  - first:
+      213: 594733374819514323
+    second: ALL UI ASSETS on one sheet_565
+  - first:
+      213: 2900161998151848114
+    second: ALL UI ASSETS on one sheet_566
+  - first:
+      213: -9183389092154791651
+    second: ALL UI ASSETS on one sheet_567
+  - first:
+      213: 3408458892804165353
+    second: ALL UI ASSETS on one sheet_568
+  - first:
+      213: 6500669572995183174
+    second: ALL UI ASSETS on one sheet_569
+  - first:
+      213: 34793951080911748
+    second: ALL UI ASSETS on one sheet_570
+  - first:
+      213: 8652259430327043942
+    second: ALL UI ASSETS on one sheet_571
+  - first:
+      213: -181566358171654972
+    second: ALL UI ASSETS on one sheet_572
+  - first:
+      213: 5671926884538451552
+    second: ALL UI ASSETS on one sheet_573
+  - first:
+      213: -964297133898802145
+    second: ALL UI ASSETS on one sheet_574
+  - first:
+      213: -5586150929536649884
+    second: ALL UI ASSETS on one sheet_575
+  - first:
+      213: 6761724601243548703
+    second: ALL UI ASSETS on one sheet_576
+  - first:
+      213: 2169528072317983772
+    second: ALL UI ASSETS on one sheet_577
+  - first:
+      213: -1572821789758721108
+    second: ALL UI ASSETS on one sheet_578
+  - first:
+      213: -1180285171993802678
+    second: ALL UI ASSETS on one sheet_579
+  - first:
+      213: 7503706825421913213
+    second: ALL UI ASSETS on one sheet_580
+  - first:
+      213: -8911109751214033197
+    second: ALL UI ASSETS on one sheet_581
+  - first:
+      213: -4483799551552540015
+    second: ALL UI ASSETS on one sheet_582
+  - first:
+      213: -341830186532950393
+    second: ALL UI ASSETS on one sheet_583
+  - first:
+      213: -6990987088230056254
+    second: ALL UI ASSETS on one sheet_584
+  - first:
+      213: 2146505849043559632
+    second: ALL UI ASSETS on one sheet_585
+  - first:
+      213: 1702507175426940503
+    second: ALL UI ASSETS on one sheet_586
+  - first:
+      213: 6107389090368848720
+    second: ALL UI ASSETS on one sheet_587
+  - first:
+      213: -7700164693106794870
+    second: ALL UI ASSETS on one sheet_588
+  - first:
+      213: 2707497011350493704
+    second: ALL UI ASSETS on one sheet_589
+  - first:
+      213: 8265854039885478407
+    second: ALL UI ASSETS on one sheet_590
+  - first:
+      213: -1559959307700428222
+    second: ALL UI ASSETS on one sheet_591
+  - first:
+      213: -256290472419903118
+    second: ALL UI ASSETS on one sheet_592
+  - first:
+      213: -3430393638764855644
+    second: ALL UI ASSETS on one sheet_593
+  - first:
+      213: -4026885082061410704
+    second: ALL UI ASSETS on one sheet_594
+  - first:
+      213: -5522387678994462037
+    second: ALL UI ASSETS on one sheet_595
+  - first:
+      213: 7587908564248197984
+    second: ALL UI ASSETS on one sheet_596
+  - first:
+      213: -1606383639743322257
+    second: ALL UI ASSETS on one sheet_597
+  - first:
+      213: -2627404871643649965
+    second: ALL UI ASSETS on one sheet_598
+  - first:
+      213: 4078286128675206760
+    second: ALL UI ASSETS on one sheet_599
+  - first:
+      213: 1146807788538569346
+    second: ALL UI ASSETS on one sheet_600
+  - first:
+      213: 8741592281583837423
+    second: ALL UI ASSETS on one sheet_601
+  - first:
+      213: 2080826875190359596
+    second: ALL UI ASSETS on one sheet_602
+  - first:
+      213: -1563679898590895574
+    second: ALL UI ASSETS on one sheet_603
+  - first:
+      213: 7954212761846073695
+    second: ALL UI ASSETS on one sheet_604
+  - first:
+      213: -9078197824252946766
+    second: ALL UI ASSETS on one sheet_605
+  - first:
+      213: 5764760564327904441
+    second: ALL UI ASSETS on one sheet_606
+  - first:
+      213: -8179846906420217735
+    second: ALL UI ASSETS on one sheet_607
+  - first:
+      213: 3207093431455992846
+    second: ALL UI ASSETS on one sheet_608
+  - first:
+      213: 1792264153206494712
+    second: ALL UI ASSETS on one sheet_609
+  - first:
+      213: 2076988759816367302
+    second: ALL UI ASSETS on one sheet_610
+  - first:
+      213: 8445869818196585030
+    second: ALL UI ASSETS on one sheet_611
+  - first:
+      213: 1190858204073012788
+    second: ALL UI ASSETS on one sheet_612
+  - first:
+      213: 8808771648987161996
+    second: ALL UI ASSETS on one sheet_613
+  - first:
+      213: -3387177364477675500
+    second: ALL UI ASSETS on one sheet_614
+  - first:
+      213: 8541760915236681990
+    second: ALL UI ASSETS on one sheet_615
+  - first:
+      213: 6067811786144567436
+    second: ALL UI ASSETS on one sheet_616
+  - first:
+      213: 8662747202624299952
+    second: ALL UI ASSETS on one sheet_617
+  - first:
+      213: -8006960757969473421
+    second: ALL UI ASSETS on one sheet_618
+  - first:
+      213: 2963592477435269842
+    second: ALL UI ASSETS on one sheet_619
+  - first:
+      213: -508783173815697048
+    second: ALL UI ASSETS on one sheet_620
+  - first:
+      213: 6223589805572384089
+    second: ALL UI ASSETS on one sheet_621
+  - first:
+      213: -4388414452579691035
+    second: ALL UI ASSETS on one sheet_622
+  - first:
+      213: 8900412596329120439
+    second: ALL UI ASSETS on one sheet_623
+  - first:
+      213: -1196675790264671963
+    second: ALL UI ASSETS on one sheet_624
+  - first:
+      213: -404182525653548119
+    second: ALL UI ASSETS on one sheet_625
+  - first:
+      213: 8917307786694881
+    second: ALL UI ASSETS on one sheet_626
+  - first:
+      213: 5161096778032801122
+    second: ALL UI ASSETS on one sheet_627
+  - first:
+      213: -6418560619661410082
+    second: ALL UI ASSETS on one sheet_628
+  - first:
+      213: 270187700827789231
+    second: ALL UI ASSETS on one sheet_629
+  - first:
+      213: -5298721330246392945
+    second: ALL UI ASSETS on one sheet_630
+  - first:
+      213: 3021410744287562937
+    second: ALL UI ASSETS on one sheet_631
+  - first:
+      213: 6685433681424760955
+    second: ALL UI ASSETS on one sheet_632
+  - first:
+      213: 4190032887915296216
+    second: ALL UI ASSETS on one sheet_633
+  - first:
+      213: -3637276620415739776
+    second: ALL UI ASSETS on one sheet_634
+  - first:
+      213: 4996044081776382558
+    second: ALL UI ASSETS on one sheet_635
+  - first:
+      213: 7865489399114839086
+    second: ALL UI ASSETS on one sheet_636
+  - first:
+      213: 2823578530566912096
+    second: ALL UI ASSETS on one sheet_637
+  - first:
+      213: 834278732896395563
+    second: ALL UI ASSETS on one sheet_638
+  - first:
+      213: -960724870833166367
+    second: ALL UI ASSETS on one sheet_639
+  - first:
+      213: -4523400409728530601
+    second: ALL UI ASSETS on one sheet_640
+  - first:
+      213: 5077995094078816382
+    second: ALL UI ASSETS on one sheet_641
+  - first:
+      213: -4004306490716576294
+    second: ALL UI ASSETS on one sheet_642
+  - first:
+      213: -2114036631250164540
+    second: ALL UI ASSETS on one sheet_643
+  - first:
+      213: 4713866525770455251
+    second: ALL UI ASSETS on one sheet_644
+  - first:
+      213: 3228993058119792532
+    second: ALL UI ASSETS on one sheet_645
+  - first:
+      213: -3700833951604704922
+    second: ALL UI ASSETS on one sheet_646
+  - first:
+      213: -8852532583493477763
+    second: ALL UI ASSETS on one sheet_647
+  - first:
+      213: 569731643027582381
+    second: ALL UI ASSETS on one sheet_648
+  - first:
+      213: -7475797443740335502
+    second: ALL UI ASSETS on one sheet_649
+  - first:
+      213: -4661915809570020428
+    second: ALL UI ASSETS on one sheet_650
+  - first:
+      213: 5845774677570337542
+    second: ALL UI ASSETS on one sheet_651
+  - first:
+      213: 7149823569578752759
+    second: ALL UI ASSETS on one sheet_652
+  - first:
+      213: 6225030261871499176
+    second: ALL UI ASSETS on one sheet_653
+  - first:
+      213: 3300550383350302217
+    second: ALL UI ASSETS on one sheet_654
+  - first:
+      213: 1749660142725635470
+    second: ALL UI ASSETS on one sheet_655
+  - first:
+      213: 7103065635251061585
+    second: ALL UI ASSETS on one sheet_656
+  - first:
+      213: 8855314717308602805
+    second: ALL UI ASSETS on one sheet_657
+  - first:
+      213: -1414510564949352339
+    second: ALL UI ASSETS on one sheet_658
+  - first:
+      213: -1589800507503192874
+    second: ALL UI ASSETS on one sheet_659
+  - first:
+      213: -2732751776553829545
+    second: ALL UI ASSETS on one sheet_660
+  - first:
+      213: 2920063930584778729
+    second: ALL UI ASSETS on one sheet_661
+  - first:
+      213: 936429381214091478
+    second: ALL UI ASSETS on one sheet_662
+  - first:
+      213: -4946856235779736069
+    second: ALL UI ASSETS on one sheet_663
+  - first:
+      213: -5120002840994437544
+    second: ALL UI ASSETS on one sheet_664
+  - first:
+      213: 5254738964132662727
+    second: ALL UI ASSETS on one sheet_665
+  - first:
+      213: 4234016991905168259
+    second: ALL UI ASSETS on one sheet_666
+  - first:
+      213: -6829361033934655993
+    second: ALL UI ASSETS on one sheet_667
+  - first:
+      213: -3742434562729509986
+    second: ALL UI ASSETS on one sheet_668
+  - first:
+      213: 9220034661790215760
+    second: ALL UI ASSETS on one sheet_669
+  - first:
+      213: -8349869029825195167
+    second: ALL UI ASSETS on one sheet_670
+  - first:
+      213: 5132843247006305774
+    second: ALL UI ASSETS on one sheet_671
+  - first:
+      213: 6344726174268278408
+    second: ALL UI ASSETS on one sheet_672
+  - first:
+      213: -3784441555765710851
+    second: ALL UI ASSETS on one sheet_673
+  - first:
+      213: -6515517478605251276
+    second: ALL UI ASSETS on one sheet_674
+  - first:
+      213: 8715264589152592837
+    second: ALL UI ASSETS on one sheet_675
+  - first:
+      213: 7270640209989837554
+    second: ALL UI ASSETS on one sheet_676
+  - first:
+      213: -877438479918986605
+    second: ALL UI ASSETS on one sheet_677
+  - first:
+      213: -4836501630387576138
+    second: ALL UI ASSETS on one sheet_678
+  - first:
+      213: -5711506988994924504
+    second: ALL UI ASSETS on one sheet_679
+  - first:
+      213: 294603473503673066
+    second: ALL UI ASSETS on one sheet_680
+  - first:
+      213: -5149881933033767775
+    second: ALL UI ASSETS on one sheet_681
+  - first:
+      213: -5096585183136710885
+    second: ALL UI ASSETS on one sheet_682
+  - first:
+      213: 5013672319124571237
+    second: ALL UI ASSETS on one sheet_683
+  - first:
+      213: -5249728218736930629
+    second: ALL UI ASSETS on one sheet_684
+  - first:
+      213: -3728742953240591252
+    second: ALL UI ASSETS on one sheet_685
+  - first:
+      213: 4957237682643332618
+    second: ALL UI ASSETS on one sheet_686
+  - first:
+      213: -2271520346745610099
+    second: ALL UI ASSETS on one sheet_687
+  - first:
+      213: 3870648009237199815
+    second: ALL UI ASSETS on one sheet_688
+  - first:
+      213: -5040923770466005602
+    second: ALL UI ASSETS on one sheet_689
+  - first:
+      213: -6731031522133418431
+    second: ALL UI ASSETS on one sheet_690
+  - first:
+      213: 7604962879374960509
+    second: ALL UI ASSETS on one sheet_691
+  - first:
+      213: 3884720022076776501
+    second: ALL UI ASSETS on one sheet_692
+  - first:
+      213: -3119577150405171891
+    second: ALL UI ASSETS on one sheet_693
+  - first:
+      213: -1634335862691232434
+    second: ALL UI ASSETS on one sheet_694
+  - first:
+      213: -5432936035333390510
+    second: ALL UI ASSETS on one sheet_695
+  - first:
+      213: 818491186390546784
+    second: ALL UI ASSETS on one sheet_696
+  - first:
+      213: -1564017559103546271
+    second: ALL UI ASSETS on one sheet_697
+  - first:
+      213: 7112604445351777335
+    second: ALL UI ASSETS on one sheet_698
+  - first:
+      213: 7237702236931048066
+    second: ALL UI ASSETS on one sheet_699
+  - first:
+      213: 3122408523937288300
+    second: ALL UI ASSETS on one sheet_700
+  - first:
+      213: -6829560139949909354
+    second: ALL UI ASSETS on one sheet_701
+  - first:
+      213: 6219664806366538247
+    second: ALL UI ASSETS on one sheet_702
+  - first:
+      213: -1029239286327327506
+    second: ALL UI ASSETS on one sheet_703
+  - first:
+      213: 6994611913844743076
+    second: ALL UI ASSETS on one sheet_704
+  - first:
+      213: -4054676429669574654
+    second: ALL UI ASSETS on one sheet_705
+  - first:
+      213: 3863695827448573894
+    second: ALL UI ASSETS on one sheet_706
+  - first:
+      213: 1845054401192484970
+    second: ALL UI ASSETS on one sheet_707
+  - first:
+      213: 5405065670340330613
+    second: ALL UI ASSETS on one sheet_708
+  - first:
+      213: -4131149828204111254
+    second: ALL UI ASSETS on one sheet_709
+  - first:
+      213: 454230387380475216
+    second: ALL UI ASSETS on one sheet_710
+  - first:
+      213: -1599249358080025972
+    second: ALL UI ASSETS on one sheet_711
+  - first:
+      213: -174101290451054053
+    second: ALL UI ASSETS on one sheet_712
+  - first:
+      213: -7211867466176369981
+    second: ALL UI ASSETS on one sheet_713
+  - first:
+      213: 2722851252130243954
+    second: ALL UI ASSETS on one sheet_714
+  - first:
+      213: -7229276309447193908
+    second: ALL UI ASSETS on one sheet_715
+  - first:
+      213: 3146784722528103749
+    second: ALL UI ASSETS on one sheet_716
+  - first:
+      213: -3855231745240125539
+    second: ALL UI ASSETS on one sheet_717
+  - first:
+      213: 1419997227902833318
+    second: ALL UI ASSETS on one sheet_718
+  - first:
+      213: 8562586930430909257
+    second: ALL UI ASSETS on one sheet_719
+  - first:
+      213: -7935842836658015613
+    second: ALL UI ASSETS on one sheet_720
+  - first:
+      213: -5733609697450113646
+    second: ALL UI ASSETS on one sheet_721
+  - first:
+      213: -4311712675137192188
+    second: ALL UI ASSETS on one sheet_722
+  - first:
+      213: 2107060689885392106
+    second: ALL UI ASSETS on one sheet_723
+  - first:
+      213: -4376556482569115383
+    second: ALL UI ASSETS on one sheet_724
+  - first:
+      213: 5432269370795459574
+    second: ALL UI ASSETS on one sheet_725
+  - first:
+      213: 8060921542734294855
+    second: ALL UI ASSETS on one sheet_726
+  - first:
+      213: -4659788375156427552
+    second: ALL UI ASSETS on one sheet_727
+  - first:
+      213: 3582569404607791112
+    second: ALL UI ASSETS on one sheet_728
+  - first:
+      213: -3868723883152838110
+    second: ALL UI ASSETS on one sheet_729
+  - first:
+      213: -2935647603462255069
+    second: ALL UI ASSETS on one sheet_730
+  - first:
+      213: 3360084950451736632
+    second: ALL UI ASSETS on one sheet_731
+  - first:
+      213: -8736505022638809405
+    second: ALL UI ASSETS on one sheet_732
+  - first:
+      213: -5215560090146251608
+    second: ALL UI ASSETS on one sheet_733
+  - first:
+      213: -8252594768315039218
+    second: ALL UI ASSETS on one sheet_734
+  - first:
+      213: 6739603043404959574
+    second: ALL UI ASSETS on one sheet_735
+  - first:
+      213: 1449144529215292718
+    second: ALL UI ASSETS on one sheet_736
+  - first:
+      213: 3148052499010149541
+    second: ALL UI ASSETS on one sheet_737
+  - first:
+      213: -5581593470474058085
+    second: ALL UI ASSETS on one sheet_738
+  - first:
+      213: -6945384538797794361
+    second: ALL UI ASSETS on one sheet_739
+  - first:
+      213: -6624089190412608902
+    second: ALL UI ASSETS on one sheet_740
+  - first:
+      213: -6791042363307057439
+    second: ALL UI ASSETS on one sheet_741
+  - first:
+      213: 5774646003116764246
+    second: ALL UI ASSETS on one sheet_742
+  - first:
+      213: -5561431224946959489
+    second: ALL UI ASSETS on one sheet_743
+  - first:
+      213: 3966109313853007581
+    second: ALL UI ASSETS on one sheet_744
+  - first:
+      213: 302751298974048833
+    second: ALL UI ASSETS on one sheet_745
+  - first:
+      213: 8843093061304557577
+    second: ALL UI ASSETS on one sheet_746
+  - first:
+      213: 5673161398447673707
+    second: ALL UI ASSETS on one sheet_747
+  - first:
+      213: 4206502569946250718
+    second: ALL UI ASSETS on one sheet_748
+  - first:
+      213: 5003641747034505097
+    second: ALL UI ASSETS on one sheet_749
+  - first:
+      213: 7125030522183000277
+    second: ALL UI ASSETS on one sheet_750
+  - first:
+      213: -4963450722840071792
+    second: ALL UI ASSETS on one sheet_751
+  - first:
+      213: -7419925001525868471
+    second: ALL UI ASSETS on one sheet_752
+  - first:
+      213: -4315785771017487532
+    second: ALL UI ASSETS on one sheet_753
+  - first:
+      213: -3158510983716672912
+    second: ALL UI ASSETS on one sheet_754
+  - first:
+      213: -6920755530234332180
+    second: ALL UI ASSETS on one sheet_755
+  - first:
+      213: 5721553052291647586
+    second: ALL UI ASSETS on one sheet_756
+  - first:
+      213: 10404825101717804
+    second: ALL UI ASSETS on one sheet_757
+  - first:
+      213: 8157830838761065398
+    second: ALL UI ASSETS on one sheet_758
+  - first:
+      213: 7781194524708267576
+    second: ALL UI ASSETS on one sheet_759
+  - first:
+      213: -6107329825599831090
+    second: ALL UI ASSETS on one sheet_760
+  - first:
+      213: -7285943988342216471
+    second: ALL UI ASSETS on one sheet_761
+  - first:
+      213: 2573484228317556483
+    second: ALL UI ASSETS on one sheet_762
+  - first:
+      213: 1625764150725563437
+    second: ALL UI ASSETS on one sheet_763
+  - first:
+      213: -2362175433325824727
+    second: ALL UI ASSETS on one sheet_764
+  - first:
+      213: 1510474477255978166
+    second: ALL UI ASSETS on one sheet_765
+  - first:
+      213: 7599051337018244058
+    second: ALL UI ASSETS on one sheet_766
+  - first:
+      213: -3205441697919977874
+    second: ALL UI ASSETS on one sheet_767
+  - first:
+      213: -6757826012099768791
+    second: ALL UI ASSETS on one sheet_768
+  - first:
+      213: -4066619478386317716
+    second: ALL UI ASSETS on one sheet_769
+  - first:
+      213: -8405116089569581235
+    second: ALL UI ASSETS on one sheet_770
+  - first:
+      213: -348327399361936358
+    second: ALL UI ASSETS on one sheet_771
+  - first:
+      213: 2237411985438708384
+    second: ALL UI ASSETS on one sheet_772
+  - first:
+      213: -7520836220704856306
+    second: ALL UI ASSETS on one sheet_773
+  - first:
+      213: -8620614880663336082
+    second: ALL UI ASSETS on one sheet_774
+  - first:
+      213: 8036783446042929360
+    second: ALL UI ASSETS on one sheet_775
+  - first:
+      213: -4387833995642424087
+    second: ALL UI ASSETS on one sheet_776
+  - first:
+      213: 5105244264314873407
+    second: ALL UI ASSETS on one sheet_777
+  - first:
+      213: -7192415218327314501
+    second: ALL UI ASSETS on one sheet_778
+  - first:
+      213: 7208680654856900343
+    second: ALL UI ASSETS on one sheet_779
+  - first:
+      213: 6150163855340739812
+    second: ALL UI ASSETS on one sheet_780
+  - first:
+      213: 3942275474901252917
+    second: ALL UI ASSETS on one sheet_781
+  - first:
+      213: 2636370996424692006
+    second: ALL UI ASSETS on one sheet_782
+  - first:
+      213: 3886509011188300511
+    second: ALL UI ASSETS on one sheet_783
+  - first:
+      213: 6857176159569967211
+    second: ALL UI ASSETS on one sheet_784
+  - first:
+      213: 8891293661192359692
+    second: ALL UI ASSETS on one sheet_785
+  - first:
+      213: -5896881990378838176
+    second: ALL UI ASSETS on one sheet_786
+  - first:
+      213: 2229805441116551544
+    second: ALL UI ASSETS on one sheet_787
+  - first:
+      213: 2045883532356412436
+    second: ALL UI ASSETS on one sheet_788
+  - first:
+      213: -4979386182836310319
+    second: ALL UI ASSETS on one sheet_789
+  - first:
+      213: 8665557668044907688
+    second: ALL UI ASSETS on one sheet_790
+  - first:
+      213: 6800989079091419111
+    second: ALL UI ASSETS on one sheet_791
+  - first:
+      213: 5207864377767771742
+    second: ALL UI ASSETS on one sheet_792
+  - first:
+      213: -1991104864333689226
+    second: ALL UI ASSETS on one sheet_793
+  - first:
+      213: -3013909854943341083
+    second: ALL UI ASSETS on one sheet_794
+  - first:
+      213: -4242290452975477627
+    second: ALL UI ASSETS on one sheet_795
+  - first:
+      213: -4949407390954647145
+    second: ALL UI ASSETS on one sheet_796
+  - first:
+      213: 127337315056342221
+    second: ALL UI ASSETS on one sheet_797
+  - first:
+      213: -6257041767587657921
+    second: ALL UI ASSETS on one sheet_798
+  - first:
+      213: 1574541676001396291
+    second: ALL UI ASSETS on one sheet_799
+  - first:
+      213: 4125642091795090618
+    second: ALL UI ASSETS on one sheet_800
+  - first:
+      213: 8781539329537036533
+    second: ALL UI ASSETS on one sheet_801
+  - first:
+      213: -1352505741783525072
+    second: ALL UI ASSETS on one sheet_802
+  - first:
+      213: 4403980236990014078
+    second: ALL UI ASSETS on one sheet_803
+  - first:
+      213: 618221519454867779
+    second: ALL UI ASSETS on one sheet_804
+  - first:
+      213: -2282663882372138752
+    second: ALL UI ASSETS on one sheet_805
+  - first:
+      213: 8568843572064045014
+    second: ALL UI ASSETS on one sheet_806
+  - first:
+      213: -3099880935387878148
+    second: ALL UI ASSETS on one sheet_807
+  - first:
+      213: 6045899387323148826
+    second: ALL UI ASSETS on one sheet_808
+  - first:
+      213: -5594613941958494135
+    second: ALL UI ASSETS on one sheet_809
+  - first:
+      213: -1391259845938264966
+    second: ALL UI ASSETS on one sheet_810
+  - first:
+      213: 5668222336536041113
+    second: ALL UI ASSETS on one sheet_811
+  - first:
+      213: 7378295337448616350
+    second: ALL UI ASSETS on one sheet_812
+  - first:
+      213: 3283229564874936492
+    second: ALL UI ASSETS on one sheet_813
+  - first:
+      213: -5415507721942193645
+    second: ALL UI ASSETS on one sheet_814
+  - first:
+      213: 8661709133972860681
+    second: ALL UI ASSETS on one sheet_815
+  - first:
+      213: -7873529483913904400
+    second: ALL UI ASSETS on one sheet_816
+  - first:
+      213: -8576478275237549036
+    second: ALL UI ASSETS on one sheet_817
+  - first:
+      213: 1165186568810464076
+    second: ALL UI ASSETS on one sheet_818
+  - first:
+      213: -8972373773226471309
+    second: ALL UI ASSETS on one sheet_819
+  - first:
+      213: -2348844630355781871
+    second: ALL UI ASSETS on one sheet_820
+  - first:
+      213: 5791858998782761200
+    second: ALL UI ASSETS on one sheet_821
+  - first:
+      213: -7937035362995731347
+    second: ALL UI ASSETS on one sheet_822
+  - first:
+      213: -3260796201923268298
+    second: ALL UI ASSETS on one sheet_823
+  - first:
+      213: -3438350480435810428
+    second: ALL UI ASSETS on one sheet_824
+  - first:
+      213: -2705239366641644424
+    second: ALL UI ASSETS on one sheet_825
+  - first:
+      213: 6821997154343572365
+    second: ALL UI ASSETS on one sheet_826
+  - first:
+      213: -8022872613881548946
+    second: ALL UI ASSETS on one sheet_827
+  - first:
+      213: 5492234205773240753
+    second: ALL UI ASSETS on one sheet_828
+  - first:
+      213: -4775690754738801956
+    second: ALL UI ASSETS on one sheet_829
+  - first:
+      213: 6162986355119430253
+    second: ALL UI ASSETS on one sheet_830
+  - first:
+      213: 2780011680804105156
+    second: ALL UI ASSETS on one sheet_831
+  - first:
+      213: -2963728095045586382
+    second: ALL UI ASSETS on one sheet_832
+  - first:
+      213: 4521752842442200529
+    second: ALL UI ASSETS on one sheet_833
+  - first:
+      213: 1509876414880768278
+    second: ALL UI ASSETS on one sheet_834
+  - first:
+      213: -2020206849410522970
+    second: ALL UI ASSETS on one sheet_835
+  - first:
+      213: 1683239335794540718
+    second: ALL UI ASSETS on one sheet_836
+  - first:
+      213: 8773135145543547499
+    second: ALL UI ASSETS on one sheet_837
+  - first:
+      213: 5378413927945659251
+    second: ALL UI ASSETS on one sheet_838
+  - first:
+      213: -7365117120921206898
+    second: ALL UI ASSETS on one sheet_839
+  - first:
+      213: 4991726714876482693
+    second: ALL UI ASSETS on one sheet_840
+  - first:
+      213: -336096119190710470
+    second: ALL UI ASSETS on one sheet_841
+  - first:
+      213: -1138198379880380462
+    second: ALL UI ASSETS on one sheet_842
+  - first:
+      213: 163529127162655513
+    second: ALL UI ASSETS on one sheet_843
+  - first:
+      213: 2494475892186847679
+    second: ALL UI ASSETS on one sheet_844
+  - first:
+      213: -3792927324600370031
+    second: ALL UI ASSETS on one sheet_845
+  - first:
+      213: 7594726670917289730
+    second: ALL UI ASSETS on one sheet_846
+  - first:
+      213: -3627677503677566570
+    second: ALL UI ASSETS on one sheet_847
+  - first:
+      213: 6213445258769698026
+    second: ALL UI ASSETS on one sheet_848
+  - first:
+      213: 945048928656129002
+    second: ALL UI ASSETS on one sheet_849
+  - first:
+      213: -1381041450359355562
+    second: ALL UI ASSETS on one sheet_850
+  - first:
+      213: 4333452673651339389
+    second: ALL UI ASSETS on one sheet_851
+  - first:
+      213: 3190469264778861439
+    second: ALL UI ASSETS on one sheet_852
+  - first:
+      213: -5261092036551687544
+    second: ALL UI ASSETS on one sheet_853
+  - first:
+      213: -3077333241450349428
+    second: ALL UI ASSETS on one sheet_854
+  - first:
+      213: 2891466714806727852
+    second: ALL UI ASSETS on one sheet_855
+  - first:
+      213: 4198982347362529052
+    second: ALL UI ASSETS on one sheet_856
+  - first:
+      213: -3229103473953267949
+    second: ALL UI ASSETS on one sheet_857
+  - first:
+      213: -8329511318626928729
+    second: ALL UI ASSETS on one sheet_858
+  - first:
+      213: -1251024106023751517
+    second: ALL UI ASSETS on one sheet_859
+  - first:
+      213: -6275247981189273993
+    second: ALL UI ASSETS on one sheet_860
+  - first:
+      213: -3058810476527502814
+    second: ALL UI ASSETS on one sheet_861
+  - first:
+      213: -5484745918324413873
+    second: ALL UI ASSETS on one sheet_862
+  - first:
+      213: -515876086540092868
+    second: ALL UI ASSETS on one sheet_863
+  - first:
+      213: 8721632440874537216
+    second: ALL UI ASSETS on one sheet_864
+  - first:
+      213: -7557983570379920198
+    second: ALL UI ASSETS on one sheet_865
+  - first:
+      213: -8412798298097373032
+    second: ALL UI ASSETS on one sheet_866
+  - first:
+      213: 6527039329264632609
+    second: ALL UI ASSETS on one sheet_867
+  - first:
+      213: 6773324246020192331
+    second: ALL UI ASSETS on one sheet_868
+  - first:
+      213: 7512201327671959717
+    second: ALL UI ASSETS on one sheet_869
+  - first:
+      213: -6492461261586015170
+    second: ALL UI ASSETS on one sheet_870
+  - first:
+      213: -4474826920605202299
+    second: ALL UI ASSETS on one sheet_871
+  - first:
+      213: 4628860790289269132
+    second: ALL UI ASSETS on one sheet_872
+  - first:
+      213: -3761301554211368654
+    second: ALL UI ASSETS on one sheet_873
+  - first:
+      213: -3331304475862647333
+    second: ALL UI ASSETS on one sheet_874
+  - first:
+      213: -608340729236871247
+    second: ALL UI ASSETS on one sheet_875
+  - first:
+      213: 1727702919499214888
+    second: ALL UI ASSETS on one sheet_876
+  - first:
+      213: 1970142185857193276
+    second: ALL UI ASSETS on one sheet_877
+  - first:
+      213: -1554050356181682451
+    second: ALL UI ASSETS on one sheet_878
+  - first:
+      213: -8586161385276057006
+    second: ALL UI ASSETS on one sheet_879
+  - first:
+      213: -1592119811655122052
+    second: ALL UI ASSETS on one sheet_880
+  - first:
+      213: 7876047563935902220
+    second: ALL UI ASSETS on one sheet_881
+  - first:
+      213: -8749577977012267015
+    second: ALL UI ASSETS on one sheet_882
+  - first:
+      213: -6796626608354553362
+    second: ALL UI ASSETS on one sheet_883
+  - first:
+      213: -7186903876271988124
+    second: ALL UI ASSETS on one sheet_884
+  - first:
+      213: -1928057431161379341
+    second: ALL UI ASSETS on one sheet_885
+  - first:
+      213: 7946868038877841140
+    second: ALL UI ASSETS on one sheet_886
+  - first:
+      213: -7324082576721394025
+    second: ALL UI ASSETS on one sheet_887
+  - first:
+      213: -8798897793215097854
+    second: ALL UI ASSETS on one sheet_888
+  - first:
+      213: 6379672473346989478
+    second: ALL UI ASSETS on one sheet_889
+  - first:
+      213: -7971955712752334881
+    second: ALL UI ASSETS on one sheet_890
+  - first:
+      213: 277567629627794968
+    second: ALL UI ASSETS on one sheet_891
+  - first:
+      213: 7435666371911711061
+    second: ALL UI ASSETS on one sheet_892
+  - first:
+      213: -836354725018475717
+    second: ALL UI ASSETS on one sheet_893
+  - first:
+      213: -4123179868147108507
+    second: ALL UI ASSETS on one sheet_894
+  - first:
+      213: 6958434845912131744
+    second: ALL UI ASSETS on one sheet_895
+  - first:
+      213: 259176352806852804
+    second: ALL UI ASSETS on one sheet_896
+  - first:
+      213: -1440114375136035145
+    second: ALL UI ASSETS on one sheet_897
+  - first:
+      213: -278953046742875698
+    second: ALL UI ASSETS on one sheet_898
+  - first:
+      213: 1779589731125032355
+    second: ALL UI ASSETS on one sheet_899
+  - first:
+      213: 6696852237270518696
+    second: ALL UI ASSETS on one sheet_900
+  - first:
+      213: 5303842899169450803
+    second: ALL UI ASSETS on one sheet_901
+  - first:
+      213: -5210158661095550010
+    second: ALL UI ASSETS on one sheet_902
+  - first:
+      213: -1901660708043016097
+    second: ALL UI ASSETS on one sheet_903
+  - first:
+      213: 6553596864345805154
+    second: ALL UI ASSETS on one sheet_904
+  - first:
+      213: -5796540393782965720
+    second: ALL UI ASSETS on one sheet_905
+  - first:
+      213: 6850936791386726054
+    second: ALL UI ASSETS on one sheet_906
+  - first:
+      213: -9120319627746968665
+    second: ALL UI ASSETS on one sheet_907
+  - first:
+      213: -9053488823992538378
+    second: ALL UI ASSETS on one sheet_908
+  - first:
+      213: 4149679325888065624
+    second: ALL UI ASSETS on one sheet_909
+  - first:
+      213: 3973336334200868516
+    second: ALL UI ASSETS on one sheet_910
+  - first:
+      213: 8453652481492109801
+    second: ALL UI ASSETS on one sheet_911
+  - first:
+      213: 4457628494381225879
+    second: ALL UI ASSETS on one sheet_912
+  - first:
+      213: -4200557496288241995
+    second: ALL UI ASSETS on one sheet_913
+  - first:
+      213: 6477087138710171570
+    second: ALL UI ASSETS on one sheet_914
+  - first:
+      213: 1588383009693090581
+    second: ALL UI ASSETS on one sheet_915
+  - first:
+      213: 3615696689050149952
+    second: ALL UI ASSETS on one sheet_916
+  - first:
+      213: 1540498932974139631
+    second: ALL UI ASSETS on one sheet_917
+  - first:
+      213: 9118172116676791866
+    second: ALL UI ASSETS on one sheet_918
+  - first:
+      213: -7209354444314174492
+    second: ALL UI ASSETS on one sheet_919
+  - first:
+      213: -7740165053047476832
+    second: ALL UI ASSETS on one sheet_920
+  - first:
+      213: 1327853271327939865
+    second: ALL UI ASSETS on one sheet_921
+  - first:
+      213: 2986975494785707914
+    second: ALL UI ASSETS on one sheet_922
+  - first:
+      213: 6395428219527424994
+    second: ALL UI ASSETS on one sheet_923
+  - first:
+      213: -6011200939333799663
+    second: ALL UI ASSETS on one sheet_924
+  - first:
+      213: 3569905000670619331
+    second: ALL UI ASSETS on one sheet_925
+  - first:
+      213: -121114449051799418
+    second: ALL UI ASSETS on one sheet_926
+  - first:
+      213: -1487336653320652456
+    second: ALL UI ASSETS on one sheet_927
+  - first:
+      213: -7640870696404207100
+    second: ALL UI ASSETS on one sheet_928
+  - first:
+      213: 3809587994711246832
+    second: ALL UI ASSETS on one sheet_929
+  - first:
+      213: 8840519782488301634
+    second: ALL UI ASSETS on one sheet_930
+  - first:
+      213: -5823238245031750253
+    second: ALL UI ASSETS on one sheet_931
+  - first:
+      213: 3871886695507470277
+    second: ALL UI ASSETS on one sheet_932
+  - first:
+      213: -8156208955434013509
+    second: ALL UI ASSETS on one sheet_933
+  - first:
+      213: -4247881489464214810
+    second: ALL UI ASSETS on one sheet_934
+  - first:
+      213: -1510958068774418281
+    second: ALL UI ASSETS on one sheet_935
+  - first:
+      213: 6087620614690008382
+    second: ALL UI ASSETS on one sheet_936
+  - first:
+      213: -4515352871557796630
+    second: ALL UI ASSETS on one sheet_937
+  - first:
+      213: 7893571575049141825
+    second: ALL UI ASSETS on one sheet_938
+  - first:
+      213: -3409747840888973116
+    second: ALL UI ASSETS on one sheet_939
+  - first:
+      213: -4004692245779369128
+    second: ALL UI ASSETS on one sheet_940
+  - first:
+      213: -6728666166751146831
+    second: ALL UI ASSETS on one sheet_941
+  - first:
+      213: -7243854855558541124
+    second: ALL UI ASSETS on one sheet_942
+  - first:
+      213: -4730893432265327908
+    second: ALL UI ASSETS on one sheet_943
+  - first:
+      213: -3427931828946801481
+    second: ALL UI ASSETS on one sheet_944
+  - first:
+      213: -4455009135777948221
+    second: ALL UI ASSETS on one sheet_945
+  - first:
+      213: 7919691766242543057
+    second: ALL UI ASSETS on one sheet_946
+  - first:
+      213: -7032833242944250722
+    second: ALL UI ASSETS on one sheet_947
+  - first:
+      213: 7660222442309125077
+    second: ALL UI ASSETS on one sheet_948
+  - first:
+      213: 7623024473655470724
+    second: ALL UI ASSETS on one sheet_949
+  - first:
+      213: 4108945246045916961
+    second: ALL UI ASSETS on one sheet_950
+  - first:
+      213: 4431668888264039633
+    second: ALL UI ASSETS on one sheet_951
+  - first:
+      213: -7902379973166646275
+    second: ALL UI ASSETS on one sheet_952
+  - first:
+      213: 2350092392383851313
+    second: ALL UI ASSETS on one sheet_953
+  - first:
+      213: -181218156688652725
+    second: ALL UI ASSETS on one sheet_954
+  - first:
+      213: -6274029420167519788
+    second: ALL UI ASSETS on one sheet_955
+  - first:
+      213: 309181838595797115
+    second: ALL UI ASSETS on one sheet_956
+  - first:
+      213: 548774426565277587
+    second: ALL UI ASSETS on one sheet_957
+  - first:
+      213: 3071729838906824485
+    second: ALL UI ASSETS on one sheet_958
+  - first:
+      213: -5361893225458034645
+    second: ALL UI ASSETS on one sheet_959
+  - first:
+      213: -5763098913414855514
+    second: ALL UI ASSETS on one sheet_960
+  - first:
+      213: -4267772920701298030
+    second: ALL UI ASSETS on one sheet_961
+  - first:
+      213: -5785470573994249457
+    second: ALL UI ASSETS on one sheet_962
+  - first:
+      213: 3810537483624951658
+    second: ALL UI ASSETS on one sheet_963
+  - first:
+      213: -2073433702654265452
+    second: ALL UI ASSETS on one sheet_964
+  - first:
+      213: 7365514987809608350
+    second: ALL UI ASSETS on one sheet_965
+  - first:
+      213: -9197086664249604247
+    second: ALL UI ASSETS on one sheet_966
+  - first:
+      213: -2134827885536819675
+    second: ALL UI ASSETS on one sheet_967
+  - first:
+      213: -8032526631332814261
+    second: ALL UI ASSETS on one sheet_968
+  - first:
+      213: -4615441302292456804
+    second: ALL UI ASSETS on one sheet_969
+  - first:
+      213: -5754035070477052695
+    second: ALL UI ASSETS on one sheet_970
+  - first:
+      213: 789151905955098334
+    second: ALL UI ASSETS on one sheet_971
+  - first:
+      213: -1968582428896416548
+    second: ALL UI ASSETS on one sheet_972
+  - first:
+      213: 7576118072161369267
+    second: ALL UI ASSETS on one sheet_973
+  - first:
+      213: 4636907286326505117
+    second: ALL UI ASSETS on one sheet_974
+  - first:
+      213: -5664598479252674163
+    second: ALL UI ASSETS on one sheet_975
+  - first:
+      213: 1782899497767689228
+    second: ALL UI ASSETS on one sheet_976
+  - first:
+      213: -5112794021562332545
+    second: ALL UI ASSETS on one sheet_977
+  - first:
+      213: -4881659254831624710
+    second: ALL UI ASSETS on one sheet_978
+  - first:
+      213: -8589081993234310334
+    second: ALL UI ASSETS on one sheet_979
+  - first:
+      213: -6192731870009233336
+    second: ALL UI ASSETS on one sheet_980
+  - first:
+      213: -1025299747526199497
+    second: ALL UI ASSETS on one sheet_981
+  - first:
+      213: -3445870611891902373
+    second: ALL UI ASSETS on one sheet_982
+  - first:
+      213: 2368248592034046943
+    second: ALL UI ASSETS on one sheet_983
+  - first:
+      213: -6385861509422346472
+    second: ALL UI ASSETS on one sheet_984
+  - first:
+      213: 9120756719416819107
+    second: ALL UI ASSETS on one sheet_985
+  - first:
+      213: -6445297170286712356
+    second: ALL UI ASSETS on one sheet_986
+  - first:
+      213: 943014314237523104
+    second: ALL UI ASSETS on one sheet_987
+  - first:
+      213: -512504698147775066
+    second: ALL UI ASSETS on one sheet_988
+  - first:
+      213: -8617266655184935668
+    second: ALL UI ASSETS on one sheet_989
+  - first:
+      213: -8931194043894915793
+    second: ALL UI ASSETS on one sheet_990
+  - first:
+      213: 5359176320925061929
+    second: ALL UI ASSETS on one sheet_991
+  - first:
+      213: -2898618055286051190
+    second: ALL UI ASSETS on one sheet_992
+  - first:
+      213: 6212428982548748273
+    second: ALL UI ASSETS on one sheet_993
+  - first:
+      213: -1376366409594456545
+    second: ALL UI ASSETS on one sheet_994
+  - first:
+      213: 5326690184484009927
+    second: ALL UI ASSETS on one sheet_995
+  - first:
+      213: 625713497541688030
+    second: ALL UI ASSETS on one sheet_996
+  - first:
+      213: -6092674375336124858
+    second: ALL UI ASSETS on one sheet_997
+  - first:
+      213: 4551779178565127388
+    second: ALL UI ASSETS on one sheet_998
+  - first:
+      213: 1456620599578030125
+    second: ALL UI ASSETS on one sheet_999
+  - first:
+      213: -803167109869499706
+    second: ALL UI ASSETS on one sheet_1000
+  - first:
+      213: -8122502820659932530
+    second: ALL UI ASSETS on one sheet_1001
+  - first:
+      213: -1273599475630492205
+    second: ALL UI ASSETS on one sheet_1002
+  - first:
+      213: 2479073996212199040
+    second: ALL UI ASSETS on one sheet_1003
+  - first:
+      213: 1108865473990948759
+    second: ALL UI ASSETS on one sheet_1004
+  - first:
+      213: -7846429873562773436
+    second: ALL UI ASSETS on one sheet_1005
+  - first:
+      213: 7277868900490610897
+    second: ALL UI ASSETS on one sheet_1006
+  - first:
+      213: -8855975583718429
+    second: ALL UI ASSETS on one sheet_1007
+  - first:
+      213: -2738551086430029757
+    second: ALL UI ASSETS on one sheet_1008
+  - first:
+      213: 16005790477509020
+    second: ALL UI ASSETS on one sheet_1009
+  - first:
+      213: 5029617018112131774
+    second: ALL UI ASSETS on one sheet_1010
+  - first:
+      213: 8503733616238170858
+    second: ALL UI ASSETS on one sheet_1011
+  - first:
+      213: 1651544202180229118
+    second: ALL UI ASSETS on one sheet_1012
+  - first:
+      213: -7068932703363620619
+    second: ALL UI ASSETS on one sheet_1013
+  - first:
+      213: 1278519844782472294
+    second: ALL UI ASSETS on one sheet_1014
+  - first:
+      213: 6391472015264667836
+    second: ALL UI ASSETS on one sheet_1015
+  - first:
+      213: -5735529807327757102
+    second: ALL UI ASSETS on one sheet_1016
+  - first:
+      213: -2366278301178681809
+    second: ALL UI ASSETS on one sheet_1017
+  - first:
+      213: -7206943274723792841
+    second: ALL UI ASSETS on one sheet_1018
+  - first:
+      213: 227153363799746023
+    second: ALL UI ASSETS on one sheet_1019
+  - first:
+      213: -5187381200622701
+    second: ALL UI ASSETS on one sheet_1020
+  - first:
+      213: 9145896629423656507
+    second: ALL UI ASSETS on one sheet_1021
+  - first:
+      213: -8564184045670581475
+    second: ALL UI ASSETS on one sheet_1022
+  - first:
+      213: 1453258563396323665
+    second: ALL UI ASSETS on one sheet_1023
+  - first:
+      213: -7379149851546086246
+    second: ALL UI ASSETS on one sheet_1024
+  - first:
+      213: 3611759822276008246
+    second: ALL UI ASSETS on one sheet_1025
+  - first:
+      213: -2066092353143509160
+    second: ALL UI ASSETS on one sheet_1026
+  - first:
+      213: -7258060471721399957
+    second: ALL UI ASSETS on one sheet_1027
+  - first:
+      213: 3947998066405145006
+    second: ALL UI ASSETS on one sheet_1028
+  - first:
+      213: -4395973588235437771
+    second: ALL UI ASSETS on one sheet_1029
+  - first:
+      213: 6713064094882810392
+    second: ALL UI ASSETS on one sheet_1030
+  - first:
+      213: 2589919639380389157
+    second: ALL UI ASSETS on one sheet_1031
+  - first:
+      213: 8191393397901489719
+    second: ALL UI ASSETS on one sheet_1032
+  - first:
+      213: -2094840260445970592
+    second: ALL UI ASSETS on one sheet_1033
+  - first:
+      213: 9196152501972429157
+    second: ALL UI ASSETS on one sheet_1034
+  - first:
+      213: 1335767121693641163
+    second: ALL UI ASSETS on one sheet_1035
+  - first:
+      213: -6672661633605930510
+    second: ALL UI ASSETS on one sheet_1036
+  - first:
+      213: 6479347134181026941
+    second: ALL UI ASSETS on one sheet_1037
+  - first:
+      213: 7579955413928578376
+    second: ALL UI ASSETS on one sheet_1038
+  - first:
+      213: -4583319577873858801
+    second: ALL UI ASSETS on one sheet_1039
+  - first:
+      213: -3745267325407145151
+    second: ALL UI ASSETS on one sheet_1040
+  - first:
+      213: 6801168375130903605
+    second: ALL UI ASSETS on one sheet_1041
+  - first:
+      213: 3604661075980762500
+    second: ALL UI ASSETS on one sheet_1042
+  - first:
+      213: -8423093367798854649
+    second: ALL UI ASSETS on one sheet_1043
+  - first:
+      213: 9116600292384354538
+    second: ALL UI ASSETS on one sheet_1044
+  - first:
+      213: -7486503867878708993
+    second: ALL UI ASSETS on one sheet_1045
+  - first:
+      213: 6746950624762667844
+    second: ALL UI ASSETS on one sheet_1046
+  - first:
+      213: 5625712723755405299
+    second: ALL UI ASSETS on one sheet_1047
+  - first:
+      213: -8906893120362451092
+    second: ALL UI ASSETS on one sheet_1048
+  - first:
+      213: -2395070493791135668
+    second: ALL UI ASSETS on one sheet_1049
+  - first:
+      213: 6496903317229191336
+    second: ALL UI ASSETS on one sheet_1050
+  - first:
+      213: 1690140890743744789
+    second: ALL UI ASSETS on one sheet_1051
+  - first:
+      213: 3146904292275726008
+    second: ALL UI ASSETS on one sheet_1052
+  - first:
+      213: 8379514250317361255
+    second: ALL UI ASSETS on one sheet_1053
+  - first:
+      213: -2789405160938640988
+    second: ALL UI ASSETS on one sheet_1054
+  - first:
+      213: -2533097553282874728
+    second: ALL UI ASSETS on one sheet_1055
+  - first:
+      213: 3885827336415339763
+    second: ALL UI ASSETS on one sheet_1056
+  - first:
+      213: -3862087346954770067
+    second: ALL UI ASSETS on one sheet_1057
+  - first:
+      213: -2619891440647887664
+    second: ALL UI ASSETS on one sheet_1058
+  - first:
+      213: 5214873093672576583
+    second: ALL UI ASSETS on one sheet_1059
+  - first:
+      213: 3477289797194597289
+    second: ALL UI ASSETS on one sheet_1060
+  - first:
+      213: 6078202107753611919
+    second: ALL UI ASSETS on one sheet_1061
+  - first:
+      213: -4458704898060484801
+    second: ALL UI ASSETS on one sheet_1062
+  - first:
+      213: 5697799004041689575
+    second: ALL UI ASSETS on one sheet_1063
+  - first:
+      213: 8386143768895370239
+    second: ALL UI ASSETS on one sheet_1064
+  - first:
+      213: -4092164611932969936
+    second: ALL UI ASSETS on one sheet_1065
+  - first:
+      213: 3988796129733672008
+    second: ALL UI ASSETS on one sheet_1066
+  - first:
+      213: 6235355887108610350
+    second: ALL UI ASSETS on one sheet_1067
+  - first:
+      213: -8317492300262965013
+    second: ALL UI ASSETS on one sheet_1068
+  - first:
+      213: 4508591395403120015
+    second: ALL UI ASSETS on one sheet_1069
+  - first:
+      213: 4086242434294916487
+    second: ALL UI ASSETS on one sheet_1070
+  - first:
+      213: 1101849283573876971
+    second: ALL UI ASSETS on one sheet_1071
+  - first:
+      213: -8777282572733721063
+    second: ALL UI ASSETS on one sheet_1072
+  - first:
+      213: 4228309313001097669
+    second: ALL UI ASSETS on one sheet_1073
+  - first:
+      213: 2285908312629225351
+    second: ALL UI ASSETS on one sheet_1074
+  - first:
+      213: -2310802028831856206
+    second: ALL UI ASSETS on one sheet_1075
+  - first:
+      213: -6666539122018254223
+    second: ALL UI ASSETS on one sheet_1076
+  - first:
+      213: 5266330586236227936
+    second: ALL UI ASSETS on one sheet_1077
+  - first:
+      213: 3819940350686224154
+    second: ALL UI ASSETS on one sheet_1078
+  - first:
+      213: 4443165284272585964
+    second: ALL UI ASSETS on one sheet_1079
+  - first:
+      213: -444314683045006494
+    second: ALL UI ASSETS on one sheet_1080
+  - first:
+      213: -2735794044878797269
+    second: ALL UI ASSETS on one sheet_1081
+  - first:
+      213: 7226303006440037325
+    second: ALL UI ASSETS on one sheet_1082
+  - first:
+      213: -3012965182571591709
+    second: ALL UI ASSETS on one sheet_1083
+  - first:
+      213: 5546966409320954120
+    second: ALL UI ASSETS on one sheet_1084
+  - first:
+      213: 1989702976253070553
+    second: ALL UI ASSETS on one sheet_1085
+  - first:
+      213: -2385908933922333200
+    second: ALL UI ASSETS on one sheet_1086
+  - first:
+      213: 2169164056349517894
+    second: ALL UI ASSETS on one sheet_1087
+  - first:
+      213: 7617484819088513313
+    second: ALL UI ASSETS on one sheet_1088
+  - first:
+      213: -4379822881746100489
+    second: ALL UI ASSETS on one sheet_1089
+  - first:
+      213: -342183936630994961
+    second: ALL UI ASSETS on one sheet_1090
+  - first:
+      213: 1629230345379639390
+    second: ALL UI ASSETS on one sheet_1091
+  - first:
+      213: 439524113227952815
+    second: ALL UI ASSETS on one sheet_1092
+  - first:
+      213: 7453670969375366746
+    second: ALL UI ASSETS on one sheet_1093
+  - first:
+      213: 4479550180675715980
+    second: ALL UI ASSETS on one sheet_1094
+  - first:
+      213: 5380930267454698086
+    second: ALL UI ASSETS on one sheet_1095
+  - first:
+      213: -5549769533042680137
+    second: ALL UI ASSETS on one sheet_1096
+  - first:
+      213: 6103458452791969553
+    second: ALL UI ASSETS on one sheet_1097
+  - first:
+      213: 1340019772658069240
+    second: ALL UI ASSETS on one sheet_1098
+  - first:
+      213: 3564650514996429309
+    second: ALL UI ASSETS on one sheet_1099
+  - first:
+      213: 9013330700195859265
+    second: ALL UI ASSETS on one sheet_1100
+  - first:
+      213: -5339591440758831194
+    second: ALL UI ASSETS on one sheet_1101
+  - first:
+      213: -1728688590283176891
+    second: ALL UI ASSETS on one sheet_1102
+  - first:
+      213: -6951878390086928607
+    second: ALL UI ASSETS on one sheet_1103
+  - first:
+      213: -986634802097250661
+    second: ALL UI ASSETS on one sheet_1104
+  - first:
+      213: -9002415074432697376
+    second: ALL UI ASSETS on one sheet_1105
+  - first:
+      213: -8783443908818139868
+    second: ALL UI ASSETS on one sheet_1106
+  - first:
+      213: -8722105752441789630
+    second: ALL UI ASSETS on one sheet_1107
+  - first:
+      213: 7151294569526714965
+    second: ALL UI ASSETS on one sheet_1108
+  - first:
+      213: 1157430686679545275
+    second: ALL UI ASSETS on one sheet_1109
+  - first:
+      213: 986770939076664993
+    second: ALL UI ASSETS on one sheet_1110
+  - first:
+      213: 7828471465396272682
+    second: ALL UI ASSETS on one sheet_1111
+  - first:
+      213: 7313995881624253532
+    second: ALL UI ASSETS on one sheet_1112
+  - first:
+      213: -3975455494312767438
+    second: ALL UI ASSETS on one sheet_1113
+  - first:
+      213: -5066393849020447295
+    second: ALL UI ASSETS on one sheet_1114
+  - first:
+      213: -5636990045614468806
+    second: ALL UI ASSETS on one sheet_1115
+  - first:
+      213: 974180392118592080
+    second: ALL UI ASSETS on one sheet_1116
+  - first:
+      213: -2766191499451917907
+    second: ALL UI ASSETS on one sheet_1117
+  - first:
+      213: 3493509905127410111
+    second: ALL UI ASSETS on one sheet_1118
+  - first:
+      213: -8664038673343165042
+    second: ALL UI ASSETS on one sheet_1119
+  - first:
+      213: -5396408983581243258
+    second: ALL UI ASSETS on one sheet_1120
+  - first:
+      213: 4021796895733893027
+    second: ALL UI ASSETS on one sheet_1121
+  - first:
+      213: 1081653302870161563
+    second: ALL UI ASSETS on one sheet_1122
+  - first:
+      213: -6883523139534577313
+    second: ALL UI ASSETS on one sheet_1123
+  - first:
+      213: 4003051441686364127
+    second: ALL UI ASSETS on one sheet_1124
+  - first:
+      213: 1293057582253622878
+    second: ALL UI ASSETS on one sheet_1125
+  - first:
+      213: 5300964752335061904
+    second: ALL UI ASSETS on one sheet_1126
+  - first:
+      213: 2776833846857597428
+    second: ALL UI ASSETS on one sheet_1127
+  - first:
+      213: -2543067516151649465
+    second: ALL UI ASSETS on one sheet_1128
+  - first:
+      213: -7475252495579873768
+    second: ALL UI ASSETS on one sheet_1129
+  - first:
+      213: 2465486682752303080
+    second: ALL UI ASSETS on one sheet_1130
+  - first:
+      213: -6805066441940969052
+    second: ALL UI ASSETS on one sheet_1131
+  - first:
+      213: -8998755462694881871
+    second: ALL UI ASSETS on one sheet_1132
+  - first:
+      213: -7245501842690667036
+    second: ALL UI ASSETS on one sheet_1133
+  - first:
+      213: 4532565604656297619
+    second: ALL UI ASSETS on one sheet_1134
+  - first:
+      213: 1734413333416315033
+    second: ALL UI ASSETS on one sheet_1135
+  - first:
+      213: 7545221597276190335
+    second: ALL UI ASSETS on one sheet_1136
+  - first:
+      213: 627689413791173170
+    second: ALL UI ASSETS on one sheet_1137
+  - first:
+      213: -8339327843231270053
+    second: ALL UI ASSETS on one sheet_1138
+  - first:
+      213: -4820570532526896739
+    second: ALL UI ASSETS on one sheet_1139
+  - first:
+      213: -545563864787007262
+    second: ALL UI ASSETS on one sheet_1140
+  - first:
+      213: -3624351859801927831
+    second: ALL UI ASSETS on one sheet_1141
+  - first:
+      213: 3781176344341828146
+    second: ALL UI ASSETS on one sheet_1142
+  - first:
+      213: -2555400504092749849
+    second: ALL UI ASSETS on one sheet_1143
+  - first:
+      213: -68755019038120833
+    second: ALL UI ASSETS on one sheet_1144
+  - first:
+      213: 3810413945182166117
+    second: ALL UI ASSETS on one sheet_1145
+  - first:
+      213: 5479042455103596803
+    second: ALL UI ASSETS on one sheet_1146
+  - first:
+      213: 7514151911400660150
+    second: ALL UI ASSETS on one sheet_1147
+  - first:
+      213: -3785349800370208898
+    second: ALL UI ASSETS on one sheet_1148
+  - first:
+      213: -4618604735168356141
+    second: ALL UI ASSETS on one sheet_1149
+  - first:
+      213: 5072384767785338332
+    second: ALL UI ASSETS on one sheet_1150
+  - first:
+      213: -8523312869102021463
+    second: ALL UI ASSETS on one sheet_1151
+  - first:
+      213: 4280690722175674802
+    second: ALL UI ASSETS on one sheet_1152
+  - first:
+      213: -247671242271624986
+    second: ALL UI ASSETS on one sheet_1153
+  - first:
+      213: 8562437652219652822
+    second: ALL UI ASSETS on one sheet_1154
+  - first:
+      213: -488241973325847649
+    second: ALL UI ASSETS on one sheet_1155
+  - first:
+      213: 5497045176209484699
+    second: ALL UI ASSETS on one sheet_1156
+  - first:
+      213: -1860060523281037985
+    second: ALL UI ASSETS on one sheet_1157
+  - first:
+      213: -2792432194135285658
+    second: ALL UI ASSETS on one sheet_1158
+  - first:
+      213: 8937022592956467710
+    second: ALL UI ASSETS on one sheet_1159
+  - first:
+      213: -3795690173578446829
+    second: ALL UI ASSETS on one sheet_1160
+  - first:
+      213: 3357213504912515301
+    second: ALL UI ASSETS on one sheet_1161
+  - first:
+      213: 1313854253976617242
+    second: ALL UI ASSETS on one sheet_1162
+  - first:
+      213: -605667815870560973
+    second: ALL UI ASSETS on one sheet_1163
+  - first:
+      213: -3399005135842263714
+    second: ALL UI ASSETS on one sheet_1164
+  - first:
+      213: -1776722718512795928
+    second: ALL UI ASSETS on one sheet_1165
+  - first:
+      213: -136348842128881394
+    second: ALL UI ASSETS on one sheet_1166
+  - first:
+      213: -3535088059057230136
+    second: ALL UI ASSETS on one sheet_1167
+  - first:
+      213: 3328152579768676397
+    second: ALL UI ASSETS on one sheet_1168
+  - first:
+      213: -8642218663446921494
+    second: ALL UI ASSETS on one sheet_1169
+  - first:
+      213: -824217351796898834
+    second: ALL UI ASSETS on one sheet_1170
+  - first:
+      213: -3786877155589208704
+    second: ALL UI ASSETS on one sheet_1171
+  - first:
+      213: -3963454281643855604
+    second: ALL UI ASSETS on one sheet_1172
+  - first:
+      213: 2603797969762944492
+    second: ALL UI ASSETS on one sheet_1173
+  - first:
+      213: -1725498103825417403
+    second: ALL UI ASSETS on one sheet_1174
+  - first:
+      213: 5811674943086983981
+    second: ALL UI ASSETS on one sheet_1175
+  - first:
+      213: 331628424247935852
+    second: ALL UI ASSETS on one sheet_1176
+  - first:
+      213: 7956751466042169509
+    second: ALL UI ASSETS on one sheet_1177
+  - first:
+      213: 5243034343563864110
+    second: ALL UI ASSETS on one sheet_1178
+  - first:
+      213: 4388426190367739645
+    second: ALL UI ASSETS on one sheet_1179
+  - first:
+      213: -2832144321048280353
+    second: ALL UI ASSETS on one sheet_1180
+  - first:
+      213: 5359007968690237945
+    second: ALL UI ASSETS on one sheet_1181
+  - first:
+      213: -2765465766901233514
+    second: ALL UI ASSETS on one sheet_1182
+  - first:
+      213: 8032522401373178739
+    second: ALL UI ASSETS on one sheet_1183
+  - first:
+      213: -482831831675937689
+    second: ALL UI ASSETS on one sheet_1184
+  - first:
+      213: 4260170351719996894
+    second: ALL UI ASSETS on one sheet_1185
+  - first:
+      213: -5427513045770339328
+    second: ALL UI ASSETS on one sheet_1186
+  - first:
+      213: -8297048288780621826
+    second: ALL UI ASSETS on one sheet_1187
+  - first:
+      213: 2245516350295126945
+    second: ALL UI ASSETS on one sheet_1188
+  - first:
+      213: -4769309129962277583
+    second: ALL UI ASSETS on one sheet_1189
+  - first:
+      213: 1344021430401934207
+    second: ALL UI ASSETS on one sheet_1190
+  - first:
+      213: -6946302883438252811
+    second: ALL UI ASSETS on one sheet_1191
+  - first:
+      213: 7907375177471345407
+    second: ALL UI ASSETS on one sheet_1192
+  - first:
+      213: -4659791922780187263
+    second: ALL UI ASSETS on one sheet_1193
+  - first:
+      213: -4702160847075111836
+    second: ALL UI ASSETS on one sheet_1194
+  - first:
+      213: 1689744739685872015
+    second: ALL UI ASSETS on one sheet_1195
+  - first:
+      213: -6701518612262608087
+    second: ALL UI ASSETS on one sheet_1196
+  - first:
+      213: 8601339025550315761
+    second: ALL UI ASSETS on one sheet_1197
+  - first:
+      213: 7002360184834940185
+    second: ALL UI ASSETS on one sheet_1198
+  - first:
+      213: 4894151994045614004
+    second: ALL UI ASSETS on one sheet_1199
+  - first:
+      213: 6745999741599825366
+    second: ALL UI ASSETS on one sheet_1200
+  - first:
+      213: -1290511427327036849
+    second: ALL UI ASSETS on one sheet_1201
+  - first:
+      213: 4566190982054521585
+    second: ALL UI ASSETS on one sheet_1202
+  - first:
+      213: 6240544760558291447
+    second: ALL UI ASSETS on one sheet_1203
+  - first:
+      213: 8393553107142048458
+    second: ALL UI ASSETS on one sheet_1204
+  - first:
+      213: -8356271242312036348
+    second: ALL UI ASSETS on one sheet_1205
+  - first:
+      213: -2545918916875082957
+    second: ALL UI ASSETS on one sheet_1206
+  - first:
+      213: 3502036648270260059
+    second: ALL UI ASSETS on one sheet_1207
+  - first:
+      213: 2971018396328652271
+    second: ALL UI ASSETS on one sheet_1208
+  - first:
+      213: 6355385646883599126
+    second: ALL UI ASSETS on one sheet_1209
+  - first:
+      213: -7876480708346360616
+    second: ALL UI ASSETS on one sheet_1210
+  - first:
+      213: 1951121239074174197
+    second: ALL UI ASSETS on one sheet_1211
+  - first:
+      213: -4654099774105953629
+    second: ALL UI ASSETS on one sheet_1212
+  - first:
+      213: -6052506764806753354
+    second: ALL UI ASSETS on one sheet_1213
+  - first:
+      213: 6285518574510150810
+    second: ALL UI ASSETS on one sheet_1214
+  - first:
+      213: 7046729310338099992
+    second: ALL UI ASSETS on one sheet_1215
+  - first:
+      213: 9137186509688736268
+    second: ALL UI ASSETS on one sheet_1216
+  - first:
+      213: 1215801542854008342
+    second: ALL UI ASSETS on one sheet_1217
+  - first:
+      213: 7274964980555230689
+    second: ALL UI ASSETS on one sheet_1218
+  - first:
+      213: 7377595979596293955
+    second: ALL UI ASSETS on one sheet_1219
+  - first:
+      213: -4221910208479032188
+    second: ALL UI ASSETS on one sheet_1220
+  - first:
+      213: -1932138441264192382
+    second: ALL UI ASSETS on one sheet_1221
+  - first:
+      213: -3238657258260448799
+    second: ALL UI ASSETS on one sheet_1222
+  - first:
+      213: -3435383109947384081
+    second: ALL UI ASSETS on one sheet_1223
+  - first:
+      213: 1412797248581736773
+    second: ALL UI ASSETS on one sheet_1224
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HUD
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 389
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc923b76e3f619448380dd4e8903715
+      internalID: 832254496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartContainer_Full
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 6
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f040ca40f89700b41b87d568d6d2d0df
+      internalID: 328480996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartContainer_Half
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 6
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59299a4e2515e7d49908dbc672eba7d2
+      internalID: 1019691073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartContainer_Empty
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 70
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9af8e35df4720a42a86ae1067906771
+      internalID: -349297048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinIcon
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 323
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90754c7cb651fc44b80feecc965ca24
+      internalID: 877732525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 95939907fc9ee5c4a8b72409b662ce90
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CoinIcon: 877732525
+      HUD: 8941493973892504005
+      HeartContainer_Empty: -349297048
+      HeartContainer_Full: 328480996
+      HeartContainer_Half: 1019691073
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

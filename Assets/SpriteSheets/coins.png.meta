@@ -1,11 +1,31 @@
 fileFormatVersion: 2
-guid: bfd4ee5eab1a6cd45b8e48f45c0b3daf
+guid: 741d2eb0ca0db3f458b7025958e2370d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5454876331652596625
-    second: Game Boy GBC - The Legend of Zelda Links Awakening DX - Level 5 - Catfishs
-      Maw_0
+      213: 8003260396191338441
+    second: coins_0
+  - first:
+      213: 2154074400079490951
+    second: coins_1
+  - first:
+      213: -8722020019358736109
+    second: coins_2
+  - first:
+      213: 7432920796079150873
+    second: coins_3
+  - first:
+      213: -3076578299200870413
+    second: coins_4
+  - first:
+      213: -6129140024025953609
+    second: coins_5
+  - first:
+      213: 7858416400693487702
+    second: coins_6
+  - first:
+      213: 7944876737930998293
+    second: coins_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -114,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Level5_BaseFloorTile
+      name: coinPickup
       rect:
         serializedVersion: 2
-        x: 33
-        y: 1000
-        width: 16
-        height: 16
+        x: 20
+        y: 36
+        width: 7
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,71 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 193c6d95f1d93bb40800000000000000
-      internalID: 5454876331652596625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Level5_FlairFloorTile
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 984
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b8da9d5ac0ff7245988b38ec95231b3
-      internalID: 1898002786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Level5_Block
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 920
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d490996079c5b784cae8715c857179ef
-      internalID: -2068059494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Level5_Hole
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 350
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 262560f7bca0d6f4b85faf5db7db1203
-      internalID: -872291195
+      spriteID: 78f208c014fc4ed10800000000000000
+      internalID: 2154074400079490951
       vertices: []
       indices: 
       edges: []
@@ -200,7 +157,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ead0488f1236c1744a1b25565a859301
+    spriteID: 0b4ef124346187a4d83a1b1c59013b1e
     internalID: 0
     vertices: []
     indices: 
@@ -208,14 +165,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DungeonDoorDown: -471130722
-      DungeonDoorLeft: -1917783881
-      DungeonDoorRight: 696930149
-      DungeonDoorUp: 1848887429
-      Level5_BaseFloorTile: 5454876331652596625
-      Level5_Block: -2068059494
-      Level5_FlairFloorTile: 1898002786
-      Level5_Hole: -872291195
+      coinPickup: 2154074400079490951
+      coins_0: 8003260396191338441
+      coins_2: -8722020019358736109
+      coins_3: 7432920796079150873
+      coins_4: -3076578299200870413
+      coins_5: -6129140024025953609
+      coins_6: 7858416400693487702
+      coins_7: 7944876737930998293
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

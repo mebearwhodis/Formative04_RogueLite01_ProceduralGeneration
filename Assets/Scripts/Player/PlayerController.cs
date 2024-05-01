@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -28,7 +29,7 @@ public class PlayerController : Singleton<PlayerController>
     private Vector2 _lookDirection;
     
     //Health
-    [Header("Health")] 
+    [Header("Ressources")] 
     private int _maxPlayerHealth = 6;
     [SerializeField][Range(0,6)] private int _remainingHealth;
     [SerializeField] private Image _heart1;
@@ -37,6 +38,8 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Sprite _heartFull;
     [SerializeField] private Sprite _heartHalf;
     [SerializeField] private Sprite _heartEmpty;
+    [SerializeField] private TextMeshProUGUI _coinCount;
+    private int _coinAmount = 0;
 
     [Header("Attack Hitboxes")]
     //Hitboxes of the different attack directions
@@ -172,6 +175,11 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+    public void UpdateCoinCounter(int value)
+    {
+        _coinAmount += value;
+        _coinCount.text = _coinAmount.ToString();
+    }
 
     private void Move()
     {
@@ -195,20 +203,28 @@ public class PlayerController : Singleton<PlayerController>
         GameManager.Instance.SetPause();
     }
     
-    public void LowerHealth()
+    public void UpdateHealth(int value)
     {
-        if (!_canTakeDamage) { return; }
-        _canTakeDamage = false;
-        _remainingHealth--;
+        if (value < 0 && !_canTakeDamage) { return; }
+        if (value < 0)
+        {
+            _canTakeDamage = false;
+            _remainingHealth += value;
+            if (_remainingHealth > 0)
+            {
+                StartCoroutine(DamagedCooldown());
+            }
+            else
+            {
+                Death();
+            }
+        }
+        if (value > 0)
+        {
+            if(_remainingHealth == _maxPlayerHealth){return;}
+            _remainingHealth += value;
+        }
         UpdateHearts();
-        if (_remainingHealth > 0)
-        {
-            StartCoroutine(DamagedCooldown());
-        }
-        else
-        {
-            Death();
-        }
     }
 
     private void Death()
