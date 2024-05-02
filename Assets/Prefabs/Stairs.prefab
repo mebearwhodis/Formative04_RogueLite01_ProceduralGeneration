@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4022266733026629046}
   - component: {fileID: 7453728468723582885}
+  - component: {fileID: 7321059988313781350}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -86,3 +87,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7321059988313781350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185815712974389375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635f75afd40a6b64d941c60c2550abd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

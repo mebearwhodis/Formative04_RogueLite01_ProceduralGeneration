@@ -16,7 +16,8 @@ public class GameManager : Singleton<GameManager>
         StartingState,
         IslandState,
         DungeonState,
-        GameOver
+        GameOver,
+        EndState
     }
 
     [SerializeField] private GameObject _pauseMenu;
@@ -74,6 +75,10 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GameState.GameOver:
                 SceneManager.LoadScene("GameOver");
+                _canPause = false;
+                break;
+            case GameState.EndState:
+                SceneManager.LoadScene("EndScreen");
                 _canPause = false;
                 break;
             default:

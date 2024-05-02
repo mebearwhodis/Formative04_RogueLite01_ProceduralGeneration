@@ -3877,7 +3877,7 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3885,6 +3885,27 @@ TextureImporter:
       bones: []
       spriteID: d90754c7cb651fc44b80feecc965ca24
       internalID: 877732525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 563
+        width: 90
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc061ec227872e49ac9cadefb6a5a1f
+      internalID: -684198317
       vertices: []
       indices: 
       edges: []
@@ -3900,6 +3921,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Button: -684198317
       CoinIcon: 877732525
       HUD: 8941493973892504005
       HeartContainer_Empty: -349297048
