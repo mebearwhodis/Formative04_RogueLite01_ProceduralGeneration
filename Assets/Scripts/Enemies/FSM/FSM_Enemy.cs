@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace FSM
 {
@@ -27,6 +28,7 @@ namespace FSM
         private bool _invulnerable;
         private float _colorCD = 0.1f;
         private Color _baseColor;
+        [SerializeField] private bool _contactDamage = false;
         [SerializeField] private int _damageValue = 1;
         [SerializeField] private float _knockBackPower = 3;
 
@@ -35,6 +37,16 @@ namespace FSM
             get => _invulnerable;
             set => _invulnerable = value;
         }
+
+        public bool ContactDamage
+        {
+            get => _contactDamage;
+            set => _contactDamage = value;
+        }
+
+        [Header("Loot")] 
+        [SerializeField] private GameObject _heartPickup;
+        [SerializeField] private GameObject _coinPickup;
 
         [Header("Chase State")] 
         [SerializeField] private float _chaseSpeed;
@@ -114,7 +126,19 @@ namespace FSM
         {
             if (_currentHealth <= 0)
             {
+                float randomValue = Random.value;
+                if (randomValue < 0.15f)
+                {
+                    Instantiate(_coinPickup, transform.position, Quaternion.identity);
+                    Debug.Log("Coin dropped");
+                }
+                else if (randomValue < 0.24f)
+                {
+                    Instantiate(_heartPickup, transform.position, Quaternion.identity);
+                    Debug.Log("Heart Dropped");
+                }
                 PlayerController.Instance.CurrentRoom.monstersLeft--;
+                
                 Destroy(gameObject);
             }
         }
@@ -150,7 +174,7 @@ namespace FSM
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag("PlayerBody"))
+            if (other.gameObject.CompareTag("PlayerBody") && _contactDamage)
             {
                 _target.GetKnockedBack(transform, _knockBackPower);
                 _target.UpdateHealth(-1);

@@ -66,6 +66,7 @@ public class SpikedBeetle_FSM : MonoBehaviour
         {
             _lastTagHit = "Shield";
             _thisEntity.Invulnerable = false;
+            _thisEntity.ContactDamage = false;
             _thisEntity.Animator.SetBool("isVulnerable", true);
             Debug.Log("Trigger Shield hit");
             StartCoroutine("VulnerableTime");
@@ -76,6 +77,7 @@ public class SpikedBeetle_FSM : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         _thisEntity.Invulnerable = true;
+        _thisEntity.ContactDamage = true;
         _thisEntity.Animator.SetBool("isVulnerable", false);
     }
 

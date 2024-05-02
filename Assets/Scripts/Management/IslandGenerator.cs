@@ -46,10 +46,10 @@ public class IslandGenerator : MonoBehaviour
     {
         Vector2[] confinerPoints =
         {
-            new Vector2(0,0),
-            new Vector2(0, _size.y),
-            new Vector2(_size.x, _size.y),
-            new Vector2(_size.x, 0)
+            new Vector2(1,1),
+            new Vector2(1, _size.y - 1),
+            new Vector2(_size.x - 1, _size.y - 1),
+            new Vector2(_size.x - 1, 1)
         };
         _cameraConfiner.points = confinerPoints;
     }
@@ -107,9 +107,9 @@ public class IslandGenerator : MonoBehaviour
                 {
                     // Check if there is enough space to place the prefab
                     bool canPlacePrefab = true;
-                    for (int offsetX = -1; offsetX < 3; offsetX++)
+                    for (int offsetX = -1; offsetX < 4; offsetX++)
                     {
-                        for (int offsetY = -1; offsetY < 2; offsetY++)
+                        for (int offsetY = -2; offsetY < 3; offsetY++)
                         {
                             Vector3Int offsetTile = tilePosition + new Vector3Int(offsetX, offsetY, 0);
                             if (!_landMap.HasTile(offsetTile))
@@ -195,15 +195,15 @@ public class IslandGenerator : MonoBehaviour
                         if (randomValue <= 0.15f) // 15% chance for any decoration
                         {
                             float decorationChance = Random.value;
-                            if (decorationChance < 0.33f) // 50% chance for box
+                            if (decorationChance < 0.15f) // 15% chance for box
                             {
                                 _decorSolid.SetTile(tilePosition, _box);
                             }
-                            else if (decorationChance < 0.66f) // 25% chance for barrel
+                            else if (decorationChance < 0.30f) // 15% chance for barrel
                             {
                                 _decorSolid.SetTile(tilePosition, _barrel);
                             }
-                            else // 25% chance for tree
+                            else // 70% chance for tree
                             {
                                 _decorSolid.SetTile(tilePosition, _treeBase);
 

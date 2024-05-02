@@ -52,6 +52,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startingHealth: 5
   _currentHealth: 0
+  _contactDamage: 0
+  _damageValue: 1
+  _knockBackPower: 3
+  _heartPickup: {fileID: 1439155197221081855, guid: eafa072264aff3340a520fceac57af6b, type: 3}
+  _coinPickup: {fileID: 5857379348913472244, guid: 89797e04012af724d8a6ff7b4ef0f1e2, type: 3}
   _chaseSpeed: 5
   _targetDistance: 5
   _explosionTimer: 0

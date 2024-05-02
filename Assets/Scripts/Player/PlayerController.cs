@@ -41,6 +41,8 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private TextMeshProUGUI _coinCount;
     private int _coinAmount = 0;
 
+    public int CoinAmount => _coinAmount;
+
     [Header("Attack Hitboxes")]
     //Hitboxes of the different attack directions
     [SerializeField] private GameObject _slashHitBox_Up;

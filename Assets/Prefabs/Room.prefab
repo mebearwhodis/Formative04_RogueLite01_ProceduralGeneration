@@ -61,6 +61,10 @@ MonoBehaviour:
   _blockTile: {fileID: 11400000, guid: eea463bf119509e4d90703a8d635da63, type: 2}
   _holeTile: {fileID: 11400000, guid: 2255205a9b733b84e84cbe1493d2aeda, type: 2}
   _center: {fileID: 6038670384740010121}
+  _stairs: {fileID: 4185815712974389375, guid: ce9e5b4cd4f91124a9297256de1e3b7d, type: 3}
+  _chest: {fileID: 2397457845233144279, guid: a8b573454bd7e2f43ba67024eb24d957, type: 3}
+  _shop: {fileID: 5227738131670206258, guid: 4ae772098e70c634e96b8c25cdaa812e, type: 3}
+  _heartShop: {fileID: 1439155197221081855, guid: f9a0e45d1bec1f5488d3c05c7403463a, type: 3}
   size: {x: 0, y: 0}
   up: 0
   down: 0

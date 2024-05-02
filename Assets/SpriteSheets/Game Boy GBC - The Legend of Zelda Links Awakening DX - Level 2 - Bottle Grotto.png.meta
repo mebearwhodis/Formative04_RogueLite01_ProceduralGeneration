@@ -114,14 +114,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Boy GBC - The Legend of Zelda Links Awakening DX - Level 2 - Bottle
-        Grotto_0
+      name: Level2_Stairs
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 967
-        height: 904
+        x: 226
+        y: 565
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,10 +134,52 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Level2_ChestClosed
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 295
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10ca3ce13a7b2b459bf5a4dfc203529
+      internalID: 1850196200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level2_ChestOpened
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 295
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4115be8bae58e5d48ba0bad24b99613c
+      internalID: 1214816354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b42e9e0c2f42c4a45b08ae767b677904
     internalID: 0
     vertices: []
     indices: 
@@ -146,7 +187,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Game Boy GBC - The Legend of Zelda Links Awakening DX - Level 2 - Bottle Grotto_0: -90660011168257334
+      Level2_ChestClosed: 1850196200
+      Level2_ChestOpened: 1214816354
+      Level2_Stairs: -90660011168257334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

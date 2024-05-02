@@ -18,6 +18,7 @@ public class DungeonGeneratorV2 : MonoBehaviour
     private int _gridSizeX, _gridSizeY;
     private Room[,] _rooms; //(Empty) List of rooms
     private List<Vector2> _takenPositions = new List<Vector2>(); //Grid Positions where there's already a room
+    private bool _shopSpawned = false;
     
     public Vector2Int RoomSize => _roomSize;
 
@@ -351,7 +352,19 @@ public class DungeonGeneratorV2 : MonoBehaviour
            }
 
            float treasureChance = Random.Range(0f, 1f);
-           room.Type = treasureChance > 0.85f ? Room.RoomType.Treasure : Room.RoomType.Combat;
+           if (treasureChance > 0.70f && !_shopSpawned)
+           {
+               room.Type = Room.RoomType.Shop;
+               _shopSpawned = true;
+           }
+           else if (treasureChance > 0.85f)
+           {
+               room.Type = Room.RoomType.Treasure;
+           }
+           else
+           {
+               room.Type = Room.RoomType.Combat;
+           }
            roomsByDistance.Add(room);
        }
 
@@ -375,6 +388,5 @@ public class DungeonGeneratorV2 : MonoBehaviour
        }
        //Assign the Boss Type to the furthest room from the start
        roomsByDistance[0].Type = Room.RoomType.Boss;
-       roomsByDistance[1].Type = Room.RoomType.Shop;
     }
 }

@@ -15,6 +15,10 @@ public class RoomSpawn : MonoBehaviour
     [SerializeField] private TileBase _blockTile;
     [SerializeField] private TileBase _holeTile;
     [SerializeField] private EnemySpawner _center;
+    [SerializeField] private GameObject _stairs;
+    [SerializeField] private GameObject _chest;
+    [SerializeField] private GameObject _shop;
+    [SerializeField] private GameObject _heartShop;
 
     public Vector2Int size;
 
@@ -59,7 +63,6 @@ public class RoomSpawn : MonoBehaviour
         }
 
         _roomBoundaries.color = Color.clear;
-        GenerateRoomDecorations();
     }
 
     private void GenerateRoomDecorations()
@@ -257,10 +260,14 @@ public class RoomSpawn : MonoBehaviour
             case Room.RoomType.Treasure:
                 completed = true;
                 open = true;
+                Instantiate(_chest, transform.position + new Vector3(size.x / 2f, size.y / 2f, 0f), Quaternion.identity);
                 break;
             case Room.RoomType.Shop:
                 completed = true;
                 open = true;
+                Instantiate(_shop, transform.position + new Vector3(size.x / 2f, size.y / 2f + 1, 0f), Quaternion.identity);
+                Instantiate(_heartShop, transform.position + new Vector3(size.x / 2f - 2, size.y / 2f - 1, 0f), Quaternion.identity);
+                Instantiate(_heartShop, transform.position + new Vector3(size.x / 2f + 2, size.y / 2f - 1, 0f), Quaternion.identity);
                 break;
             case Room.RoomType.Combat:
                 if (spacesFromStart * spacesFromStart + 5 > 30)
@@ -271,9 +278,11 @@ public class RoomSpawn : MonoBehaviour
                 {
                     maxDifficulty = spacesFromStart * spacesFromStart + 5;
                 }
-
+                GenerateRoomDecorations();
                 break;
             case Room.RoomType.Boss:
+                Instantiate(_stairs, transform.position + new Vector3(size.x / 2f, size.y / 2f, 0f), Quaternion.identity);
+                break;
             default:
                 Debug.Log("Room Type not supported yet: " + this.type);
                 break;
