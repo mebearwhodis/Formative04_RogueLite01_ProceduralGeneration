@@ -156,19 +156,19 @@ public class PlayerController : Singleton<PlayerController>
 
         _movement = _playerControls.Player.Move.ReadValue<Vector2>();
 
-        // Check the control scheme
+        //Check the control scheme
         var controlScheme = _playerInput.currentControlScheme;
 
-        // Handle input based on the control scheme
+        //Handle input based on the control scheme
         switch (controlScheme)
         {
             case "Gamepad":
-                // Use right stick input for aiming
+                //Use right stick input for aiming
                 _lookDirection = _playerControls.Player.Look.ReadValue<Vector2>();
                 break;
             case "Keyboard&Mouse":
             {
-                // Handle mouse/keyboard input for aiming
+                //Handle mouse/keyboard input for aiming
                 Vector2 mousePosition = _playerControls.Player.MousePosition.ReadValue<Vector2>();
                 Vector2 playerPosition = Camera.main.WorldToScreenPoint(transform.position);
                 _lookDirection = (mousePosition - playerPosition).normalized;
@@ -176,7 +176,7 @@ public class PlayerController : Singleton<PlayerController>
             }
         }
 
-        // If there's no input from mouse/keyboard or right stick, use movement input for aiming
+        //If there's no input from mouse/keyboard or right stick, use movement input for aiming
         if (_lookDirection.magnitude < 0.1f)
         {
             _lookDirection = _movement;
@@ -279,7 +279,7 @@ public class PlayerController : Singleton<PlayerController>
     private void UpdateHearts()
     {
         if (_heart1 is null || _heart2 is null || _heart3 is null) return;
-        // Determine which sprite to use for each heart
+        //Determine which sprite to use for each heart
         _heart1.sprite = (_remainingHealth >= 2) ? _heartFull : (_remainingHealth == 1) ? _heartHalf : _heartEmpty;
         _heart2.sprite = (_remainingHealth >= 4) ? _heartFull : (_remainingHealth == 3) ? _heartHalf : _heartEmpty;
         _heart3.sprite = (_remainingHealth >= 6) ? _heartFull : (_remainingHealth == 5) ? _heartHalf : _heartEmpty;
@@ -325,7 +325,7 @@ public class PlayerController : Singleton<PlayerController>
                 break;
         }
         
-        StartCoroutine("AttackCooldown");
+        StartCoroutine(AttackCooldown());
     }
 
     private void ShootArrow()
@@ -349,7 +349,7 @@ public class PlayerController : Singleton<PlayerController>
         }
         else
         {
-            // Calculate the angle of the look direction
+            //Calculate the angle of the look direction
             angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
         }
         

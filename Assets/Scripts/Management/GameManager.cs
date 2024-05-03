@@ -17,9 +17,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     [SerializeField] private GameObject _pauseMenu;
-    private PlayerInput _input;
-    
-    //public static GameManager instance = null;
+
     public GameState currentGameState = GameState.InitState;
 
     private bool _canPause = false;
@@ -30,7 +28,6 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        _input = GetComponentInChildren<PlayerInput>();
         OnStateEnter();
     }
 
@@ -57,6 +54,7 @@ public class GameManager : Singleton<GameManager>
                     PlayerController.Instance.RemainingHealth = PlayerController.Instance.MaxPlayerHealth;
                     PlayerController.Instance.CoinAmount = 0;
                 }
+
                 _canPause = false;
                 break;
             case GameState.MainMenuState:
@@ -66,9 +64,10 @@ public class GameManager : Singleton<GameManager>
                 {
                     PlayerController.Instance.Destroy();
                 }
+
                 SceneManager.LoadScene("MainMenu");
                 _canPause = false;
-                break;  
+                break;
             case GameState.CreditsState:
                 SceneManager.LoadScene("Credits");
                 _canPause = false;
@@ -103,7 +102,7 @@ public class GameManager : Singleton<GameManager>
             case GameState.InitState:
                 break;
             case GameState.MainMenuState:
-                break;  
+                break;
             case GameState.CreditsState:
                 break;
             case GameState.IslandState:
@@ -121,7 +120,11 @@ public class GameManager : Singleton<GameManager>
 
     public void SetPause()
     {
-        if(!_canPause){return;}
+        if (!_canPause)
+        {
+            return;
+        }
+
         _isPaused = !_isPaused;
         _pauseMenu.SetActive(_isPaused);
     }

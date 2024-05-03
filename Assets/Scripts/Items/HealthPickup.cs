@@ -6,8 +6,8 @@ public class HealthPickup : MonoBehaviour
     [SerializeField] private Sprite _fullHeart;
     private SpriteRenderer _sr;
     private int _value = 0;
-    
-    void Start()
+
+    private void Start()
     {
         _sr = GetComponent<SpriteRenderer>();
         _value = Random.Range(1, 3);
@@ -20,7 +20,7 @@ public class HealthPickup : MonoBehaviour
             _sr.sprite = _fullHeart;
         }
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerBody"))

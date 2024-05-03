@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using FSM;
+using Enemies.FSM;
 using UnityEngine;
 
 public class SlashAttack : MonoBehaviour
@@ -14,7 +11,11 @@ public class SlashAttack : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<FSM_Enemy>().GetKnockedBack(transform, _knockBackPower);
-            if(other.GetComponent<FSM_Enemy>().Invulnerable){return;}
+            if (other.GetComponent<FSM_Enemy>().Invulnerable)
+            {
+                return;
+            }
+
             other.GetComponent<FSM_Enemy>().TakeDamage(_damageValue);
         }
     }

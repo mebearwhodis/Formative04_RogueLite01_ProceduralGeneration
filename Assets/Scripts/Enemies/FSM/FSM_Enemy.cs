@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-namespace FSM
+//I tried making this a class that monsters can inherit from but
+//then I ended up having to link every monster that used each state in said state and
+//it got very complicated very fast. If I were to redo it I would do differently/better,
+//but for now this has to stay this way.
+
+namespace Enemies.FSM
 {
     public class FSM_Enemy : MonoBehaviour
     {
@@ -22,8 +26,9 @@ namespace FSM
         public SpriteRenderer SpriteRenderer => _spriteRenderer;
         public PlayerController Target => _target;
 
-        [Header("Enemy stats")] 
-        [SerializeField] private int _startingHealth;
+        [Header("Enemy stats")] [SerializeField]
+        private int _startingHealth;
+
         [SerializeField] private int _currentHealth;
         private bool _invulnerable;
         private float _colorCD = 0.1f;
@@ -44,33 +49,34 @@ namespace FSM
             set => _contactDamage = value;
         }
 
-        [Header("Loot")] 
-        [SerializeField] private GameObject _heartPickup;
+        [Header("Loot")] [SerializeField] private GameObject _heartPickup;
         [SerializeField] private GameObject _coinPickup;
 
-        [Header("Chase State")] 
-        [SerializeField] private float _chaseSpeed;
+        [Header("Chase State")] [SerializeField]
+        private float _chaseSpeed;
+
         [SerializeField] private float _targetDistance;
-        
+
         public float ChaseSpeed => _chaseSpeed;
         public float TargetDistance => _targetDistance;
 
-        [Header("Explosion State")] 
-        [SerializeField] private float _explosionTimer;
+        [Header("Explosion State")] [SerializeField]
+        private float _explosionTimer;
+
         [SerializeField] private float _explosionRadius;
         [SerializeField] private float _explosionChaseSpeed;
-        
-        public float ExplosionTimer => _explosionTimer;
+
         public float ExplosionRadius => _explosionRadius;
         public float ExplosionChaseSpeed => _explosionChaseSpeed;
 
-        [Header("Hide State")] 
-        [SerializeField] private float popoutRadius;
+        [Header("Hide State")] [SerializeField]
+        private float _popoutRadius;
 
-        public float PopoutRadius => popoutRadius;
+        public float PopoutRadius => _popoutRadius;
 
-        [Header("Ranged Attack State")] 
-        [SerializeField] private float _minAttackDistance;
+        [Header("Ranged Attack State")] [SerializeField]
+        private float _minAttackDistance;
+
         [SerializeField] private float _maxAttackDistance;
         [SerializeField] private Ammunition _ammunition;
         [SerializeField] private float _attackCooldown = 1.5f;
@@ -80,13 +86,14 @@ namespace FSM
         public float MaxAttackDistance => _maxAttackDistance;
         public Ammunition Ammunition => _ammunition;
 
-        [Header("Rush State")] 
-        [SerializeField] private float _rushSpeed;
-        
+        [Header("Rush State")] [SerializeField]
+        private float _rushSpeed;
+
         public float RushSpeed => _rushSpeed;
-        
-        [Header("Wander State")] 
-        [SerializeField] private float _wanderRadius;
+
+        [Header("Wander State")] [SerializeField]
+        private float _wanderRadius;
+
         [SerializeField] private float _wanderSpeed;
         [SerializeField] private float _maxWanderDistance;
 
@@ -111,8 +118,12 @@ namespace FSM
 
         public void ThrowProjectile()
         {
-            if(!_canShoot){return;}
-            StartCoroutine("RangedAttack");
+            if (!_canShoot)
+            {
+                return;
+            }
+
+            StartCoroutine(nameof(RangedAttack));
         }
 
         public void TakeDamage(int damage)
@@ -125,23 +136,22 @@ namespace FSM
 
         private void DetectDeath()
         {
-            if (_currentHealth <= 0)
+            if (_currentHealth > 0) return;
+            float randomValue = Random.value;
+            if (randomValue < 0.25f)
             {
-                float randomValue = Random.value;
-                if (randomValue < 0.25f)
-                {
-                    Instantiate(_coinPickup, transform.position, Quaternion.identity);
-                    Debug.Log("Coin dropped");
-                }
-                else if (randomValue < 0.34f)
-                {
-                    Instantiate(_heartPickup, transform.position, Quaternion.identity);
-                    Debug.Log("Heart Dropped");
-                }
-                PlayerController.Instance.CurrentRoom.monstersLeft--;
-                
-                Destroy(gameObject);
+                Instantiate(_coinPickup, transform.position, Quaternion.identity);
+                Debug.Log("Coin dropped");
             }
+            else if (randomValue < 0.34f)
+            {
+                Instantiate(_heartPickup, transform.position, Quaternion.identity);
+                Debug.Log("Heart Dropped");
+            }
+
+            PlayerController.Instance.CurrentRoom.monstersLeft--;
+
+            Destroy(gameObject);
         }
 
         public void GetKnockedBack(Transform damageSource, float knockBackPower)
@@ -160,13 +170,13 @@ namespace FSM
             yield return new WaitForSeconds(_attackCooldown);
             _canShoot = true;
         }
-        
+
         private IEnumerator SetDefaultColor(float colorCD)
         {
             yield return new WaitForSeconds(colorCD);
             _spriteRenderer.color = _baseColor;
         }
-     
+
         private IEnumerator KnockBackRoutine()
         {
             yield return new WaitForSeconds(0.5f);

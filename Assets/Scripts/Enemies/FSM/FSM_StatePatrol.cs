@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace FSM
+namespace Enemies.FSM
 {
     // ReSharper disable once InconsistentNaming
     public class FSM_StatePatrol : FSM_IState

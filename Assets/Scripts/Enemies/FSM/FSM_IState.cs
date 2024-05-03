@@ -1,6 +1,4 @@
-using System;
-
-namespace FSM
+namespace Enemies.FSM
 {
     public interface FSM_IState
     {

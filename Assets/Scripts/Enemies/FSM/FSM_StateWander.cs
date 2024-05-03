@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace FSM
+namespace Enemies.FSM
 {
     public class FSM_StateWander : FSM_IState
     {
@@ -13,32 +13,28 @@ namespace FSM
             _entity = entity;
             _rb = _entity.GetComponent<Rigidbody2D>();
         }
-        
+
         public void OnUpdate()
         {
-            // Vector2 direction = Random.insideUnitCircle.normalized;
-            // _entity.transform.Translate(direction * (_entity.WanderSpeed * Time.deltaTime));
-            
-            // If the entity reaches the target position, choose a new target position
+            //If the entity reaches the target position, choose a new target position
             if (Vector3.Distance(_entity.transform.position, _targetPosition) < 2f)
             {
                 _targetPosition = GetRandomPointInCircle(_entity.transform.position, _entity.WanderRadius);
             }
 
-            // Move towards the target position
-            _entity.transform.position = Vector3.MoveTowards(_entity.transform.position, _targetPosition, _entity.WanderSpeed * Time.deltaTime);
+            //Move towards the target position
+            _entity.transform.position = Vector3.MoveTowards(_entity.transform.position, _targetPosition,
+                _entity.WanderSpeed * Time.deltaTime);
         }
 
         public void OnEnter()
         {
             _targetPosition = GetRandomPointInCircle(_entity.transform.position, _entity.WanderRadius);
-            Debug.Log("Wander state entered!");
         }
 
         public void OnExit()
         {
             _rb.velocity = Vector2.zero;
-            Debug.Log("Wander state exited!");
         }
 
         private Vector3 GetRandomPointInCircle(Vector3 center, float radius)
@@ -49,8 +45,6 @@ namespace FSM
             //Get a random target in that direction
             Vector2 randomPoint = center + new Vector3(randomDirection.x, randomDirection.y);
             // Clamp the point to stay within the circle
-            //TODO: Check that the point is in the room, else pick another point
-            //TODO: (Maybe also restart the wander if it hits a wall)
             randomPoint = Vector2.ClampMagnitude(randomPoint - center2D, radius) + center2D;
 
             return randomPoint;

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace FSM
+namespace Enemies.FSM
 {
     public class FSM_StateRangedAttack : FSM_IState
-    {  
+    {
         private FSM_Enemy _entity;
         private Rigidbody2D _rigidbody;
 
@@ -12,7 +12,7 @@ namespace FSM
             _entity = entity;
             _rigidbody = _entity.Rigidbody;
         }
-        
+
         public void OnUpdate()
         {
             _entity.ThrowProjectile();
@@ -20,15 +20,11 @@ namespace FSM
 
         public void OnEnter()
         {
-            Debug.Log("Ranged Attack state entered!");
             _rigidbody.velocity = Vector2.zero;
         }
 
         public void OnExit()
         {
-            Debug.Log("Ranged Attack state exited!");
         }
-        
-     
     }
 }

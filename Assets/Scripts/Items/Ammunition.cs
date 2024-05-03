@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using FSM;
+﻿using Enemies.FSM;
 using UnityEngine;
 
 public class Ammunition : MonoBehaviour
@@ -12,9 +10,7 @@ public class Ammunition : MonoBehaviour
     [SerializeField] private int _damageValue = 1;
     [SerializeField] private float _knockBackPower = 3;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, 5);
@@ -31,7 +27,6 @@ public class Ammunition : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Hit wall");
             Destroy(gameObject);
         }
 

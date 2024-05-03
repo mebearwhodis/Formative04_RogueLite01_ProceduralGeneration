@@ -1,88 +1,90 @@
 using System;
 using System.Collections;
-using FSM;
+using Enemies.FSM;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class SpikedBeetle_FSM : MonoBehaviour
+namespace Enemies
 {
-    private FSM_StateMachine _stateMachine;
-    private FSM_StateWander _wanderState;
-    private FSM_StateRush _rushState;
-    private FSM_StateVulnerable _vulnerableState;
-    private FSM_Enemy _thisEntity;
-    
-    private PlayerController _target;
-    //private Vector2 _targetPosition
-    //private Vector2 _direction;
-
-    private string _lastTagHit;
-
-    private void Start()
+    public class SpikedBeetle_FSM : MonoBehaviour
     {
-        _target = PlayerController.Instance;
-        _thisEntity = GetComponent<FSM_Enemy>();
+        private FSM_StateMachine _stateMachine;
+        private FSM_StateWander _wanderState;
+        private FSM_StateRush _rushState;
+        private FSM_StateVulnerable _vulnerableState;
+        private FSM_Enemy _thisEntity;
 
-        _thisEntity.Invulnerable = true;
+        private PlayerController _target;
 
-        _stateMachine = new FSM_StateMachine();
-        _wanderState = new FSM_StateWander(_thisEntity);
-        _rushState = new FSM_StateRush(_thisEntity);
-        _vulnerableState = new FSM_StateVulnerable();
-        
-        _stateMachine.ChangeState(_wanderState);
-        _stateMachine.AddTransition(_wanderState, _rushState, SeePlayer);
-        _stateMachine.AddTransition(_rushState, _vulnerableState, () => CheckCollisionWithTag("Shield"));
-        _stateMachine.AddTransition(_rushState, _wanderState, () => CheckCollisionWithTag("Wall"));
-        _stateMachine.AddTransition(_vulnerableState, _wanderState, StopVulnerable);
-    }
+        private string _lastTagHit;
+        private static readonly int IsVulnerable = Animator.StringToHash("isVulnerable");
 
-    private void Update()
-    {
-        _stateMachine.UpdateState();
-    }
-
-    private bool SeePlayer()
-    {
-        _lastTagHit = null;
-        var targetPosition = _target.transform.position;
-        var thisPosition = transform.position;
-        return Math.Abs(targetPosition.x - thisPosition.x) < 0.5f || Math.Abs(targetPosition.y - thisPosition.y) < 0.5f;
-    }
-
-    private bool StopVulnerable()
-    {
-        return _thisEntity.Invulnerable;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Wall"))
+        private void Start()
         {
-            _lastTagHit = "Wall";
-            Debug.Log("Trigger Wall hit");
+            _target = PlayerController.Instance;
+            _thisEntity = GetComponent<FSM_Enemy>();
+
+            _thisEntity.Invulnerable = true;
+
+            _stateMachine = new FSM_StateMachine();
+            _wanderState = new FSM_StateWander(_thisEntity);
+            _rushState = new FSM_StateRush(_thisEntity);
+            _vulnerableState = new FSM_StateVulnerable();
+
+            _stateMachine.ChangeState(_wanderState);
+            _stateMachine.AddTransition(_wanderState, _rushState, SeePlayer);
+            _stateMachine.AddTransition(_rushState, _vulnerableState, () => CheckCollisionWithTag("Shield"));
+            _stateMachine.AddTransition(_rushState, _wanderState, () => CheckCollisionWithTag("Wall"));
+            _stateMachine.AddTransition(_vulnerableState, _wanderState, StopVulnerable);
         }
-        else if (other.gameObject.CompareTag("Shield"))
+
+        private void Update()
         {
-            _lastTagHit = "Shield";
-            _thisEntity.Invulnerable = false;
-            _thisEntity.ContactDamage = false;
-            _thisEntity.Animator.SetBool("isVulnerable", true);
-            Debug.Log("Trigger Shield hit");
-            StartCoroutine("VulnerableTime");
+            _stateMachine.UpdateState();
         }
-    }
 
-    private IEnumerator VulnerableTime()
-    {
-        yield return new WaitForSeconds(4);
-        _thisEntity.Invulnerable = true;
-        _thisEntity.ContactDamage = true;
-        _thisEntity.Animator.SetBool("isVulnerable", false);
-    }
+        private bool SeePlayer()
+        {
+            _lastTagHit = null;
+            var targetPosition = _target.transform.position;
+            var thisPosition = transform.position;
+            return Math.Abs(targetPosition.x - thisPosition.x) < 0.5f ||
+                   Math.Abs(targetPosition.y - thisPosition.y) < 0.5f;
+        }
 
-    private bool CheckCollisionWithTag(string checkTag)
-    {
-        return checkTag == _lastTagHit;
+        private bool StopVulnerable()
+        {
+            return _thisEntity.Invulnerable;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Wall"))
+            {
+                _lastTagHit = "Wall";
+                Debug.Log("Trigger Wall hit");
+            }
+            else if (other.gameObject.CompareTag("Shield"))
+            {
+                _lastTagHit = "Shield";
+                _thisEntity.Invulnerable = false;
+                _thisEntity.ContactDamage = false;
+                _thisEntity.Animator.SetBool(IsVulnerable, true);
+                Debug.Log("Trigger Shield hit");
+                StartCoroutine(VulnerableTime());
+            }
+        }
+
+        private IEnumerator VulnerableTime()
+        {
+            yield return new WaitForSeconds(4);
+            _thisEntity.Invulnerable = true;
+            _thisEntity.ContactDamage = true;
+            _thisEntity.Animator.SetBool(IsVulnerable, false);
+        }
+
+        private bool CheckCollisionWithTag(string checkTag)
+        {
+            return checkTag == _lastTagHit;
+        }
     }
 }
