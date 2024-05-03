@@ -7,6 +7,7 @@ public class MenuButtons : MonoBehaviour
     public void StartGame()
     {
         GameManager.Instance.SetGameState(GameManager.GameState.IslandState);
+        SoundManager.Instance.PlaySound("GameStart");
     }
 
     public void ShowCredits()

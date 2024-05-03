@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -26,6 +27,8 @@ public class PlayerController : Singleton<PlayerController>
     private float _speedMultiplier = 1f;
     private Vector2 _movement;
     private Vector2 _lookDirection;
+    private float footstepInterval = 0.2f;
+    private float footstepTimer;
     
     //Health & coins
     [Header("Ressources")] 
@@ -211,6 +214,13 @@ public class PlayerController : Singleton<PlayerController>
 
         _animator.SetBool("isMoving", true);
         _rb.MovePosition(_rb.position + _movement * (_moveSpeed * _speedMultiplier * Time.fixedDeltaTime));
+        
+        footstepTimer += Time.deltaTime;
+        if (footstepTimer >= footstepInterval)
+        {
+            SoundManager.Instance.PlayFootsteps();
+            footstepTimer = 0f;
+        }
     }
 
     private void Pause()
@@ -235,10 +245,12 @@ public class PlayerController : Singleton<PlayerController>
             _remainingHealth += value;
             if (_remainingHealth > 0)
             {
+                SoundManager.Instance.PlaySound("PlayerHit");
                 StartCoroutine(DamagedCooldown());
             }
             else
             {
+                SoundManager.Instance.PlaySound("GameFail");
                 Death();
             }
         }
@@ -246,6 +258,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             if(_remainingHealth == _maxPlayerHealth){return;}
             _remainingHealth += value;
+            SoundManager.Instance.PlaySound("PickupHealth");
         }
         UpdateHearts();
     }
@@ -296,6 +309,22 @@ public class PlayerController : Singleton<PlayerController>
         _canAttack = false;
         _animator.SetTrigger("attack");
 
+        int randomSound = Random.Range(0, 3);
+        switch (randomSound)
+        {
+            case 0:
+                SoundManager.Instance.PlaySound("SwordSwing1");
+                break;
+            case 1:
+                SoundManager.Instance.PlaySound("SwordSwing2");
+                break;
+            case 2:
+                SoundManager.Instance.PlaySound("SwordSwing3");
+                break;
+            default:
+                break;
+        }
+        
         StartCoroutine("AttackCooldown");
     }
 
@@ -323,7 +352,8 @@ public class PlayerController : Singleton<PlayerController>
             // Calculate the angle of the look direction
             angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
         }
-
+        
+        SoundManager.Instance.PlaySound("ArrowShot");
         Instantiate(_arrow, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
 
         _canShoot = false;

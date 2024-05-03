@@ -8,6 +8,7 @@ public class CoinCollector : MonoBehaviour
         {
             int randomCoinCount = Random.Range(1, 6);
             PlayerController.Instance.UpdateCoinCounter(randomCoinCount);
+            SoundManager.Instance.PlaySound("PickupCoin");
             Destroy(gameObject);
         }
     }

@@ -17,6 +17,7 @@ public class Chest : MonoBehaviour
         {
             _sr.sprite = _openedSprite;
             PlayerController.Instance.UpdateCoinCounter(20);
+            SoundManager.Instance.PlaySound("ChestOpen");
             _opened = true;
         }
     }

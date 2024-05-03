@@ -52,6 +52,7 @@ public class Bombite_FSM : MonoBehaviour
     {
         _thisEntity.Rigidbody.velocity = Vector2.zero;
         yield return new WaitForSeconds(1);
+        SoundManager.Instance.PlaySound("BombExplosion");
         PlayerController.Instance.CurrentRoom.monstersLeft--;
         if (PlayerInRange())
         {

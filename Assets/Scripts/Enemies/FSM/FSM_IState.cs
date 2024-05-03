@@ -7,8 +7,5 @@ namespace FSM
         void OnUpdate();
         void OnEnter();
         void OnExit();
-        
-        // Transitions in state machine
-        
     }
 }

@@ -119,6 +119,7 @@ namespace FSM
         {
             _currentHealth -= damage;
             _spriteRenderer.color = Color.grey;
+            SoundManager.Instance.PlaySound("MonsterHit");
             StartCoroutine(SetDefaultColor(_colorCD));
         }
 

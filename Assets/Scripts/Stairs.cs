@@ -8,6 +8,7 @@ public class Stairs : MonoBehaviour
     {
         if (other.CompareTag("Feet"))
         {
+            SoundManager.Instance.PlaySound("GameWin");
             GameManager.Instance.SetGameState(GameManager.GameState.GameWonState);
         }
     }

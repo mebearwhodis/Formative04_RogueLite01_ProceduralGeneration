@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SoundManager : Singleton<SoundManager>
 {
@@ -15,6 +16,7 @@ public class SoundManager : Singleton<SoundManager>
     
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioSource _stepsSource;
     [SerializeField] private AudioClip _backgroundMusic;
 
     private void Start()
@@ -47,5 +49,10 @@ public class SoundManager : Singleton<SoundManager>
         {
             Debug.LogWarning("Sound not found: " + soundName);
         }
+    }
+
+    public void PlayFootsteps()
+    {
+        _stepsSource.PlayOneShot(sounds[Random.Range(13, 18)].clip);
     }
 }
