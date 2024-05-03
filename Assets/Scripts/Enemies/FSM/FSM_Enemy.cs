@@ -127,12 +127,12 @@ namespace FSM
             if (_currentHealth <= 0)
             {
                 float randomValue = Random.value;
-                if (randomValue < 0.15f)
+                if (randomValue < 0.25f)
                 {
                     Instantiate(_coinPickup, transform.position, Quaternion.identity);
                     Debug.Log("Coin dropped");
                 }
-                else if (randomValue < 0.24f)
+                else if (randomValue < 0.34f)
                 {
                     Instantiate(_heartPickup, transform.position, Quaternion.identity);
                     Debug.Log("Heart Dropped");

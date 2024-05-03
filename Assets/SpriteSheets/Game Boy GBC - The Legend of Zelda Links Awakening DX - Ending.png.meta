@@ -111,28 +111,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: LinkOnRaft
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 153
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac73dd7f3bb4dc049a692ac6bec08b68
-      internalID: 1521433071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -144,6 +123,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      HappyLink: -1853843035
       LinkOnRaft: -7117436105426576663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

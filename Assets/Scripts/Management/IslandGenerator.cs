@@ -159,15 +159,35 @@ public class IslandGenerator : MonoBehaviour
         // Define the area around the position to clear decor tiles
         for (int x = position.x - 2; x <= position.x + 2; x++)
         {
-            for (int y = position.y - 2; y <= position.y + 1; y++)
+            for (int y = position.y - 2; y <= position.y + 2; y++)
             {
-                // Clear tiles on decorSolid tilemap
-                _decorSolid.SetTile(new Vector3Int(x, y, 0), null);
-                // Clear tiles on decorFront tilemap
-                _decorFront.SetTile(new Vector3Int(x, y, 0), null);
+                // Check for mismatched palm tree tops and bottoms
+                if (y == position.y - 2)
+                {
+                    if (_decorSolid.GetTile(new Vector3Int(x, y, 0)) == _treeBase)
+                    {
+                        _decorSolid.SetTile(new Vector3Int(x, y, 0), null);
+                    }
+                }
+                else if (y == position.y + 2)
+                {
+                    if (_decorFront.GetTile(new Vector3Int(x, y, 0)) == _treeTop)
+                    {
+                        _decorFront.SetTile(new Vector3Int(x, y, 0), null);
+                    }
+                }
+                else
+                {
+                    
+                    // Clear tiles on decorSolid tilemap
+                    _decorSolid.SetTile(new Vector3Int(x, y, 0), null);
+                    // Clear tiles on decorFront tilemap
+                    _decorFront.SetTile(new Vector3Int(x, y, 0), null);
+                }
             }
         }
     }
+
 
     private void AddDecor()
     {
@@ -192,7 +212,7 @@ public class IslandGenerator : MonoBehaviour
                     {
                         // Randomly choose which decor to add
                         float randomValue = Random.value;
-                        if (randomValue <= 0.15f) // 15% chance for any decoration
+                        if (randomValue <= 0.12f) // 12% chance for any decoration
                         {
                             float decorationChance = Random.value;
                             if (decorationChance < 0.15f) // 15% chance for box

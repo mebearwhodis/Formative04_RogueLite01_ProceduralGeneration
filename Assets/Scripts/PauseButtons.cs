@@ -9,12 +9,8 @@ public class PauseButtons : MonoBehaviour
         GameManager.Instance.SetPause();
     }
     
-    public void ExitGame()
+    public void MainMenu()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+    GameManager.Instance.SetGameState(GameManager.GameState.MainMenuState);
     }
 }

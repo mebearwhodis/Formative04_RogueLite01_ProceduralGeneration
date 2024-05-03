@@ -8,7 +8,7 @@ public class Stairs : MonoBehaviour
     {
         if (other.CompareTag("Feet"))
         {
-            GameManager.Instance.SetGameState(GameManager.GameState.EndState);
+            GameManager.Instance.SetGameState(GameManager.GameState.GameWonState);
         }
     }
 }

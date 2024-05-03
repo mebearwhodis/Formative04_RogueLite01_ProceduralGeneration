@@ -7,6 +7,7 @@ public class RoomSpawn : MonoBehaviour
     [SerializeField] private Tilemap _floorMap;
     [SerializeField] private Tilemap _doorsMap;
     [SerializeField] private Tilemap _roomBoundaries;
+    [SerializeField] private Tilemap _holesMap;
     [SerializeField] private TileBase _wallTile;
     [SerializeField] private TileBase _floorTile;
     [SerializeField] private TileBase _flairFloorTile;
@@ -70,17 +71,6 @@ public class RoomSpawn : MonoBehaviour
         // Define the total number of floor tiles in the room
         int totalFloorTiles = (size.x - 4) * (size.y - 4);
 
-        // Calculate the number of flair tiles (30% of total floor tiles)
-        int numFlairTiles = Mathf.RoundToInt(totalFloorTiles * 0.3f);
-
-        // Randomly replace some floor tiles with flair tiles
-        for (int i = 0; i < numFlairTiles; i++)
-        {
-            int x = UnityEngine.Random.Range(0, size.x - 4) + 2;
-            int y = UnityEngine.Random.Range(0, size.y - 4) + 2;
-            _floorMap.SetTile(new Vector3Int(x, y, 0), _flairFloorTile);
-        }
-
         // Calculate the number of block tiles (10% of total floor tiles)
         int numBlockTiles = Mathf.RoundToInt(totalFloorTiles * 0.1f);
 
@@ -91,17 +81,27 @@ public class RoomSpawn : MonoBehaviour
             int y = UnityEngine.Random.Range(1, size.y - 1);
 
             // Check if the tile is not next to a wall or another block tile
+            //Sorry for the blocky code :(
             if (
-                _blockTile != null && 
+                _blockTile != null &&
                 _wallsMap.GetTile(new Vector3Int(x, y, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x, y, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x, y + 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x, y + 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x + 1, y + 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x + 1, y + 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x + 1, y, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x + 1, y, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x + 1, y - 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x + 1, y - 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x, y - 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x, y - 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x - 1, y - 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x - 1, y - 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x - 1, y, 0)) == null &&
-                _wallsMap.GetTile(new Vector3Int(x - 1, y + 1, 0)) == null
+                _holesMap.GetTile(new Vector3Int(x - 1, y, 0)) == null &&
+                _wallsMap.GetTile(new Vector3Int(x - 1, y + 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x - 1, y + 1, 0)) == null
                 )
             {
                 _wallsMap.SetTile(new Vector3Int(x, y, 0), _blockTile);
@@ -118,20 +118,30 @@ public class RoomSpawn : MonoBehaviour
             int y = UnityEngine.Random.Range(1, size.y - 1);
 
             // Check if the tile is not next to a wall or another hole tile
+            //Eww more blocky code
             if (
-                _holeTile != null && 
+                _holeTile != null &&
                 _wallsMap.GetTile(new Vector3Int(x, y, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x, y, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x, y + 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x, y + 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x + 1, y + 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x + 1, y + 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x + 1, y, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x + 1, y, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x + 1, y - 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x + 1, y - 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x, y - 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x, y - 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x - 1, y - 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x - 1, y - 1, 0)) == null &&
                 _wallsMap.GetTile(new Vector3Int(x - 1, y, 0)) == null &&
-                _wallsMap.GetTile(new Vector3Int(x - 1, y + 1, 0)) == null
+                _holesMap.GetTile(new Vector3Int(x - 1, y, 0)) == null &&
+                _wallsMap.GetTile(new Vector3Int(x - 1, y + 1, 0)) == null &&
+                _holesMap.GetTile(new Vector3Int(x - 1, y + 1, 0)) == null
             )
             {
-                _wallsMap.SetTile(new Vector3Int(x, y, 0), _holeTile);
+                _holesMap.SetTile(new Vector3Int(x, y, 0), _holeTile); // Place hole on the _holesMap
             }
         }
     }

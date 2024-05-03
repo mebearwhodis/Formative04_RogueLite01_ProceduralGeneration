@@ -11,15 +11,23 @@ public class IslandCamera : MonoBehaviour
     {
         _camera = GetComponent<CinemachineVirtualCamera>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         //if(_camera.m_Follow is not null && _camera.m_LookAt is not null){return;}
         //else
         {
-            _camera.m_Follow = FindFirstObjectByType<PlayerController>().transform;
-            _camera.m_LookAt = FindFirstObjectByType<PlayerController>().transform;
+            if (PlayerController.Instance is not null)
+            {
+                _camera.m_Follow = PlayerController.Instance.transform;
+                _camera.m_LookAt = PlayerController.Instance.transform;
+            }
+            else
+            {
+                _camera.m_Follow = null;
+                _camera.m_LookAt = null;
+            }
         }
     }
 }

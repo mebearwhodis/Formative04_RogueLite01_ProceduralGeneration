@@ -158,7 +158,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.Formative04-RogueLite01-ProceduralGeneration
   buildNumber:
     Bratwurst: 0
     Standalone: 0
@@ -602,8 +603,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Formative04_RogueLite01_ProceduralGeneration
-  metroPackageVersion: 
+  metroPackageName: Formative04RogueLite01ProceduralGeneration
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -611,7 +612,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Formative04_RogueLite01_ProceduralGeneration
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Formative04_RogueLite01_ProceduralGenera
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

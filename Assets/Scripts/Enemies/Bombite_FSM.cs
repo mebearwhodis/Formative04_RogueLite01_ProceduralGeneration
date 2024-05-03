@@ -20,12 +20,10 @@ public class Bombite_FSM : MonoBehaviour
         _thisEntity = GetComponent<FSM_Enemy>();
 
         _stateMachine = new FSM_StateMachine();
-        // _wanderState = new FSM_StateWander(_thisEntity);
         _chaseState = new FSM_StateChase(_thisEntity);
         _explosionState = new FSM_ExplosionState(_thisEntity);
         
         _stateMachine.ChangeState(_chaseState);
-        // _stateMachine.AddTransition(_wanderState, _chaseState, SeePlayer);
         _stateMachine.AddTransition(_chaseState, _explosionState, PlayerInRange);
     }
 
@@ -33,12 +31,7 @@ public class Bombite_FSM : MonoBehaviour
     {
         _stateMachine.UpdateState();
     }
-    //
-    // private bool SeePlayer()
-    // {
-    //     //either raycast if obstacles or check in a radius
-    //     return false;
-    // }
+    
 
     private bool PlayerInRange()
     {
@@ -57,10 +50,14 @@ public class Bombite_FSM : MonoBehaviour
 
     private IEnumerator Explode()
     {
+        _thisEntity.Rigidbody.velocity = Vector2.zero;
         yield return new WaitForSeconds(1);
-        //Explosion code, destroy enemy, etc.
-        Debug.Log("Exploded :(");
         PlayerController.Instance.CurrentRoom.monstersLeft--;
+        if (PlayerInRange())
+        {
+            PlayerController.Instance.UpdateHealth(-2);
+            PlayerController.Instance.GetKnockedBack(transform,4);
+        }
         Destroy(this.gameObject);
     }
 }

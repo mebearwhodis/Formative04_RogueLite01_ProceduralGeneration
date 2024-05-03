@@ -11,7 +11,7 @@ public class MenuButtons : MonoBehaviour
 
     public void ShowCredits()
     {
-        GameManager.Instance.SetGameState(GameManager.GameState.Credits);
+        GameManager.Instance.SetGameState(GameManager.GameState.CreditsState);
     }
     
     public void ExitGame()

@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Boy GBC - The Legend of Zelda Links Awakening DX - NPCs_0
+      name: Explosion
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 542
-        height: 533
+        x: 285
+        y: 299
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b4c58a685b6966344bc48c378b4e2677
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Game Boy GBC - The Legend of Zelda Links Awakening DX - NPCs_0: -9109778087866394943
+      Explosion: -9109778087866394943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

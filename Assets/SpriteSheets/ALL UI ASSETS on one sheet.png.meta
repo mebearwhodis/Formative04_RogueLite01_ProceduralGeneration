@@ -3898,7 +3898,7 @@ TextureImporter:
         width: 90
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3906,6 +3906,27 @@ TextureImporter:
       bones: []
       spriteID: 7dc061ec227872e49ac9cadefb6a5a1f
       internalID: -684198317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigCoin
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 294
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55145a0f7d17f50438582df172076155
+      internalID: -1574001458
       vertices: []
       indices: 
       edges: []
@@ -3921,6 +3942,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BigCoin: -1574001458
       Button: -684198317
       CoinIcon: 877732525
       HUD: 8941493973892504005

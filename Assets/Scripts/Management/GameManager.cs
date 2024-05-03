@@ -1,26 +1,23 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR;
 
 public class GameManager : Singleton<GameManager>
 {
     public enum GameState
     {
         InitState,
-        MainMenu,
-        Credits,
-        StartingState,
+        MainMenuState,
+        CreditsState,
         IslandState,
         DungeonState,
-        GameOver,
-        EndState
+        GameLostState,
+        GameWonState
     }
 
     [SerializeField] private GameObject _pauseMenu;
+    private PlayerInput _input;
     
     //public static GameManager instance = null;
     public GameState currentGameState = GameState.InitState;
@@ -33,6 +30,7 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
+        _input = GetComponentInChildren<PlayerInput>();
         OnStateEnter();
     }
 
@@ -53,17 +51,27 @@ public class GameManager : Singleton<GameManager>
         switch (currentGameState)
         {
             case GameState.InitState:
-                //Initialize game
+                if (PlayerController.Instance is not null)
+                {
+                    PlayerController.Instance.gameObject.SetActive(false);
+                    PlayerController.Instance.RemainingHealth = PlayerController.Instance.MaxPlayerHealth;
+                    PlayerController.Instance.CoinAmount = 0;
+                }
                 _canPause = false;
                 break;
-            case GameState.MainMenu:
+            case GameState.MainMenuState:
+                _isPaused = false;
+                _pauseMenu.SetActive(false);
+                if (PlayerController.Instance is not null)
+                {
+                    PlayerController.Instance.Destroy();
+                }
+                SceneManager.LoadScene("MainMenu");
                 _canPause = false;
                 break;  
-            case GameState.Credits:
+            case GameState.CreditsState:
                 SceneManager.LoadScene("Credits");
                 _canPause = false;
-                break;
-            case GameState.StartingState:
                 break;
             case GameState.IslandState:
                 SceneManager.LoadScene("IslandGenerator");
@@ -73,12 +81,14 @@ public class GameManager : Singleton<GameManager>
                 SceneManager.LoadScene("DungeonGenerator");
                 _canPause = true;
                 break;
-            case GameState.GameOver:
-                SceneManager.LoadScene("GameOver");
+            case GameState.GameLostState:
+                PlayerController.Instance.gameObject.SetActive(false);
+                SceneManager.LoadScene("GameLost");
                 _canPause = false;
                 break;
-            case GameState.EndState:
-                SceneManager.LoadScene("EndScreen");
+            case GameState.GameWonState:
+                PlayerController.Instance.gameObject.SetActive(false);
+                SceneManager.LoadScene("GameWon");
                 _canPause = false;
                 break;
             default:
@@ -92,17 +102,17 @@ public class GameManager : Singleton<GameManager>
         {
             case GameState.InitState:
                 break;
-            case GameState.MainMenu:
+            case GameState.MainMenuState:
                 break;  
-            case GameState.Credits:
-                break;
-            case GameState.StartingState:
+            case GameState.CreditsState:
                 break;
             case GameState.IslandState:
                 break;
             case GameState.DungeonState:
                 break;
-            case GameState.GameOver:
+            case GameState.GameLostState:
+                break;
+            case GameState.GameWonState:
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -111,10 +121,9 @@ public class GameManager : Singleton<GameManager>
 
     public void SetPause()
     {
-        if(!_canPause){Debug.Log("Can't pause here");return;}
+        if(!_canPause){return;}
         _isPaused = !_isPaused;
         _pauseMenu.SetActive(_isPaused);
-        //de/Activate Pause Menu
     }
 
     public Vector3 GetPlayerPosition()
